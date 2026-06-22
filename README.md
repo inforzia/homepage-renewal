@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inforzia Homepage Renewal
 
-## Getting Started
+회사 홈페이지를 Next.js로 재구축하는 프로젝트입니다.  
+대부분의 화면은 정적 콘텐츠 중심으로 구성하며, Netlify 배포를 전제로 초기 세팅되어 있습니다.
 
-First, run the development server:
+## Goals
+
+- 정적 사이트 중심의 회사 홈페이지 구축
+- Figma 프레임과 코드 컴포넌트의 연결 관리
+- 디자인 변경 시 로직을 최대한 보존하면서 화면만 안정적으로 동기화
+
+## Tech Stack
+
+- Next.js
+- App Router
+- TypeScript
+- ESLint
+- Netlify
+
+## Node Version
+
+이 프로젝트는 `.node-version` 파일을 기준으로 Node.js `20.20.0` 사용을 전제로 합니다.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+fnm use
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+필요하면 아래처럼 맞춘 뒤 의존성을 다시 설치합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+fnm install 20.20.0
+fnm use 20.20.0
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Local: `http://localhost:3000`
+- Lint: `npm run lint`
+- Type check: `npm run typecheck`
+- Build: `npm run build`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+정적 출력 기준으로 구성되어 있으며 Netlify에서 `out/` 디렉터리를 publish 대상으로 사용합니다.
+운영 기준 도메인은 `https://inforzia.io/` 입니다.
 
-## Deploy on Vercel
+## CI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GitHub Actions 기반 기본 CI가 포함되어 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Pull Request와 `main` 브랜치 push 시 자동 실행
+- Node.js `20.20.0` 사용
+- `npm ci`
+- `npm run check`
+- `npm run build`
+
+## Figma Workflow
+
+- Figma 프레임과 구현 파일의 매핑은 `docs/note/figma-screen-map.md`에서 관리합니다.
+- 디자인 변경이 발생하면 우선 변경점을 비교하고, 사용자 승인 후 코드에 반영합니다.
+- Figma 연동 범위는 디자인 반영에 한정하며, 비즈니스 로직은 코드에서 직접 관리합니다.
