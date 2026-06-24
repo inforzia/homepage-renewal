@@ -1,0 +1,679 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.heroSection,
+.ctaSection {
+    position: relative;
+    overflow: hidden;
+    min-height: 948px;
+    background: #0f1218;
+}
+
+.heroVideo,
+.ctaVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroOverlay,
+.ctaOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.heroContent,
+.ctaContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    min-height: 948px;
+    padding: 60px 0 128px;
+}
+
+.heroCopy,
+.ctaCopy {
+    display: grid;
+    gap: 24px;
+    width: 100%;
+    max-width: 658px;
+}
+
+.heroTitle,
+.ctaTitle {
+    color: #fff;
+    font-family: var(--font-pretendard-bold);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 84px;
+    letter-spacing: -1.6px;
+}
+
+.heroTitle span,
+.ctaTitle span,
+.heroDescription span {
+    display: block;
+}
+
+.heroDescription,
+.ctaDescription {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-pretendard-medium);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.5px;
+}
+
+.primaryButton {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    width: fit-content;
+    height: 44px;
+    padding: 12px 20px 12px 24px;
+    border-radius: 9999px;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-pretendard-semibold);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.45px;
+}
+
+.primaryButton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid #fff;
+    border-radius: inherit;
+}
+
+.primaryButton span,
+.primaryButtonIcon {
+    position: relative;
+    z-index: 1;
+}
+
+.primaryButtonIcon {
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    height: 360px;
+}
+
+.logoViewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.logoRow {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    width: max-content;
+}
+
+.logoItem {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.logoItem :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logoAdd {
+    width: 142px;
+    height: 79.88px;
+}
+
+.logoApplied {
+    width: 198px;
+    height: 49.88px;
+}
+
+.logoCj {
+    width: 147px;
+    height: 60px;
+}
+
+.logoDoosan {
+    width: 132px;
+    height: 23.97px;
+}
+
+.logoEmart {
+    width: 99px;
+    height: 28.03px;
+}
+
+.logoGhost {
+    opacity: 0.2;
+}
+
+.logoFade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    pointer-events: none;
+}
+
+.logoFadeLeft {
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logoFadeRight {
+    right: 0;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.productsSection {
+    padding: 40px 0;
+}
+
+.sectionLabelWrap {
+    height: 96px;
+    display: flex;
+    align-items: center;
+}
+
+.sectionLabel {
+    color: #121416;
+    font-family: var(--font-pretendard-medium);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -1.05px;
+}
+
+.productList {
+    display: grid;
+}
+
+.productCard {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(844px, 1fr);
+    gap: 120px;
+    align-items: center;
+    padding: 64px 0;
+}
+
+.productCopy {
+    min-width: 320px;
+}
+
+.productCopyGroup {
+    display: grid;
+    gap: 20px;
+}
+
+.productTitle {
+    color: #212529;
+    font-family: var(--font-pretendard-medium);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -1.2px;
+}
+
+.productSubtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    color: #212529;
+    font-family: var(--font-pretendard-semibold);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.7px;
+}
+
+.visionAccent,
+.agentAccent {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.visionAccent {
+    background-image: linear-gradient(
+        90deg,
+        #6322ef 0%,
+        #8a2cbe 25%,
+        #b1378d 50%,
+        #d8415c 75%,
+        #ec4644 87.5%,
+        #ff4b2b 100%
+    );
+}
+
+.agentAccent {
+    background-image: linear-gradient(
+        90deg,
+        #007bff 0%,
+        #136cf9 12.5%,
+        #265cf2 25%,
+        #4d3ee6 50%,
+        #731fd9 75%,
+        #860fd2 87.5%,
+        #9900cc 100%
+    );
+}
+
+.productDescription {
+    color: #495057;
+    font-family: var(--font-pretendard-regular);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+}
+
+.productMedia {
+    position: relative;
+    min-width: 844px;
+    height: 512px;
+    border-radius: 48px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.visionFrame {
+    background-image: url("/images/inforzia/product-vision-frame.png");
+}
+
+.agentFrame {
+    background-image: url("/images/inforzia/product-agent-frame.png");
+}
+
+.productMediaInner {
+    position: absolute;
+    top: 62px;
+    left: 76px;
+    width: 692px;
+    height: 388px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.industriesSection {
+    padding: 116px 0 136px;
+}
+
+.industriesHeadingWrap {
+    height: 96px;
+    display: flex;
+    align-items: center;
+}
+
+.industriesTitle {
+    color: #121416;
+    font-family: var(--font-pretendard-medium);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -1.05px;
+}
+
+.industriesCarousel {
+    display: grid;
+    gap: 32px;
+    padding: 24px 0;
+}
+
+.industriesViewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.industriesRow {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+.industryCard {
+    position: relative;
+    flex: 0 0 360px;
+    width: 360px;
+    height: 360px;
+    padding: 20px 36px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.industryImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.industryOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 40%);
+}
+
+.industryText {
+    position: relative;
+    z-index: 1;
+    display: grid;
+}
+
+.industryLabel {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-pretendard-regular);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+}
+
+.industryTitle {
+    color: #fff;
+    font-family: var(--font-pretendard-bold);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.6px;
+}
+
+.industriesViewportFade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 360px;
+    pointer-events: none;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.carouselStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    min-height: 48px;
+}
+
+.carouselButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 9999px;
+    background: #f1f3f5;
+    color: #adb5bd;
+    overflow: hidden;
+}
+
+.carouselButtonIcon {
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+    opacity: 0.72;
+}
+
+.carouselIndicator {
+    width: 48px;
+    color: #6c757d;
+    font-family: var(--font-pretendard-regular);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    background: #000;
+}
+
+.footerInner {
+    display: grid;
+    gap: 32px;
+    padding: 44px 0;
+}
+
+.footerBrand {
+    flex: 0 0 auto;
+}
+
+.footerLogo {
+    display: block;
+    width: 216px;
+    height: auto;
+}
+
+.footerMeta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: end;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 110px 135px minmax(0, 1fr);
+    gap: 52px;
+}
+
+.contactItem {
+    display: grid;
+    gap: 4px;
+}
+
+.contactLabel {
+    color: #6c757d;
+    font-family: var(--font-pretendard-medium);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+}
+
+.contactValue,
+.footerPrivacy {
+    color: #fff;
+    font-family: var(--font-pretendard-medium);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+}
+
+.footerLegal {
+    display: grid;
+    justify-items: end;
+    gap: 4px;
+}
+
+.footerCopyright {
+    color: #6c757d;
+    font-family: var(--font-pretendard-medium);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+}
+
+@media (max-width: 1439px) {
+    .container {
+        width: min(100% - 40px, 1440px);
+    }
+
+    .logoSection {
+        height: auto;
+        padding: 120px 0;
+    }
+
+    .productCard {
+        grid-template-columns: minmax(320px, 1fr);
+        gap: 40px;
+    }
+
+    .productMedia {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .productMediaInner {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .footerMeta {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .footerLegal {
+        justify-items: start;
+    }
+
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .container {
+        width: min(100% - 48px, 960px);
+    }
+
+    .heroSection,
+    .ctaSection,
+    .heroContent,
+    .ctaContent {
+        min-height: 820px;
+    }
+
+    .heroTitle,
+    .ctaTitle {
+        font-size: 52px;
+        line-height: 68px;
+    }
+
+    .sectionLabel,
+    .industriesTitle {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .logoRow {
+        gap: 72px;
+    }
+
+    .industriesSection {
+        padding-top: 88px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .heroSection,
+    .ctaSection,
+    .heroContent,
+    .ctaContent {
+        min-height: 720px;
+    }
+
+    .heroContent,
+    .ctaContent {
+        padding-bottom: 56px;
+    }
+
+    .heroTitle,
+    .ctaTitle {
+        font-size: 42px;
+        line-height: 54px;
+    }
+
+    .heroDescription,
+    .ctaDescription,
+    .productDescription {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .logoRow {
+        gap: 48px;
+    }
+
+    .productTitle {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .productSubtitle {
+        font-size: 22px;
+        line-height: 34px;
+    }
+
+    .productMedia {
+        height: 280px;
+        border-radius: 32px;
+    }
+
+    .productMediaInner {
+        width: calc(100% - 48px);
+        height: calc(100% - 48px);
+        border-radius: 14px;
+    }
+
+    .industriesTitle {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .industryCard {
+        flex-basis: 260px;
+        width: 260px;
+        height: 260px;
+        padding: 20px;
+    }
+
+    .industriesViewportFade {
+        width: 56px;
+        height: 260px;
+    }
+}

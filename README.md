@@ -6,7 +6,7 @@
 ## Goals
 
 - 정적 사이트 중심의 회사 홈페이지 구축
-- Figma 프레임과 코드 컴포넌트의 연결 관리
+- Figma Sites 페이지와 코드 컴포넌트의 연결 관리
 - 디자인 변경 시 로직을 최대한 보존하면서 화면만 안정적으로 동기화
 
 ## Tech Stack
@@ -62,6 +62,8 @@ GitHub Actions 기반 기본 CI가 포함되어 있습니다.
 
 ## Figma Workflow
 
-- Figma 프레임과 구현 파일의 매핑은 `docs/note/figma-screen-map.md`에서 관리합니다.
+- Figma Sites의 렌더링된 페이지와 구현 파일의 매핑은 `docs/note/figma-screen-map.md`에서 관리합니다.
+- 페이지 분석 및 구현 작업 지침은 `docs/skills/` 아래 문서에서 관리합니다.
 - 디자인 변경이 발생하면 우선 변경점을 비교하고, 사용자 승인 후 코드에 반영합니다.
+- Figma MCP는 사용하지 않으며, `@chrome`을 통해 렌더링된 Figma Sites 페이지를 읽는 방식을 사용합니다.
 - Figma 연동 범위는 디자인 반영에 한정하며, 비즈니스 로직은 코드에서 직접 관리합니다.

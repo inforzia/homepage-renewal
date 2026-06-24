@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inforzia Reference Baseline</title>
+    <style>
+        :root {
+            --page-width: 1400px;
+            --side-padding: 40px;
+            --text-primary: #101418;
+            --text-muted: #495057;
+            --text-soft: rgba(255, 255, 255, 0.8);
+            --surface-dark: #0f1218;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+            color: var(--text-primary);
+            background: #ffffff;
+        }
+
+        img,
+        video {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(var(--page-width), calc(100% - (var(--side-padding) * 2)));
+            margin: 0 auto;
+        }
+
+        .hero,
+        .cta {
+            position: relative;
+            overflow: hidden;
+            background: var(--surface-dark);
+        }
+
+        .hero {
+            min-height: 948px;
+        }
+
+        .cta {
+            min-height: 560px;
+        }
+
+        .hero video,
+        .cta video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(8, 11, 18, 0.66) 0%, rgba(8, 11, 18, 0.3) 38%, rgba(8, 11, 18, 0.1) 100%),
+                linear-gradient(180deg, rgba(8, 11, 18, 0.08) 0%, rgba(8, 11, 18, 0.22) 100%);
+        }
+
+        .hero-content,
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            min-height: inherit;
+            padding-bottom: 128px;
+        }
+
+        .cta-content {
+            padding-bottom: 120px;
+        }
+
+        .display-title {
+            margin: 0;
+            color: #ffffff;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.3125;
+            letter-spacing: -0.025em;
+        }
+
+        .display-title span,
+        .body-copy span {
+            display: block;
+        }
+
+        .body-copy {
+            margin: 24px 0 0;
+            color: var(--text-soft);
+            font-size: 20px;
+            line-height: 1.5;
+            letter-spacing: -0.025em;
+        }
+
+        .pill-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            border-radius: 999px;
+            color: #ffffff;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .logos {
+            overflow: hidden;
+            padding: 140px 0 148px;
+        }
+
+        .logos-track {
+            display: flex;
+            align-items: center;
+            gap: 120px;
+        }
+
+        .products {
+            padding: 0 0 216px;
+        }
+
+        .section-label {
+            margin: 0 0 136px;
+            font-size: 48px;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .product-list {
+            display: grid;
+            gap: 128px;
+        }
+
+        .product-card {
+            display: grid;
+            grid-template-columns: 436px minmax(0, 1fr);
+            gap: 120px;
+            align-items: center;
+        }
+
+        .product-title {
+            margin: 0 0 28px;
+            font-size: 48px;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .product-subtitle {
+            margin: 0 0 28px;
+            font-size: 28px;
+            line-height: 1.5714;
+        }
+
+        .product-description {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .product-frame {
+            min-height: 512px;
+            border-radius: 48px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .industries {
+            padding: 0 0 136px;
+        }
+
+        .industries-title {
+            margin: 0;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.3125;
+            letter-spacing: -0.025em;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .industry-card {
+            position: relative;
+            min-height: 336px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: var(--surface-dark);
+        }
+
+        .industry-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .industry-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.08) 42%, rgba(255, 255, 255, 0.34) 100%),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(255, 255, 255, 0) 72%);
+        }
+
+        .industry-copy {
+            position: relative;
+            z-index: 1;
+            padding: 18px 24px;
+            color: #ffffff;
+        }
+
+        .industry-copy p {
+            margin: 0;
+        }
+
+        .industry-copy .eyebrow {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .industry-copy .title {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .carousel-status {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+            color: var(--text-muted);
+        }
+
+        footer {
+            padding: 40px 0 56px;
+            background: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="https://seed-bronze-70048020.figma.site/_videos/v1/903a889d2ddbeae25b3a395060756facede92d6b" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container hero-content">
+            <div>
+                <h1 class="display-title">
+                    <span>Vision AI That Sees</span>
+                    <span>Beyond The Surface.</span>
+                </h1>
+                <p class="body-copy">
+                    <span>인포지아의 Vision AI 기술은 우리가 놓치기 쉬운 수많은 시각 정보를</span>
+                    <span>정확히 이해하고, 현장과 상황에 맞는 실질적인 가치와 솔루션을 제시합니다.</span>
+                </p>
+                <a class="pill-button" href="#">Get started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="logos">
+        <div class="container">
+            <div class="logos-track">
+                <img alt="ADD" src="https://seed-bronze-70048020.figma.site/_assets/v11/605ad1c3c3cba44b623de577ff9b0e4f77b7f88a.png">
+                <img alt="Applied Materials" src="https://seed-bronze-70048020.figma.site/_assets/v11/06e9fbdec29af2c307d7e5ac276d730a4c544336.png">
+                <img alt="CJ Logistics" src="https://seed-bronze-70048020.figma.site/_assets/v11/a9fe30f195fd7b1fe9c5f2223ececf74b990d74f.png">
+                <img alt="Doosan" src="https://seed-bronze-70048020.figma.site/_assets/v11/633ff91bbfe8189a39977398eaf24bcb71b50dc2.png">
+                <img alt="Emart" src="https://seed-bronze-70048020.figma.site/_assets/v11/8db0bce752c8559f880dc8b3f1e69b968c2dfc3e.png?w=256">
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <p class="section-label">Our Products</p>
+            <div class="product-list">
+                <article class="product-card">
+                    <div>
+                        <h2 class="product-title">Flomon Vision</h2>
+                        <p class="product-subtitle">현장의 모든 순간을 감지하는 Vision AI</p>
+                        <p class="product-description">제조·건설 현장의 세밀한 공정 변화부터 안전 상태와 위험 예측까지, 현장의 모든 징후와 순간을 데이터화하여 관제 환경을 지능형 자동화 체계로 혁신합니다.</p>
+                    </div>
+                    <div class="product-frame" style="background-image:url('https://seed-bronze-70048020.figma.site/_assets/v11/b58e8d74a0affe652a3f7062a4967a51144f5c32.png?w=2048')"></div>
+                </article>
+                <article class="product-card">
+                    <div>
+                        <h2 class="product-title">Flomon Agent</h2>
+                        <p class="product-subtitle">의사결정과 흐름을 설계하는 AI 에이전트</p>
+                        <p class="product-description">Vision AI가 포착한 현장의 상황을 스스로 추론하고 분석하여, 현장 대응부터 시스템 제어까지 전 과정을 유기적으로 연결해 완벽한 자율 제어를 실현합니다.</p>
+                    </div>
+                    <div class="product-frame" style="background-image:url('https://seed-bronze-70048020.figma.site/_assets/v11/1b13e8c0bda2373e71fc13a29fb6517b79a15dad.png?w=2048')"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries">
+        <div class="container">
+            <h2 class="industries-title">현장 관제의 완벽한 지능화, 인포지아와 실현하세요.</h2>
+            <div class="industries-grid">
+                <article class="industry-card">
+                    <img alt="" src="/images/inforzia/industry-disaster.png">
+                    <div class="industry-copy"><p class="eyebrow">Industries</p><p class="title">재난 안전</p></div>
+                </article>
+                <article class="industry-card">
+                    <img alt="" src="/images/inforzia/industry-facility.png">
+                    <div class="industry-copy"><p class="eyebrow">Industries</p><p class="title">시설물 안전</p></div>
+                </article>
+                <article class="industry-card">
+                    <img alt="" src="/images/inforzia/industry-retail.png">
+                    <div class="industry-copy"><p class="eyebrow">Industries</p><p class="title">리테일 및 매장</p></div>
+                </article>
+                <article class="industry-card">
+                    <img alt="" src="/images/inforzia/industry-manufacturing.png">
+                    <div class="industry-copy"><p class="eyebrow">Industries</p><p class="title">제조 및 건설</p></div>
+                </article>
+            </div>
+            <div class="carousel-status">
+                <span>Prev</span>
+                <span>1 / 3</span>
+                <span>Next</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <video autoplay muted loop playsinline>
+            <source src="https://seed-bronze-70048020.figma.site/_videos/v1/664fb88829d0a36dbc3564beab8ab6b300e106c6" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container cta-content">
+            <div>
+                <h2 class="display-title">
+                    <span>Vision AI That Sees</span>
+                    <span>Beyond The Surface.</span>
+                </h2>
+                <p class="body-copy"><span>산업 지능화의 시작, 인포지아와 함께 하세요.</span></p>
+                <a class="pill-button" href="#">Get started</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>전화 02-6959-2540</p>
+            <p>메일 inforzia@inforzia.io</p>
+            <p>주소 (16942) 경기도 용인시 수지구 광교중앙로 338(상현동, 광교우미뉴브) A동 627호</p>
+            <p>개인정보 처리방침</p>
+            <p>© 2026 Inforzia Corp. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -7,36 +7,33 @@
 
 ## Core Rules
 - Use the App Router and default to server components unless client logic is clearly required.
-- Figma integration is only for design reflection. Business logic and non-visual behavior are implemented manually in code.
-- Never modify the original Figma design file or its source frames. Treat the Figma source as read-only reference material at all times.
-- When design changes arrive, preserve existing logic as much as possible and scope updates to layout, copy, assets, and styling.
-- Do not apply Figma-driven sync automatically unless the user explicitly requests comparison and application.
-
-## Figma Mapping Workflow
-- Manage frame-to-code mapping in `docs/note/figma-screen-map.md`.
-- Do not edit, rearrange, rename, detach, or overwrite anything in the original Figma source while inspecting or mapping designs.
-- For each mapped frame, record:
-  - Figma frame name
-  - Figma URL
-  - Node ID if available
-  - Route or screen purpose
-  - Target component or page file
-  - Sync status
-  - Notes about reusable components and implementation rules
-- If a frame changes, summarize the design delta first and propose the code impact before editing.
+- Figma MCP is not available for this workflow. Treat Figma Sites pages as read-only visual and behavioral references.
+- Analyze Figma Sites through Codex Chrome extension, Chrome DevTools, or CDP-based browser inspection.
+- Reconstruct screens in project-native React / Next.js code for the final implementation. However, when following `docs/skills/figma-sites-to-nextjs.md` step 1, prioritize bringing the original site over as directly as possible into an analysis-only baseline HTML, and treat any conflicting "do not copy" guidance as lower priority for that baseline artifact. Runtime scripts should still be removed or disabled unless they are strictly required for visual verification.
+- Preserve existing business logic, route structure, shared components, tokens, and state behavior unless the user explicitly asks for logic changes.
+- When design changes arrive, scope updates to layout, copy, assets, styling, and clearly requested interaction behavior.
+- If a skill requires information from the user, or if behavior may differ depending on the user's intent or approval, explicitly request the needed information and obtain the user's consent before proceeding.
+- If a task relies on the Figma Sites inspection workflow, explicitly say which skill in `docs/skills/` you are following.
+- Follow `.editorconfig` when creating or editing code and stylesheet files, including 4-space indentation and LF line endings.
 
 ## Implementation Guidelines
 - Keep components small, semantic, and content-oriented.
+- Reuse existing shared components before creating new ones.
 - Prefer CSS variables and shared tokens before introducing heavier styling patterns.
+- Replace obfuscated or machine-generated naming with clear project-native names that describe component purpose.
+- Measure spacing, typography, sizing, and responsive behavior from the rendered page instead of approximating by eye.
+- Preserve natural asset proportions. Do not upscale logos, icons, or wordmarks beyond their rendered size unless the user explicitly requests a redesign.
+- Use semantic HTML and accessible controls for navigation, buttons, inputs, dialogs, and overlays.
 - Avoid unnecessary client state, effects, and browser-only code in static sections.
 - If interactivity is added later, isolate it in narrowly scoped client components.
 
 ## Documentation Workflow
 - High-level and task-level work items live in `docs/todo/`.
 - Move fully completed todo files into `docs/todo/completed/`.
-- Keep references, notes, and design linkage docs in `docs/note/`.
+- Keep references and notes in `docs/note/` when a task needs durable implementation context.
+- Keep repeatable task-specific workflows in `docs/skills/`.
 
 ## Final Checks
 - Confirm the change does not break static hosting assumptions.
-- Confirm Figma-derived updates did not overwrite hand-written logic.
-- Update docs when routes, mappings, or implementation rules change.
+- Confirm rendered-site-derived updates did not overwrite hand-written logic.
+- Update the relevant skill or notes when workflow expectations materially change.
