@@ -13,6 +13,8 @@
 - Preserve existing business logic, route structure, shared components, tokens, and state behavior unless the user explicitly asks for logic changes.
 - When design changes arrive, scope updates to layout, copy, assets, styling, and clearly requested interaction behavior.
 - If a skill requires information from the user, or if behavior may differ depending on the user's intent or approval, explicitly request the needed information and obtain the user's consent before proceeding.
+- If a request is ambiguous, clarify the intended scope, target, and direction before proceeding. Use concise follow-up questions or concrete options when they help narrow the task efficiently.
+- If a request is open to multiple reasonable interpretations or includes multiple possible cases, confirm which one the user wants before proceeding.
 - If a task relies on the Figma Sites inspection workflow, explicitly say which skill in `docs/skills/` you are following.
 - Follow `.editorconfig` when creating or editing code and stylesheet files, including 4-space indentation and LF line endings.
 
