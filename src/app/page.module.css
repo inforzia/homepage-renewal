@@ -1,24 +1,44 @@
 .page {
+    --page-width: min(1440px, calc(100% - 40px));
+    --text-strong: #121416;
+    --text-body: #495057;
+    --text-subtle: #6c757d;
+    --surface-dark: #000;
+    --button-border: #fff;
+    color: var(--text-strong);
     background: #fff;
-    color: #121416;
     overflow-x: hidden;
 }
 
+.page img,
+.page video {
+    display: block;
+    max-width: none;
+}
+
 .container {
-    width: min(1440px, calc(100% - 40px));
+    width: var(--page-width);
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .heroSection,
 .ctaSection {
     position: relative;
     overflow: hidden;
-    min-height: 948px;
-    background: #0f1218;
 }
 
-.heroVideo,
-.ctaVideo {
+.heroSection {
+    min-height: 948px;
+    background: #11151b;
+}
+
+.ctaSection {
+    min-height: 560px;
+    background: #0c1015;
+}
+
+.backgroundVideo {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -26,8 +46,7 @@
     object-fit: cover;
 }
 
-.heroOverlay,
-.ctaOverlay {
+.videoOverlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.18);
@@ -39,25 +58,42 @@
     z-index: 1;
     display: flex;
     align-items: flex-end;
+}
+
+.heroContent {
     min-height: 948px;
     padding: 60px 0 128px;
+}
+
+.ctaContent {
+    min-height: 560px;
+    padding: 52px 0 60px;
 }
 
 .heroCopy,
 .ctaCopy {
     display: grid;
+    width: min(100%, 658px);
+}
+
+.heroCopy {
+}
+
+.ctaCopy {
     gap: 24px;
-    width: 100%;
-    max-width: 658px;
+}
+
+.heroTitle {
+    margin-bottom: 24px;
+}
+.heroDescription {
+    margin-bottom: 28px;
 }
 
 .heroTitle,
 .ctaTitle {
     color: #fff;
-    font-family: var(--font-pretendard-bold);
-    font-size: 64px;
     font-weight: 400;
-    line-height: 84px;
     letter-spacing: -1.6px;
 }
 
@@ -67,40 +103,60 @@
     display: block;
 }
 
+.heroTitle {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 84px;
+}
+
+.ctaTitle {
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 68px;
+    letter-spacing: -1.3px;
+}
+
 .heroDescription,
 .ctaDescription {
     color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-pretendard-medium);
+    font-weight: 500;
     font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
     letter-spacing: -0.5px;
+}
+
+.heroDescription {
+    line-height: 30px;
+}
+
+.ctaDescription {
+    line-height: 30px;
 }
 
 .primaryButton {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
     justify-content: center;
+    gap: 12px;
     width: fit-content;
     height: 44px;
     padding: 12px 20px 12px 24px;
-    border-radius: 9999px;
+    border: 0;
+    border-radius: 999px;
     background: transparent;
     color: #fff;
-    font-family: var(--font-pretendard-semibold);
+    font-weight: 600;
     font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
     letter-spacing: -0.45px;
+    line-height: 24px;
+    cursor: default;
 }
 
 .primaryButton::before {
     content: "";
     position: absolute;
     inset: 0;
-    border: 1px solid #fff;
+    border: 1px solid var(--button-border);
     border-radius: inherit;
 }
 
@@ -127,7 +183,7 @@
     overflow: hidden;
 }
 
-.logoRow {
+.logoTrack {
     display: flex;
     align-items: center;
     gap: 120px;
@@ -135,43 +191,7 @@
 }
 
 .logoItem {
-    position: relative;
     flex: 0 0 auto;
-}
-
-.logoItem :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.logoAdd {
-    width: 142px;
-    height: 79.88px;
-}
-
-.logoApplied {
-    width: 198px;
-    height: 49.88px;
-}
-
-.logoCj {
-    width: 147px;
-    height: 60px;
-}
-
-.logoDoosan {
-    width: 132px;
-    height: 23.97px;
-}
-
-.logoEmart {
-    width: 99px;
-    height: 28.03px;
-}
-
-.logoGhost {
-    opacity: 0.2;
 }
 
 .logoFade {
@@ -196,19 +216,19 @@
     padding: 40px 0;
 }
 
-.sectionLabelWrap {
-    height: 96px;
+.sectionHeading {
     display: flex;
     align-items: center;
+    min-height: 96px;
 }
 
-.sectionLabel {
-    color: #121416;
-    font-family: var(--font-pretendard-medium);
+.sectionHeading p,
+.sectionHeading h2 {
+    color: var(--text-strong);
+    font-weight: 500;
     font-size: 42px;
-    font-weight: 400;
-    line-height: 48px;
     letter-spacing: -1.05px;
+    line-height: 48px;
 }
 
 .productList {
@@ -217,28 +237,23 @@
 
 .productCard {
     display: grid;
-    grid-template-columns: minmax(320px, 1fr) minmax(844px, 1fr);
+    grid-template-columns: 436px minmax(0, 844px);
     gap: 120px;
     align-items: center;
     padding: 64px 0;
 }
 
 .productCopy {
-    min-width: 320px;
-}
-
-.productCopyGroup {
     display: grid;
-    gap: 20px;
 }
 
 .productTitle {
     color: #212529;
-    font-family: var(--font-pretendard-medium);
+    font-weight: 500;
     font-size: 48px;
-    font-weight: 400;
-    line-height: 48px;
     letter-spacing: -1.2px;
+    line-height: 48px;
+    margin-bottom: 32px;
 }
 
 .productSubtitle {
@@ -246,18 +261,25 @@
     flex-wrap: wrap;
     gap: 4px;
     color: #212529;
-    font-family: var(--font-pretendard-semibold);
+    font-weight: 600;
     font-size: 28px;
-    font-weight: 400;
-    line-height: 44px;
     letter-spacing: -0.7px;
+    line-height: 44px;
+    margin-bottom: 20px;
+}
+
+.productDescription {
+    color: var(--text-body);
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
 }
 
 .visionAccent,
 .agentAccent {
+    color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
 }
 
 .visionAccent {
@@ -285,67 +307,49 @@
     );
 }
 
-.productDescription {
-    color: #495057;
-    font-family: var(--font-pretendard-regular);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: -0.5px;
-}
-
 .productMedia {
     position: relative;
-    min-width: 844px;
+    width: 844px;
     height: 512px;
     border-radius: 48px;
-    overflow: hidden;
+    background-image: var(--frame-image);
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
-.visionFrame {
-    background-image: url("/images/inforzia/product-vision-frame.png");
-}
-
-.agentFrame {
-    background-image: url("/images/inforzia/product-agent-frame.png");
-}
-
-.productMediaInner {
+.productInnerFrame {
     position: absolute;
     top: 62px;
     left: 76px;
-    width: 692px;
-    height: 388px;
+    bottom: 62px;
+    right: 76px;
+    /* width: 692px;
+    height: 388px; */
     border-radius: 16px;
     background: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transition:
+        top 0.3s,
+        left 0.3s,
+        bottom 0.3s,
+        right 0.3s;
+}
+.productMedia:hover .productInnerFrame {
+    top: 54px;
+    left: 64px;
+    bottom: 54px;
+    right: 64px;
 }
 
 .industriesSection {
-    padding: 116px 0 136px;
+    padding: 116px 0 168px;
 }
 
-.industriesHeadingWrap {
-    height: 96px;
-    display: flex;
-    align-items: center;
-}
-
-.industriesTitle {
-    color: #121416;
-    font-family: var(--font-pretendard-medium);
-    font-size: 42px;
-    font-weight: 400;
-    line-height: 48px;
-    letter-spacing: -1.05px;
-}
-
-.industriesCarousel {
+.industriesWrap {
     display: grid;
     gap: 32px;
-    padding: 24px 0;
+    padding-top: 24px;
 }
 
 .industriesViewport {
@@ -353,7 +357,7 @@
     overflow: hidden;
 }
 
-.industriesRow {
+.industriesTrack {
     display: flex;
     gap: 24px;
     width: max-content;
@@ -361,15 +365,15 @@
 
 .industryCard {
     position: relative;
-    flex: 0 0 360px;
     width: 360px;
     height: 360px;
     padding: 20px 36px;
     border-radius: 20px;
     overflow: hidden;
+    flex: 0 0 auto;
 }
 
-.industryImage {
+.industryCard img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -386,28 +390,24 @@
 .industryText {
     position: relative;
     z-index: 1;
-    display: grid;
 }
 
-.industryLabel {
+.industryText p {
     color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-pretendard-regular);
     font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     letter-spacing: -0.4px;
+    line-height: 24px;
 }
 
-.industryTitle {
+.industryText h3 {
     color: #fff;
-    font-family: var(--font-pretendard-bold);
+    font-weight: bold;
     font-size: 24px;
-    font-weight: 400;
-    line-height: 36px;
     letter-spacing: -0.6px;
+    line-height: 36px;
 }
 
-.industriesViewportFade {
+.industriesFade {
     position: absolute;
     top: 0;
     right: 0;
@@ -422,7 +422,6 @@
     align-items: center;
     justify-content: center;
     gap: 36px;
-    min-height: 48px;
 }
 
 .carouselButton {
@@ -431,15 +430,14 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    padding: 0;
     border: 0;
-    border-radius: 9999px;
+    border-radius: 999px;
     background: #f1f3f5;
     color: #adb5bd;
-    overflow: hidden;
+    cursor: default;
 }
 
-.carouselButtonIcon {
+.carouselIcon {
     width: 20px;
     height: 20px;
     fill: currentcolor;
@@ -448,18 +446,15 @@
 
 .carouselIndicator {
     width: 48px;
-    color: #6c757d;
-    font-family: var(--font-pretendard-regular);
+    color: var(--text-subtle);
     font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
     letter-spacing: -0.5px;
+    line-height: 32px;
     text-align: center;
 }
 
 .footer {
-    position: relative;
-    background: #000;
+    background: var(--surface-dark);
 }
 
 .footerInner {
@@ -468,14 +463,9 @@
     padding: 44px 0;
 }
 
-.footerBrand {
-    flex: 0 0 auto;
-}
-
 .footerLogo {
-    display: block;
     width: 216px;
-    height: auto;
+    height: 72px;
 }
 
 .footerMeta {
@@ -496,23 +486,22 @@
     gap: 4px;
 }
 
-.contactLabel {
-    color: #6c757d;
-    font-family: var(--font-pretendard-medium);
+.contactLabel,
+.footerLegal p {
+    color: var(--text-subtle);
+    font-weight: 500;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     letter-spacing: -0.4px;
+    line-height: 24px;
 }
 
 .contactValue,
-.footerPrivacy {
+.footerLegal a {
     color: #fff;
-    font-family: var(--font-pretendard-medium);
+    font-weight: 600;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     letter-spacing: -0.4px;
+    line-height: 24px;
 }
 
 .footerLegal {
@@ -521,39 +510,15 @@
     gap: 4px;
 }
 
-.footerCopyright {
-    color: #6c757d;
-    font-family: var(--font-pretendard-medium);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: -0.4px;
-}
-
 @media (max-width: 1439px) {
-    .container {
-        width: min(100% - 40px, 1440px);
-    }
-
-    .logoSection {
-        height: auto;
-        padding: 120px 0;
-    }
-
     .productCard {
-        grid-template-columns: minmax(320px, 1fr);
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .productMedia {
-        min-width: 100%;
         width: 100%;
-    }
-
-    .productMediaInner {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        max-width: 844px;
     }
 
     .footerMeta {
@@ -564,6 +529,59 @@
     .footerLegal {
         justify-items: start;
     }
+}
+
+@media (max-width: 1023px) {
+    .page {
+        --page-width: calc(100% - 32px);
+    }
+
+    .heroContent {
+        min-height: 880px;
+        padding-bottom: 72px;
+    }
+
+    .heroTitle {
+        font-size: 56px;
+        line-height: 74px;
+    }
+
+    .ctaContent {
+        min-height: 560px;
+        padding-bottom: 52px;
+    }
+
+    .ctaTitle {
+        font-size: 44px;
+        line-height: 58px;
+    }
+
+    .sectionHeading p,
+    .sectionHeading h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .productMedia {
+        height: auto;
+        aspect-ratio: 844 / 512;
+    }
+
+    .productInnerFrame {
+        top: 12.109375%;
+        left: 9.004739%;
+        width: 81.990521%;
+        height: 75.78125%;
+    }
+
+    .industryCard {
+        width: 320px;
+        height: 320px;
+    }
+
+    .industriesFade {
+        height: 320px;
+    }
 
     .contactGrid {
         grid-template-columns: 1fr;
@@ -571,109 +589,81 @@
     }
 }
 
-@media (max-width: 1023px) {
-    .container {
-        width: min(100% - 48px, 960px);
-    }
-
-    .heroSection,
-    .ctaSection,
-    .heroContent,
-    .ctaContent {
-        min-height: 820px;
-    }
-
-    .heroTitle,
-    .ctaTitle {
-        font-size: 52px;
-        line-height: 68px;
-    }
-
-    .sectionLabel,
-    .industriesTitle {
-        font-size: 36px;
-        line-height: 42px;
-    }
-
-    .logoRow {
-        gap: 72px;
-    }
-
-    .industriesSection {
-        padding-top: 88px;
-    }
-
-}
-
 @media (max-width: 767px) {
-    .container {
-        width: calc(100% - 32px);
+    .heroContent {
+        min-height: 948px;
+        padding-top: 32px;
+        padding-bottom: 52px;
     }
 
-    .heroSection,
-    .ctaSection,
-    .heroContent,
-    .ctaContent {
-        min-height: 720px;
+    .heroCopy,
+    .ctaCopy {
+        width: 100%;
     }
 
-    .heroContent,
-    .ctaContent {
-        padding-bottom: 56px;
-    }
-
-    .heroTitle,
-    .ctaTitle {
-        font-size: 42px;
-        line-height: 54px;
+    .heroTitle {
+        font-size: 64px;
+        line-height: 84px;
     }
 
     .heroDescription,
     .ctaDescription,
     .productDescription {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 20px;
+        line-height: 30px;
     }
 
-    .logoRow {
-        gap: 48px;
+    .logoSection {
+        height: 280px;
+    }
+
+    .logoTrack {
+        gap: 72px;
+    }
+
+    .sectionHeading p,
+    .sectionHeading h2 {
+        font-size: 42px;
+        line-height: 48px;
     }
 
     .productTitle {
-        font-size: 36px;
-        line-height: 40px;
+        font-size: 48px;
+        line-height: 48px;
     }
 
     .productSubtitle {
-        font-size: 22px;
-        line-height: 34px;
+        display: grid;
+        gap: 4px;
     }
 
-    .productMedia {
-        height: 280px;
-        border-radius: 32px;
-    }
-
-    .productMediaInner {
-        width: calc(100% - 48px);
-        height: calc(100% - 48px);
-        border-radius: 14px;
-    }
-
-    .industriesTitle {
-        font-size: 32px;
-        line-height: 38px;
+    .productDescription {
+        line-height: 32px;
     }
 
     .industryCard {
-        flex-basis: 260px;
-        width: 260px;
-        height: 260px;
-        padding: 20px;
+        width: 280px;
+        height: 280px;
+        padding: 20px 24px;
     }
 
-    .industriesViewportFade {
+    .industriesFade {
         width: 56px;
-        height: 260px;
+        height: 280px;
+    }
+
+    .ctaSection {
+        min-height: 560px;
+    }
+
+    .ctaContent {
+        min-height: 560px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .ctaTitle {
+        font-size: 52px;
+        line-height: 68px;
     }
 }

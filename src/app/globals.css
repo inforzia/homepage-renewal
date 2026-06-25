@@ -11,18 +11,6 @@
     --cta-height: 560px;
     --industry-card-width: 360px;
     --industry-gap: 24px;
-    --font-pretendard-regular:
-        "Pretendard:Regular", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-        sans-serif;
-    --font-pretendard-medium:
-        "Pretendard:Medium", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-        sans-serif;
-    --font-pretendard-semibold:
-        "Pretendard:SemiBold", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-        sans-serif;
-    --font-pretendard-bold:
-        "Pretendard:Bold", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-        sans-serif;
 }
 
 html {
@@ -40,7 +28,8 @@ body {
     min-height: 100%;
     color: var(--foreground);
     background: var(--background);
-    font-family: var(--font-pretendard-regular);
+    font-family:
+        "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

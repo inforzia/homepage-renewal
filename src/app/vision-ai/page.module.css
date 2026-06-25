@@ -1,0 +1,610 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.heroSection {
+    min-height: 948px;
+    background-color: #f2f6ff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroContent {
+    display: flex;
+    align-items: flex-end;
+    min-height: 948px;
+    padding: 60px 0 128px;
+}
+
+.heroCopy {
+    display: grid;
+    gap: 24px;
+    width: min(100%, 920px);
+}
+
+.heroTitle {
+    color: #1a234e;
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: -1.6px;
+    line-height: 84px;
+}
+
+.heroTitle span,
+.heroDescription span,
+.sectionHeadline h2 span,
+.storyContent h2 span,
+.workflowCard h3 span,
+.ctaCopy h2 span {
+    display: block;
+}
+
+.heroDescription {
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+}
+
+.primaryButton {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    height: 44px;
+    padding: 12px 20px 12px 24px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+}
+
+.primaryButton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid #fff;
+    border-radius: inherit;
+}
+
+.primaryButtonDark {
+    color: #121416;
+}
+
+.primaryButtonDark::before {
+    border-color: #121416;
+}
+
+.primaryButton span,
+.primaryButtonIcon {
+    position: relative;
+    z-index: 1;
+}
+
+.primaryButtonIcon {
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+}
+
+.comparisonSection {
+    padding: 202px 0 0;
+}
+
+.overviewSection {
+    padding: 202px 0 58px;
+}
+
+.sectionIntro {
+    display: grid;
+    gap: 12px;
+    padding: 0 0 24px;
+    border-top: 1px solid #d9dee5;
+    border-bottom: 1px solid #d9dee5;
+}
+
+.sectionLabel,
+.gradientLabel {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.sectionLabel {
+    color: #8c959f;
+}
+
+.gradientLabel {
+    color: transparent;
+    background-image: linear-gradient(
+        90deg,
+        #007bff 0%,
+        #136cf9 12.5%,
+        #265cf2 25%,
+        #4d3ee6 50%,
+        #731fd9 75%,
+        #860fd2 87.5%,
+        #9900cc 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.sectionGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 682px);
+    gap: 40px;
+    align-items: start;
+}
+
+.sectionHeadline h2 {
+    color: #121416;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: -1.3px;
+    line-height: 68px;
+}
+
+.sectionBody {
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    padding-top: 4px;
+}
+
+.comparisonBlock {
+    display: grid;
+    gap: 84px;
+    padding: 202px 0 0;
+}
+
+.comparisonCard {
+    display: grid;
+    gap: 24px;
+    padding: 44px 32px 32px;
+    border-radius: 32px;
+    background: #fafbfc;
+}
+
+.comparisonCard h3,
+.solutionCard h3 {
+    color: #121416;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 36px;
+}
+
+.comparisonCard p,
+.solutionCard p {
+    color: #8c959f;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.comparisonLine {
+    width: 100%;
+    height: 20px;
+    margin-top: 8px;
+}
+
+.iconRow {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+    padding-top: 12px;
+}
+
+.iconRow::before {
+    content: "";
+    position: absolute;
+    top: 67px;
+    left: 8%;
+    right: 8%;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(132, 157, 255, 0.45), rgba(231, 77, 157, 0.55));
+}
+
+.iconItem {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+    text-align: center;
+}
+
+.iconItem img {
+    width: 136px;
+    height: 136px;
+    padding: 18px;
+    border: 1px solid rgba(222, 226, 230, 0.9);
+    border-radius: 50%;
+    background: #fff;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.solutionCard .iconItem img {
+    width: 136px;
+    height: 136px;
+}
+
+.iconItem p {
+    color: #8c959f;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.comparisonEmphasis,
+.solutionEmphasis {
+    color: #212529;
+    font-weight: 600;
+    font-size: 56px;
+    letter-spacing: -1.4px;
+    line-height: 72px;
+    text-align: center;
+}
+
+.versus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121416;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: -1.3px;
+    line-height: 68px;
+}
+
+.solutionCard {
+    background: linear-gradient(180deg, #fff 0%, #f7f1ff 100%);
+}
+
+.storySection {
+    display: flex;
+    align-items: center;
+    min-height: 680px;
+    margin-top: 182px;
+    background-color: #0d1220;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyContent {
+    padding: 226px 0 14px;
+}
+
+.storyContent h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: -1.6px;
+    line-height: 84px;
+}
+
+.workflowSection {
+    padding: 136px 0 458px;
+}
+
+.workflowHeader {
+    display: block;
+}
+
+.workflowHeader h2 {
+    color: #121416;
+    font-weight: 500;
+    font-size: 42px;
+    letter-spacing: -1.05px;
+    line-height: 48px;
+}
+
+.workflowTabs {
+    display: grid;
+    gap: 28px;
+    align-content: start;
+    margin: 300px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.workflowTab {
+    display: flex;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 26px;
+}
+
+.workflowTabActive {
+    color: #212529;
+}
+
+.workflowBody {
+    display: grid;
+    grid-template-columns: 310px 520px 530px;
+    gap: 50px;
+    align-items: start;
+    padding-top: 152px;
+}
+
+.workflowIllustration {
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+    align-content: start;
+}
+
+.workflowIllustration img {
+    width: min(100%, 480px);
+    height: auto;
+}
+
+.workflowStrips {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.workflowStrips img:first-child {
+    width: min(100%, 448px);
+    height: 40px;
+    object-fit: cover;
+}
+
+.workflowStrips img:last-child {
+    width: min(100%, 384px);
+    height: 20px;
+    object-fit: cover;
+}
+
+.workflowCards {
+    display: grid;
+    gap: 576px;
+    align-content: start;
+    padding-top: 300px;
+}
+
+.workflowCard {
+    display: grid;
+    gap: 26px;
+}
+
+.workflowCard h3 {
+    color: #121416;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -1px;
+    line-height: 52px;
+}
+
+.workflowCard p {
+    color: #212529;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+}
+
+.ctaSection {
+    position: relative;
+    overflow: hidden;
+    min-height: 560px;
+    background: #0c1015;
+}
+
+.ctaVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ctaOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.ctaContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 560px;
+    padding: 0;
+}
+
+.ctaCopy {
+    display: grid;
+    gap: 24px;
+    width: min(100%, 658px);
+}
+
+.ctaCopy h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: -1.3px;
+    line-height: 68px;
+}
+
+.ctaCopy p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+}
+
+@media (max-width: 1439px) {
+    .sectionGrid,
+    .workflowBody {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionBody {
+        padding-top: 0;
+    }
+
+    .iconRow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .workflowTabs,
+    .workflowCards {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .workflowBody {
+        gap: 72px;
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    .heroSection,
+    .heroContent {
+        min-height: 1034px;
+    }
+}
+
+@media (max-width: 767px) {
+    .heroContent {
+        align-items: flex-start;
+        padding-top: 100px;
+        padding-bottom: 140px;
+    }
+
+    .heroSection,
+    .heroContent {
+        min-height: 1138px;
+    }
+
+    .storySection {
+        min-height: 680px;
+        margin-top: 188px;
+    }
+
+    .comparisonSection,
+    .overviewSection {
+        padding-top: 220px;
+    }
+
+    .sectionIntro {
+        gap: 40px;
+    }
+
+    .sectionGrid {
+        gap: 56px;
+    }
+
+    .sectionHeadline h2,
+    .ctaCopy h2 {
+        font-size: 52px;
+        line-height: 68px;
+    }
+
+    .heroDescription,
+    .sectionBody,
+    .workflowCard p,
+    .ctaCopy p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .comparisonBlock {
+        gap: 84px;
+        padding-top: 260px;
+    }
+
+    .comparisonCard {
+        padding: 44px 20px 32px;
+    }
+
+    .comparisonCard h3,
+    .solutionCard h3 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .iconRow {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .iconRow::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        width: 4px;
+        height: auto;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(132, 157, 255, 0.45), rgba(231, 77, 157, 0.55));
+    }
+
+    .comparisonEmphasis,
+    .solutionEmphasis,
+    .workflowCard h3 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .overviewWrap {
+        padding-top: 140px;
+    }
+
+    .workflowSection {
+        padding-top: 120px;
+    }
+
+    .workflowBody {
+        gap: 56px;
+        padding-top: 160px;
+    }
+
+    .workflowTabs {
+        gap: 16px;
+    }
+
+    .workflowCards {
+        gap: 96px;
+    }
+}
