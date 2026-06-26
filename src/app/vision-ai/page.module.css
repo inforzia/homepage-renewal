@@ -9,96 +9,10 @@
     margin: 0 auto;
 }
 
-.heroSection {
-    min-height: 948px;
-    background-color: #f2f6ff;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.heroContent {
-    display: flex;
-    align-items: flex-end;
-    min-height: 948px;
-    padding: 60px 0 128px;
-}
-
-.heroCopy {
-    display: grid;
-    gap: 24px;
-    width: min(100%, 920px);
-}
-
-.heroTitle {
-    color: #1a234e;
-    font-weight: bold;
-    font-size: 64px;
-    letter-spacing: -1.6px;
-    line-height: 84px;
-}
-
-.heroTitle span,
-.heroDescription span,
 .sectionHeadline h2 span,
 .storyContent h2 span,
-.workflowCard h3 span,
-.ctaCopy h2 span {
+.workflowCard h3 span {
     display: block;
-}
-
-.heroDescription {
-    color: #495057;
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    line-height: 30px;
-}
-
-.primaryButton {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: fit-content;
-    height: 44px;
-    padding: 12px 20px 12px 24px;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: -0.45px;
-    line-height: 24px;
-}
-
-.primaryButton::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 1px solid #fff;
-    border-radius: inherit;
-}
-
-.primaryButtonDark {
-    color: #121416;
-}
-
-.primaryButtonDark::before {
-    border-color: #121416;
-}
-
-.primaryButton span,
-.primaryButtonIcon {
-    position: relative;
-    z-index: 1;
-}
-
-.primaryButtonIcon {
-    width: 14px;
-    height: 14px;
-    fill: currentcolor;
 }
 
 .comparisonSection {
@@ -416,58 +330,6 @@
     line-height: 30px;
 }
 
-.ctaSection {
-    position: relative;
-    overflow: hidden;
-    min-height: 560px;
-    background: #0c1015;
-}
-
-.ctaVideo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ctaOverlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.18);
-}
-
-.ctaContent {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    min-height: 560px;
-    padding: 0;
-}
-
-.ctaCopy {
-    display: grid;
-    gap: 24px;
-    width: min(100%, 658px);
-}
-
-.ctaCopy h2 {
-    color: #fff;
-    font-weight: 600;
-    font-size: 52px;
-    letter-spacing: -1.3px;
-    line-height: 68px;
-}
-
-.ctaCopy p {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    line-height: 30px;
-}
-
 @media (max-width: 1439px) {
     .sectionGrid,
     .workflowBody {
@@ -498,25 +360,9 @@
     .container {
         width: calc(100% - 40px);
     }
-
-    .heroSection,
-    .heroContent {
-        min-height: 1034px;
-    }
 }
 
 @media (max-width: 767px) {
-    .heroContent {
-        align-items: flex-start;
-        padding-top: 100px;
-        padding-bottom: 140px;
-    }
-
-    .heroSection,
-    .heroContent {
-        min-height: 1138px;
-    }
-
     .storySection {
         min-height: 680px;
         margin-top: 188px;
@@ -535,16 +381,14 @@
         gap: 56px;
     }
 
-    .sectionHeadline h2,
-    .ctaCopy h2 {
+    .sectionHeadline h2 {
         font-size: 52px;
         line-height: 68px;
     }
 
     .heroDescription,
     .sectionBody,
-    .workflowCard p,
-    .ctaCopy p {
+    .workflowCard p {
         font-size: 20px;
         line-height: 30px;
     }

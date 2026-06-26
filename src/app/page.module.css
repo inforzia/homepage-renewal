@@ -3,8 +3,6 @@
     --text-strong: #121416;
     --text-body: #495057;
     --text-subtle: #6c757d;
-    --surface-dark: #000;
-    --button-border: #fff;
     color: var(--text-strong);
     background: #fff;
     overflow-x: hidden;
@@ -20,156 +18,6 @@
     width: var(--page-width);
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.heroSection,
-.ctaSection {
-    position: relative;
-    overflow: hidden;
-}
-
-.heroSection {
-    min-height: 948px;
-    background: #11151b;
-}
-
-.ctaSection {
-    min-height: 560px;
-    background: #0c1015;
-}
-
-.backgroundVideo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.videoOverlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.18);
-}
-
-.heroContent,
-.ctaContent {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: flex-end;
-}
-
-.heroContent {
-    min-height: 948px;
-    padding: 60px 0 128px;
-}
-
-.ctaContent {
-    min-height: 560px;
-    padding: 52px 0 60px;
-}
-
-.heroCopy,
-.ctaCopy {
-    display: grid;
-    width: min(100%, 658px);
-}
-
-.heroCopy {
-}
-
-.ctaCopy {
-    gap: 24px;
-}
-
-.heroTitle {
-    margin-bottom: 24px;
-}
-.heroDescription {
-    margin-bottom: 28px;
-}
-
-.heroTitle,
-.ctaTitle {
-    color: #fff;
-    font-weight: 400;
-    letter-spacing: -1.6px;
-}
-
-.heroTitle span,
-.ctaTitle span,
-.heroDescription span {
-    display: block;
-}
-
-.heroTitle {
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 84px;
-}
-
-.ctaTitle {
-    font-weight: 600;
-    font-size: 52px;
-    line-height: 68px;
-    letter-spacing: -1.3px;
-}
-
-.heroDescription,
-.ctaDescription {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: -0.5px;
-}
-
-.heroDescription {
-    line-height: 30px;
-}
-
-.ctaDescription {
-    line-height: 30px;
-}
-
-.primaryButton {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: fit-content;
-    height: 44px;
-    padding: 12px 20px 12px 24px;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: -0.45px;
-    line-height: 24px;
-    cursor: default;
-}
-
-.primaryButton::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 1px solid var(--button-border);
-    border-radius: inherit;
-}
-
-.primaryButton span,
-.primaryButtonIcon {
-    position: relative;
-    z-index: 1;
-}
-
-.primaryButtonIcon {
-    width: 14px;
-    height: 14px;
-    fill: currentcolor;
 }
 
 .logoSection {
@@ -536,26 +384,6 @@
         --page-width: calc(100% - 32px);
     }
 
-    .heroContent {
-        min-height: 880px;
-        padding-bottom: 72px;
-    }
-
-    .heroTitle {
-        font-size: 56px;
-        line-height: 74px;
-    }
-
-    .ctaContent {
-        min-height: 560px;
-        padding-bottom: 52px;
-    }
-
-    .ctaTitle {
-        font-size: 44px;
-        line-height: 58px;
-    }
-
     .sectionHeading p,
     .sectionHeading h2 {
         font-size: 36px;
@@ -590,24 +418,6 @@
 }
 
 @media (max-width: 767px) {
-    .heroContent {
-        min-height: 948px;
-        padding-top: 32px;
-        padding-bottom: 52px;
-    }
-
-    .heroCopy,
-    .ctaCopy {
-        width: 100%;
-    }
-
-    .heroTitle {
-        font-size: 64px;
-        line-height: 84px;
-    }
-
-    .heroDescription,
-    .ctaDescription,
     .productDescription {
         font-size: 20px;
         line-height: 30px;
@@ -652,18 +462,4 @@
         height: 280px;
     }
 
-    .ctaSection {
-        min-height: 560px;
-    }
-
-    .ctaContent {
-        min-height: 560px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .ctaTitle {
-        font-size: 52px;
-        line-height: 68px;
-    }
 }

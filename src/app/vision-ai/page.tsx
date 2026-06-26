@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
+import { VisionAiHero } from "@/components/site/VisionAiHero";
 import styles from "./page.module.css";
 
 const heroBackground = "/images/vision-ai/hero-background.png";
@@ -8,8 +11,6 @@ const narrativeBackground = "/images/vision-ai/narrative-background.png";
 const overviewVisual = "/images/vision-ai/overview-strip-secondary.png";
 const overviewStripPrimary = "/images/vision-ai/overview-strip-primary.png";
 const overviewStripSecondary = "/images/vision-ai/overview-visual.png";
-const ctaVideoUrl = "/videos/vision-ai/cta-background.mp4";
-
 const legacyPoints = [
     {
         icon: "/images/vision-ai/legacy-technical.png",
@@ -72,59 +73,21 @@ const workflowCards = [
     },
 ];
 
-function ArrowIcon({ className }: { className?: string }) {
-    return (
-        <svg
-            aria-hidden="true"
-            className={className}
-            viewBox="0 0 11.5004 11.125"
-        >
-            <path d="M11.3281 5.18438L5.425 0.0609374C5.37969 0.0218749 5.32188 0 5.26094 0H3.87813C3.7625 0 3.70938 0.14375 3.79688 0.21875L9.26875 4.96875H0.125C0.05625 4.96875 0 5.025 0 5.09375V6.03125C0 6.1 0.05625 6.15625 0.125 6.15625H9.26719L3.79531 10.9063C3.70781 10.9828 3.76094 11.125 3.87656 11.125H5.30625C5.33594 11.125 5.36563 11.1141 5.3875 11.0938L11.3281 5.94063C11.3822 5.89359 11.4256 5.83549 11.4553 5.77026C11.485 5.70503 11.5004 5.63418 11.5004 5.5625C11.5004 5.49082 11.485 5.41997 11.4553 5.35474C11.4256 5.28951 11.3822 5.23141 11.3281 5.18438V5.18438Z" />
-        </svg>
-    );
-}
-
-function PrimaryButton({ dark = false }: { dark?: boolean }) {
-    return (
-        <button
-            className={`${styles.primaryButton}${dark ? ` ${styles.primaryButtonDark}` : ""}`}
-            type="button"
-        >
-            <span>Get started</span>
-            <ArrowIcon className={styles.primaryButtonIcon} />
-        </button>
-    );
-}
-
 export default function VisionAiPage() {
     return (
         <main className={styles.page}>
-            <section
-                className={styles.heroSection}
-                style={{ backgroundImage: `url("${heroBackground}")` }}
-            >
-                <div className={styles.container}>
-                    <div className={styles.heroContent}>
-                        <div className={styles.heroCopy}>
-                            <h1 className={styles.heroTitle}>
-                                <span>Vision AI That Turns</span>
-                                <span>Every View into Industrial Value</span>
-                            </h1>
-                            <p className={styles.heroDescription}>
-                                <span>
-                                    현장의 모든 순간을 포착하고 분석하며
-                                    예측하는 Vision AI.
-                                </span>
-                                <span>
-                                    인포지아는 가장 완벽한 현장 관제를 현실로
-                                    만듭니다.
-                                </span>
-                            </p>
-                            <PrimaryButton dark />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <VisionAiHero
+                backgroundImageSrc={heroBackground}
+                button={<SitePrimaryButton dark />}
+                description={[
+                    "현장의 모든 순간을 포착하고 분석하며 예측하는 Vision AI.",
+                    "인포지아는 가장 완벽한 현장 관제를 현실로 만듭니다.",
+                ]}
+                title={[
+                    "Vision AI That Turns",
+                    "Every View into Industrial Value",
+                ]}
+            />
 
             <section className={styles.comparisonSection}>
                 <div className={styles.container}>
@@ -290,37 +253,14 @@ export default function VisionAiPage() {
                 </div>
             </section>
 
-            <section className={styles.ctaSection}>
-                <video
-                    aria-hidden="true"
-                    autoPlay
-                    className={styles.ctaVideo}
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                >
-                    <source src={ctaVideoUrl} type="video/mp4" />
-                </video>
-                <div className={styles.ctaOverlay} />
-                <div className={styles.container}>
-                    <div className={styles.ctaContent}>
-                        <div className={styles.ctaCopy}>
-                            <h2>
-                                <span>Vision AI That Sees</span>
-                                <span>Beyond The Surface.</span>
-                            </h2>
-                            <p>산업 지능화의 시작, 인포지아와 함께 하세요.</p>
-                            <PrimaryButton />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <SiteFooter
-                containerClassName={styles.container}
-                privacyHref="/vision-ai"
+            <SiteFooterCta
+                button={<SitePrimaryButton />}
+                description="산업 지능화의 시작, 인포지아와 함께 하세요."
+                title={["Vision AI That Sees", "Beyond The Surface."]}
+                variant="vision-ai"
             />
+
+            <SiteFooter privacyHref="/vision-ai" />
         </main>
     );
 }

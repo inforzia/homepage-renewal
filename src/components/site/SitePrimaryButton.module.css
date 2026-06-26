@@ -1,0 +1,43 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    height: 44px;
+    padding: 12px 20px 12px 24px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+    cursor: default;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid currentcolor;
+    border-radius: inherit;
+}
+
+.dark {
+    color: #121416;
+}
+
+.label,
+.icon {
+    position: relative;
+    z-index: 1;
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+}

@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./SiteFooter.module.css";
 
-const siteOrigin = "https://seed-bronze-70048020.figma.site";
-
 const contactItems = [
     { label: "전화", value: "02-6959-2540" },
     { label: "메일", value: "inforzia@inforzia.io" },
@@ -13,25 +11,19 @@ const contactItems = [
 ];
 
 type SiteFooterProps = {
-    className?: string;
-    containerClassName?: string;
     privacyHref?: string;
 };
 
-export function SiteFooter({
-    className,
-    containerClassName,
-    privacyHref = "/",
-}: SiteFooterProps) {
+export function SiteFooter({ privacyHref = "/" }: SiteFooterProps) {
     return (
-        <footer className={`${styles.footer}${className ? ` ${className}` : ""}`}>
-            <div className={containerClassName}>
+        <footer className={styles.footer}>
+            <div className={styles.container}>
                 <div className={styles.footerInner}>
                     <img
                         alt="Inforzia"
                         className={styles.footerLogo}
                         height={72}
-                        src={`${siteOrigin}/_assets/v11/2607c73eb4429b9e83b47ee444f5515f6877e388.png`}
+                        src="/images/inforzia/footer-logo.png"
                         width={216}
                     />
                     <div className={styles.footerMeta}>
