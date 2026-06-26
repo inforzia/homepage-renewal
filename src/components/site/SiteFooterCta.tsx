@@ -23,6 +23,12 @@ export function SiteFooterCta({
     const contentClassName = `${styles.content} ${
         isHome ? styles.contentHome : styles.contentVisionAi
     }`;
+    const titleClassName = `${styles.title} ${
+        isHome ? styles.titleHome : ""
+    }`;
+    const descriptionClassName = `${styles.description} ${
+        isHome ? styles.descriptionHome : ""
+    }`;
 
     return (
         <section className={styles.section}>
@@ -41,12 +47,12 @@ export function SiteFooterCta({
             <div className={containerClassName}>
                 <div className={contentClassName}>
                     <div className={styles.copy}>
-                        <h2 className={styles.title}>
+                        <h2 className={titleClassName}>
                             {title.map((line) => (
                                 <span key={line}>{line}</span>
                             ))}
                         </h2>
-                        <p className={styles.description}>{description}</p>
+                        <p className={descriptionClassName}>{description}</p>
                         {button}
                     </div>
                 </div>

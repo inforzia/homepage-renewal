@@ -1,0 +1,72 @@
+.section {
+    padding: 40px 0 72px;
+}
+
+.sectionDark {
+    background: #000;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.label {
+    color: #6c757d;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.sectionDark .label {
+    color: #adb5bd;
+}
+
+.viewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    width: max-content;
+}
+
+.logoItem {
+    flex: 0 0 auto;
+}
+
+.fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 96px;
+    pointer-events: none;
+}
+
+.fadeLeft {
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fadeRight {
+    right: 0;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.sectionDark .fadeLeft {
+    background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.sectionDark .fadeRight {
+    background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media (max-width: 767px) {
+    .track {
+        gap: 72px;
+    }
+}

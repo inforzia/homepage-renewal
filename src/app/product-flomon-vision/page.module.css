@@ -1,0 +1,492 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.page img {
+    display: block;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 204px 0 0;
+}
+
+.heroContainer {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.heroTitle {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #121416;
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: -1.8px;
+    line-height: 84px;
+    text-align: center;
+}
+
+.heroDescription {
+    max-width: 1060px;
+    margin: 28px auto 0;
+    color: #495057;
+    font-size: 28px;
+    letter-spacing: -0.7px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.heroActions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.heroVisual {
+    width: min(1140px, calc(100% - 80px));
+    margin: 60px auto 0;
+}
+
+.heroVisual img {
+    width: 100%;
+    height: auto;
+}
+
+.partnerStrip {
+    padding: 330px 0 350px;
+}
+
+.partnerViewport {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.partnerTrack {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    width: max-content;
+}
+
+.partnerLogo {
+    display: block;
+    width: auto;
+    height: 60px;
+    flex: 0 0 auto;
+}
+
+.gradientVision {
+    color: transparent;
+    background-image: linear-gradient(
+        90deg,
+        #6322ef 0%,
+        #8a2cbe 25%,
+        #b1378d 50%,
+        #d8415c 75%,
+        #ec4644 87.5%,
+        #ff4b2b 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.primaryAction,
+.secondaryAction {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+}
+
+.primaryAction {
+    background: #4a65e6;
+    color: #fff;
+}
+
+.secondaryAction {
+    border: 1px solid #212529;
+    color: #121416;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.sectionAlt {
+    background: #fafbfc;
+}
+
+.featureSection {
+    padding-top: 0;
+}
+
+.featureSectionIntro {
+    display: grid;
+    margin-bottom: 100px;
+}
+
+.featureSectionIntro h2 {
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -1px;
+    line-height: 52px;
+}
+
+.featureHeroCard {
+    display: grid;
+    grid-template-columns: minmax(0, 536px) minmax(0, 1fr);
+    gap: 34px;
+    align-items: start;
+    margin-bottom: 72px;
+}
+
+.featureHeroCopy {
+    display: grid;
+    gap: 0;
+    padding-left: 20px;
+}
+
+.featureEyebrow {
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 26px;
+}
+
+.featureHeroLead {
+    margin-top: 8px;
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+}
+
+.featureHeroTitle {
+    margin-top: 80px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 26px;
+}
+
+.featureHeroBody {
+    margin-top: 16px;
+    color: #495057;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.featureHeroMedia {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.featureHeroMedia img {
+    width: 100%;
+    height: auto;
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 676px) minmax(0, 676px);
+    gap: 32px;
+}
+
+.featureCard {
+    display: grid;
+    align-content: start;
+    gap: 24px;
+}
+
+.featureCard h3 {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 32px;
+}
+
+.featureCard p {
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+}
+
+.featureLineList {
+    display: grid;
+    gap: 12px;
+    margin-top: 46px;
+}
+
+.featureLineItem {
+    position: relative;
+    min-height: 46px;
+}
+
+.featureLineItem img {
+    width: 100%;
+    height: 20px;
+    margin-top: 14px;
+}
+
+.featureLineItem span {
+    position: absolute;
+    inset: 0 auto auto 0;
+    color: #121416;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 26px;
+}
+
+.featureMedia {
+    overflow: hidden;
+}
+
+.featureMedia img {
+    width: 100%;
+    height: auto;
+}
+
+.featureStack {
+    display: grid;
+    gap: 52px;
+}
+
+.statGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.statCard {
+    display: grid;
+    gap: 16px;
+    min-height: 280px;
+    padding: 32px 28px;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.statCaption {
+    color: #495057;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 28px;
+}
+
+.statValue {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #121416;
+    font-weight: 600;
+    font-size: 72px;
+    letter-spacing: -1.8px;
+    line-height: 1;
+}
+
+.statUnit {
+    font-size: 28px;
+    letter-spacing: -0.7px;
+}
+
+.tabRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tabPill {
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.tabPillActive {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+    color: #212529;
+}
+
+.mediaFrame {
+    display: grid;
+    gap: 24px;
+}
+
+.mediaCard {
+    overflow: hidden;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.mediaCard img {
+    width: 100%;
+    height: auto;
+}
+
+.sectionBody {
+    max-width: 760px;
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+}
+
+.testimonialGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.testimonialCard {
+    display: grid;
+    gap: 20px;
+    min-height: 370px;
+    padding: 68px 60px 0;
+    border-radius: 28px;
+    background: #fff;
+}
+
+.testimonialCard h3 {
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.8px;
+    line-height: 40px;
+}
+
+.testimonialCard p {
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+}
+
+.testimonialFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: auto;
+    padding: 32px 0 48px;
+}
+
+.testimonialLogo {
+    width: auto;
+    height: 28px;
+}
+
+.moreLink {
+    color: #495057;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+}
+
+.caseGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 24px;
+}
+
+.ctaSpacer {
+    padding-top: 48px;
+}
+
+@media (max-width: 1023px) {
+    .hero {
+        padding-top: 160px;
+    }
+
+    .heroTitle {
+        font-size: 56px;
+        line-height: 68px;
+    }
+
+    .heroDescription {
+        font-size: 22px;
+        line-height: 34px;
+    }
+
+    .heroVisual {
+        width: 100%;
+    }
+
+    .partnerStrip {
+        padding: 180px 0 220px;
+    }
+
+    .featureHeroCard,
+    .featureGrid,
+    .statGrid,
+    .testimonialGrid,
+    .caseGrid,
+    .featureStack {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 120px;
+    }
+
+    .heroTitle {
+        gap: 8px;
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .heroDescription {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .partnerStrip {
+        padding: 120px 0 160px;
+    }
+
+    .featureSectionIntro h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .featureSectionIntro p,
+    .sectionBody,
+    .featureCard p,
+    .testimonialCard p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}

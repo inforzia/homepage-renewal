@@ -20,15 +20,14 @@
 }
 
 .overviewSection {
-    padding: 202px 0 58px;
+    padding: 120px 0 128px;
+    background: #f1f3f5;
 }
 
 .sectionIntro {
     display: grid;
     gap: 12px;
-    padding: 0 0 24px;
-    border-top: 1px solid #d9dee5;
-    border-bottom: 1px solid #d9dee5;
+    padding: 0;
 }
 
 .sectionLabel,
@@ -62,8 +61,8 @@
 .sectionGrid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(320px, 682px);
-    gap: 40px;
-    align-items: start;
+    gap: 54px;
+    align-items: center;
 }
 
 .sectionHeadline h2 {
@@ -84,25 +83,37 @@
 
 .comparisonBlock {
     display: grid;
-    gap: 84px;
+    gap: 0;
     padding: 202px 0 0;
+    justify-items: center;
 }
 
 .comparisonCard {
     display: grid;
     gap: 24px;
-    padding: 44px 32px 32px;
+    width: 100%;
+    max-width: 1024px;
+    padding: 36px 34px 24px;
     border-radius: 32px;
     background: #fafbfc;
 }
 
-.comparisonCard h3,
-.solutionCard h3 {
+.comparisonCard h3 {
     color: #121416;
     font-weight: 600;
     font-size: 24px;
     letter-spacing: -0.6px;
     line-height: 36px;
+    width: 100%;
+}
+
+.solutionCard h3 {
+    color: #121416;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.8px;
+    line-height: 40px;
+    width: 100%;
 }
 
 .comparisonCard p,
@@ -112,39 +123,43 @@
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
+    width: 100%;
 }
 
 .comparisonLine {
-    width: 100%;
-    height: 20px;
-    margin-top: 8px;
+    display: none;
 }
 
 .iconRow {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
+    gap: 12px;
     align-items: start;
-    padding-top: 12px;
+    width: 100%;
+    padding-top: 18px;
 }
 
 .iconRow::before {
     content: "";
     position: absolute;
-    top: 67px;
-    left: 8%;
-    right: 8%;
+    top: 60px;
+    left: 10%;
+    right: 10%;
     height: 4px;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(132, 157, 255, 0.45), rgba(231, 77, 157, 0.55));
+    background: linear-gradient(
+        90deg,
+        rgba(132, 157, 255, 0.45),
+        rgba(231, 77, 157, 0.55)
+    );
 }
 
 .iconItem {
     position: relative;
     z-index: 1;
     display: grid;
-    gap: 16px;
+    gap: 14px;
     justify-items: center;
     text-align: center;
 }
@@ -171,6 +186,7 @@
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
+    white-space: nowrap;
 }
 
 .comparisonEmphasis,
@@ -180,6 +196,10 @@
     font-size: 56px;
     letter-spacing: -1.4px;
     line-height: 72px;
+    width: 100%;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: #e9edf8;
     text-align: center;
 }
 
@@ -187,6 +207,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    min-height: 232px;
     color: #121416;
     font-weight: 600;
     font-size: 52px;
@@ -421,7 +443,11 @@
         width: 4px;
         height: auto;
         transform: translateX(-50%);
-        background: linear-gradient(180deg, rgba(132, 157, 255, 0.45), rgba(231, 77, 157, 0.55));
+        background: linear-gradient(
+            180deg,
+            rgba(132, 157, 255, 0.45),
+            rgba(231, 77, 157, 0.55)
+        );
     }
 
     .comparisonEmphasis,

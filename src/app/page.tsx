@@ -10,34 +10,46 @@ const heroVideoUrl = "/videos/inforzia/hero-background.mp4";
 
 const partnerLogos = [
     {
-        alt: "ADD",
-        height: 80,
-        src: "/images/inforzia/logo-add.png",
-        width: 142,
-    },
-    {
-        alt: "Applied Materials",
-        height: 50,
-        src: "/images/inforzia/logo-applied-materials.png",
-        width: 198,
-    },
-    {
-        alt: "CJ Logistics",
+        alt: "Roadpia",
         height: 60,
-        src: "/images/inforzia/logo-cj-logistics.png",
-        width: 147,
+        src: "/images/inforzia/logo-roadpia.png",
+        width: 180,
     },
     {
-        alt: "Doosan",
-        height: 24,
-        src: "/images/inforzia/logo-doosan.png",
-        width: 132,
+        alt: "FUTURE ICT",
+        height: 60,
+        src: "/images/inforzia/logo-future-ict.png",
+        width: 110,
     },
     {
-        alt: "Emart",
-        height: 28,
-        src: "/images/inforzia/logo-emart.png",
-        width: 99,
+        alt: "D&C",
+        height: 60,
+        src: "/images/inforzia/logo-dnc.png",
+        width: 170,
+    },
+    {
+        alt: "thingspire",
+        height: 60,
+        src: "/images/inforzia/logo-thingspire.png",
+        width: 200,
+    },
+    {
+        alt: "WAPPLAB",
+        height: 60,
+        src: "/images/inforzia/logo-wapplab.png",
+        width: 96,
+    },
+    {
+        alt: "Nkia",
+        height: 60,
+        src: "/images/inforzia/logo-nkia.png",
+        width: 150,
+    },
+    {
+        alt: "COWEAVER",
+        height: 60,
+        src: "/images/inforzia/logo-coweaver.png",
+        width: 120,
     },
 ];
 

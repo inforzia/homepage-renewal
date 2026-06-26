@@ -260,7 +260,7 @@ export default function VisionAiPage() {
                 variant="vision-ai"
             />
 
-            <SiteFooter privacyHref="/vision-ai" />
+            <SiteFooter privacyHref="/" />
         </main>
     );
 }

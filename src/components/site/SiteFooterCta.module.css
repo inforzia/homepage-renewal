@@ -75,6 +75,14 @@
     line-height: 30px;
 }
 
+.titleHome {
+    font-weight: 700;
+}
+
+.descriptionHome {
+    font-weight: 500;
+}
+
 @media (max-width: 1023px) {
     .containerHome {
         width: calc(100% - 32px);

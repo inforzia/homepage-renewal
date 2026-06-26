@@ -1,0 +1,189 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.detailHero {
+    padding: 132px 0 48px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 32px;
+}
+
+.formCard {
+    display: grid;
+    gap: 32px;
+    padding: 32px;
+    border: 1px solid #c5ccd3;
+    border-radius: 24px;
+    background: #fff;
+}
+
+.fieldGroup {
+    display: grid;
+    gap: 20px;
+}
+
+.fieldRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+.fieldTitle {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 34px;
+}
+
+.fieldLabel {
+    display: flex;
+    gap: 4px;
+    color: #495057;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.required {
+    color: #f51024;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    border: 1px solid #c5ccd3;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #121416;
+    background: #fff;
+    font: inherit;
+}
+
+.textarea {
+    min-height: 128px;
+    resize: vertical;
+}
+
+.agreement {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #6c757d;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.agreement input {
+    width: 18px;
+    height: 18px;
+    accent-color: #4a65e6;
+}
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 56px;
+    border: 0;
+    border-radius: 16px;
+    background: #212529;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+}
+
+.asideCard,
+.articlePanel {
+    display: grid;
+    gap: 20px;
+    padding: 28px;
+    border: 1px solid #d9dee5;
+    border-radius: 24px;
+    background: #fff;
+}
+
+.articlePanel {
+    gap: 16px;
+}
+
+.caseTitle {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 34px;
+}
+
+.caseBody {
+    color: #495057;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 30px;
+}
+
+.simpleList {
+    display: grid;
+    gap: 14px;
+    padding-left: 20px;
+}
+
+.simpleList li {
+    color: #495057;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 28px;
+}
+
+.ctaSpacer {
+    padding-top: 48px;
+}
+
+@media (max-width: 1439px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1023px) {
+    .fieldRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .formCard,
+    .asideCard,
+    .articlePanel {
+        padding: 24px;
+    }
+
+    .caseBody {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}

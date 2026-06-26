@@ -1,0 +1,150 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.detailHero {
+    padding: 132px 0 48px;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.detailMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.detailMetaItem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #212529;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.35px;
+    line-height: 20px;
+}
+
+.detailDate {
+    color: #6c757d;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.sectionAlt {
+    background: #fafbfc;
+}
+
+.articleLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 32px;
+}
+
+.articleBody {
+    display: grid;
+    gap: 24px;
+}
+
+.articlePanel,
+.asideCard {
+    display: grid;
+    gap: 16px;
+    padding: 28px;
+    border: 1px solid #d9dee5;
+    border-radius: 24px;
+    background: #fff;
+}
+
+.asideCard {
+    gap: 20px;
+    align-content: start;
+}
+
+.caseTitle {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 34px;
+}
+
+.caseBody {
+    color: #495057;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 30px;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #c5ccd3;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #121416;
+    background: #fff;
+    font: inherit;
+}
+
+.inquiryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 56px;
+    border: 0;
+    border-radius: 16px;
+    background: #212529;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+}
+
+.caseGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ctaSpacer {
+    padding-top: 48px;
+}
+
+@media (max-width: 1439px) {
+    .articleLayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1023px) {
+    .caseGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .articlePanel,
+    .asideCard {
+        padding: 24px;
+    }
+
+    .caseBody {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
