@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { SiteCaseCard } from "@/components/site/SiteCaseCard";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
@@ -237,10 +236,9 @@ export default function ProductFlomonAgentPage() {
             <section className={`${styles.section} ${styles.sectionDark}`}>
                 <div className={styles.container}>
                     <SiteSectionIntro dark title="결정적 차이를 만드는 지능형 자동화" />
-                    <div className={styles.featureGrid}>
-                        {strengths.map((strength, index) => (
+                    <div className={styles.strengthGrid}>
+                        {strengths.map((strength) => (
                             <article className={styles.featureCard} key={strength.title}>
-                                <div className={styles.iconBadge}>{index + 1}</div>
                                 <h3>{strength.title}</h3>
                                 <p>{strength.description}</p>
                             </article>
@@ -281,14 +279,16 @@ export default function ProductFlomonAgentPage() {
                                 src={asset("/_assets/v11/548517587964dcde312350085f2c3d114c85f778.png")}
                             />
                         </div>
-                        <div className={styles.featureGrid}>
+                        <div className={styles.widgetGrid}>
                             {widgets.map((widget) => (
-                                <article className={styles.featureCard} key={widget.title}>
+                                <article className={styles.widgetCard} key={widget.title}>
                                     <div className={styles.caseCardMedia}>
                                         <img alt="" src={widget.image} />
                                     </div>
-                                    <h3>{widget.title}</h3>
-                                    <p>{widget.description}</p>
+                                    <div className={styles.widgetCopy}>
+                                        <h3>{widget.title}</h3>
+                                        <p>{widget.description}</p>
+                                    </div>
                                 </article>
                             ))}
                         </div>
@@ -305,13 +305,24 @@ export default function ProductFlomonAgentPage() {
                     />
                     <div className={styles.caseGrid}>
                         {cases.map(([a, b, c, title]) => (
-                            <SiteCaseCard
-                                dark
-                                imageSrc={asset("/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png")}
-                                key={title}
-                                tags={[a, b, c]}
-                                title={title}
-                            />
+                            <article className={styles.caseCard} key={title}>
+                                <div className={styles.caseImageWrap}>
+                                    <img
+                                        alt=""
+                                        src={asset(
+                                            "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
+                                        )}
+                                    />
+                                </div>
+                                <div className={styles.caseCopy}>
+                                    <div className={styles.caseTags}>
+                                        <span>{a}</span>
+                                        <span>{b}</span>
+                                        <span>{c}</span>
+                                    </div>
+                                    <h3>{title}</h3>
+                                </div>
+                            </article>
                         ))}
                     </div>
                 </div>

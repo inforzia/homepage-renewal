@@ -10,24 +10,20 @@
 }
 
 .detailHero {
-    padding: 132px 0 48px;
+    padding: 132px 0 110px;
 }
 
 .section {
-    padding: 120px 0;
-}
-
-.contactGrid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 400px;
-    gap: 32px;
+    padding: 72px 0 120px;
 }
 
 .formCard {
     display: grid;
-    gap: 32px;
-    padding: 32px;
-    border: 1px solid #c5ccd3;
+    gap: 44px;
+    max-width: 610px;
+    margin-left: auto;
+    padding: 32px 32px 24px;
+    border: 1px solid #d9dee5;
     border-radius: 24px;
     background: #fff;
 }
@@ -40,7 +36,7 @@
 .fieldRow {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 28px 14px;
 }
 
 .field {
@@ -50,9 +46,9 @@
 
 .fieldTitle {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -0.6px;
-    line-height: 34px;
+    line-height: 32px;
 }
 
 .fieldLabel {
@@ -73,7 +69,7 @@
 .select,
 .textarea {
     width: 100%;
-    border: 1px solid #c5ccd3;
+    border: 1px solid #d9dee5;
     border-radius: 10px;
     padding: 12px 14px;
     color: #121416;
@@ -81,16 +77,74 @@
     font: inherit;
 }
 
+.input,
+.select {
+    min-height: 40px;
+}
+
+.select {
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #868e96 50%),
+        linear-gradient(135deg, #868e96 50%, transparent 50%);
+    background-position:
+        calc(100% - 21px) calc(50% - 2px),
+        calc(100% - 15px) calc(50% - 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
 .textarea {
-    min-height: 128px;
-    resize: vertical;
+    min-height: 142px;
+    resize: none;
+}
+
+.textCount {
+    justify-self: end;
+    color: #868e96;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.fileField {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
+}
+
+.filePlaceholder {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 40px;
+    padding: 0 14px;
+    color: #868e96;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.fileButton {
+    flex: 0 0 auto;
+    min-width: 96px;
+    border: 0;
+    border-left: 1px solid #d9dee5;
+    background: #fff;
+    color: #4c6ef5;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
 }
 
 .agreement {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: #6c757d;
+    gap: 8px;
+    color: #495057;
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
@@ -102,88 +156,70 @@
     accent-color: #4a65e6;
 }
 
+.divider {
+    height: 1px;
+    background: #e9ecef;
+}
+
 .submitButton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 56px;
+    min-height: 84px;
     border: 0;
-    border-radius: 16px;
+    border-radius: 12px;
     background: #212529;
     color: #fff;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: -0.45px;
-    line-height: 24px;
-}
-
-.asideCard,
-.articlePanel {
-    display: grid;
-    gap: 20px;
-    padding: 28px;
-    border: 1px solid #d9dee5;
-    border-radius: 24px;
-    background: #fff;
-}
-
-.articlePanel {
-    gap: 16px;
-}
-
-.caseTitle {
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: -0.6px;
-    line-height: 34px;
-}
-
-.caseBody {
-    color: #495057;
-    font-size: 18px;
-    letter-spacing: -0.45px;
-    line-height: 30px;
-}
-
-.simpleList {
-    display: grid;
-    gap: 14px;
-    padding-left: 20px;
-}
-
-.simpleList li {
-    color: #495057;
-    font-size: 16px;
-    letter-spacing: -0.4px;
     line-height: 28px;
 }
 
-.ctaSpacer {
-    padding-top: 48px;
-}
-
-@media (max-width: 1439px) {
-    .contactGrid {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 1023px) {
+    .detailHero {
+        padding-bottom: 72px;
+    }
+
+    .section {
+        padding-top: 48px;
+    }
+
+    .formCard {
+        max-width: none;
+        margin-left: 0;
+    }
+
     .fieldRow {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 767px) {
-    .formCard,
-    .asideCard,
-    .articlePanel {
+    .detailHero {
+        padding-top: 112px;
+        padding-bottom: 56px;
+    }
+
+    .formCard {
+        gap: 32px;
         padding: 24px;
     }
 
-    .caseBody {
+    .submitButton {
+        min-height: 64px;
         font-size: 18px;
-        line-height: 30px;
+        line-height: 24px;
+    }
+
+    .fileField {
+        flex-direction: column;
+    }
+
+    .fileButton {
+        min-height: 44px;
+        border-top: 1px solid #d9dee5;
+        border-left: 0;
     }
 }

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SitePartnerStrip } from "@/components/site/SitePartnerStrip";
@@ -9,80 +8,44 @@ import styles from "./page.module.css";
 const assetBase = "https://seed-bronze-70048020.figma.site";
 const asset = (path: string) => `${assetBase}${path}`;
 
-function SolutionIcon({ children }: { children: ReactNode }) {
-    return (
-        <span aria-hidden="true" className={styles.solutionIconSvg}>
-            {children}
-        </span>
-    );
-}
-
 const solutions = [
     {
-        body: "지능형 카메라가 관제 구역 전역을 상시 탐지하며 환경적 이상 징후를 실시간으로 포착합니다. 이에 더해, 시각 인지 AI가 정밀 분석 알고리즘을 결합한 하이브리드 검증을 수행하여, 복잡한 현장 환경이나 기상 변화로 인한 오경보를 90% 이상 줄입니다.",
-        icon: (
-            <SolutionIcon>
-                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 4 15.8 10.2 22 12l-6.2 1.8L14 20l-1.8-6.2L6 12l6.2-1.8L14 4Z" fill="currentColor" />
-                    <path d="M21.5 5.5 22.2 7.8 24.5 8.5l-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z" fill="currentColor" />
-                </svg>
-            </SolutionIcon>
-        ),
-        title: "AI 영상기반\n위험 상황 감지",
+        body: "화물 적재 상태와 작업 현장을 실시간으로 모니터링하여 파손 위험이나 안전사고를 예방합니다. 물류센터 운영 안정성과 작업 안전성을 동시에 확보합니다.",
+        icon: "/_assets/v11/c19c362381ef974bf8eca9d4839f71212e885cb5.svg",
+        title: "적재 상태 및\n물류 안전 관리",
     },
     {
-        body: "이상 징후가 감지되는 즉시 통합 관제 센터와 현장 책임자에게 비상 알람을 실시간으로 전파합니다. 이와 동시에 AI가 분석한 현장의 실시간 영상 데이터와 정확한 위치 정보를 함께 공유하여, 골든타임 내에 즉각적인 구조 및 초동 조치가 이루어지도록 지원합니다.",
-        icon: (
-            <SolutionIcon>
-                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 5a5 5 0 0 1 5 5v2.4l2 2V18H7v-3.6l2-2V10a5 5 0 0 1 5-5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-                    <path d="M12 21h4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                </svg>
-            </SolutionIcon>
-        ),
-        title: "비상 상황 발생시\n경보 알람",
+        body: "Vision AI가 상품 이동과 재고 현황을 실시간으로 추적하여 입출고 과정을 자동 관리합니다. 수작업 검수 부담을 줄이고 운영 정확도를 향상시킵니다.",
+        icon: "/_assets/v11/732184d8b27f2a038a6a54fc0599f047d79b053a.svg",
+        title: "입출고 및\n재고 자동 인식",
     },
     {
-        body: "위험 수준이 임계치를 넘어서는 순간, 추가 피해를 막기 위해 해당 구역의 진입 차단막 가동 및 위험 설비 제어 명령을 즉각 실행합니다. 이와 동시에 현장 경보 장치, 디지털 사이니지와 유기적으로 연동되어 위험 구역 내 인원들을 안전한 지역으로 신속하게 안내합니다.",
-        icon: (
-            <SolutionIcon>
-                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 7h12M8 14h12M8 21h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                    <path d="M14 6v16" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                </svg>
-            </SolutionIcon>
-        ),
-        title: "위험 상황 발생 시스템\n자동 제어 및 대응",
+        body: "차량 이동 경로와 물류 흐름을 분석하여 병목 구간을 식별합니다. 물류 처리 속도를 높이고 운영 비용을 절감할 수 있도록 지원합니다.",
+        icon: "/_assets/v11/2cf93b00af85c23adddeea0409a656b9c89005a6.svg",
+        title: "차량 및 물류\n흐름 최적화",
     },
     {
-        body: "관리 지역 전역의 안전 상태와 실시간 데이터 흐름을 하나의 직관적인 대시보드에서 통합 관리합니다. 나아가 누적된 사고 징후 및 위험 데이터를 기반으로 AI가 다각적인 통계 분석을 수행하여, 잠재적 리스크를 선제적으로 예측하고 방재 대책을 수립할 수 있도록 지원합니다.",
-        icon: (
-            <SolutionIcon>
-                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 7.5h16v13H6z" stroke="currentColor" strokeWidth="2.4" />
-                    <path d="M10.5 18v-3.5M14 18v-6M17.5 18v-2" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                </svg>
-            </SolutionIcon>
-        ),
-        title: "통합 모니터링 및\n통계분석",
+        body: "물류 데이터와 운영 현황을 통합 분석하여 공급망 전반의 효율성을 진단합니다. 운영 개선 포인트를 도출하여 안정적인 물류 서비스를 지원합니다.",
+        icon: "/_assets/v11/5f88680007cdf6b3ead26d5668eaeb0eaf674b7d.svg",
+        title: "공급망\n운영 분석",
     },
 ];
 
 const workflow = [
     {
-        body: "강한 흔들림이나 자욱한 연기 등 이상 징후 감지 시 상황을 인식하고 즉시 대응할 수 있는 액션을 제안합니다. 자연어 기반 인터페이스를 통해 작업자는 AI 에이전트와 직관적으로 협업할 수 있고, AI의 판단 근거를 시각화해 사용성을 강화합니다.",
-        list: "현장 상황 인지",
-        title: ["재난의 사소한", "징조를 이해하는 AI"],
+        body: "입출고, 적재, 이동 경로 등 물류센터 전반의 운영 흐름을 실시간으로 분석하여 모든 물류 프로세스를 시각화합니다.",
+        list: "물류 흐름 가시화",
+        title: ["보이지 않는 물류 데이터를", "연결하는 AI"],
     },
     {
-        body: "단순 감지를 넘어 균열 깊이, 진동 상태, 연소 속도 등을 초 단위로 계산해 위험도를 정량화합니다. 실시간 데이터를 바탕으로 대피 우선순위와 최적의 방재 경로를 도출하며, 시각화된 '위험도 맵(Hazard Map)'을 통해 관리자의 신속한 의사결정을 돕습니다.",
-        list: "위험 데이터 분석",
-        title: ["위험 요인의", "실시간 정량화"],
+        body: "재고 불일치, 작업 지연, 적재 오류와 같은 운영 이상 상황을 조기에 감지하여 물류 프로세스의 안정성을 확보합니다.",
+        list: "운영 이상 탐지",
+        title: ["물류 운영의", "정확도 향상"],
     },
     {
-        body: "과거 패턴과 미세한 물리적 변화(기울기, 진동 등)를 결합해 미래의 재난 가능성을 선제적으로 예측합니다. AI 에이전트가 \"30분 내 붕괴 위험 85%\"와 같은 확률적 모델을 자연어로 브리핑하여, 재난 발생 전 선제적 예방 조치와 골든타임 확보를 지원합니다.",
-        list: "재난 예측 및 대비",
-        title: ["보이지 않는 위협을", "내다보는 AI"],
+        body: "운영 데이터를 기반으로 물류 자원 배분과 작업 프로세스를 최적화하여 비용 절감과 처리 효율 향상을 실현합니다.",
+        list: "공급망 운영 최적화",
+        title: ["효율적인", "물류 의사결정을 지원"],
     },
 ];
 
@@ -93,7 +56,7 @@ const useCases = [
     ["FBG 코리아", "Vision AI", "Tech", "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축"],
 ];
 
-export default function SolutionDisasterSafetyPage() {
+export default function SolutionLogisticsDistributionPage() {
     return (
         <main className={styles.page}>
             <section className={styles.hero}>
@@ -101,22 +64,17 @@ export default function SolutionDisasterSafetyPage() {
                     <img
                         alt=""
                         className={styles.heroImage}
-                        src={asset("/_assets/v11/dc28e9c8a2462d73c614d9e7309f430af32dc7e7.png")}
+                        src={asset("/_assets/v11/f81a13bf00097874133baf936d9ed279d1b5b904.png")}
                     />
                 </div>
                 <div className={styles.heroOverlay}>
                     <div className={styles.heroInner}>
-                        <p className={styles.eyebrow}>Vision AI for Disaster Safety</p>
-                        <h1 className={styles.heroTitle}>
-                            재난 상황을 감지하고
-                            <br />
-                            최적의 대응을 도출하는 AI
-                        </h1>
+                        <p className={styles.eyebrow}>Vision AI for Logistics &amp; Distribution</p>
+                        <h1 className={styles.heroTitle}>물류 운영의 정확성과 효율성을 높이는 AI</h1>
                         <p className={styles.heroDescription}>
-                            복잡한 재난 상황을 실시간으로 감지하고 최적의 대응 시나리오를
-                            도출하는 Vision AI 솔루션으로,
-                            <br />
-                            재난 현장의 안전 기준을 완전히 새롭게 정의합니다.
+                            물류 및 유통 전 과정에서 발생하는 데이터를 실시간으로 분석하고
+                            운영 상태를 모니터링하는 Vision AI 솔루션으로, 보다 빠르고
+                            정확한 공급망 운영을 지원합니다.
                         </p>
                         <a className={styles.heroAction} href="/contact-us">
                             Get started
@@ -133,13 +91,15 @@ export default function SolutionDisasterSafetyPage() {
                     <div className={styles.solutionVisual}>
                         <img
                             alt=""
-                            src={asset("/_assets/v11/edc50c34100e5c79a1f0b09cbba8f25f5c090efe.png")}
+                            src={asset("/_assets/v11/ba099b03935796e35a7017c79d799aad482092bf.png")}
                         />
                     </div>
                     <div className={styles.solutionGrid}>
                         {solutions.map((item) => (
                             <article className={styles.solutionCard} key={item.title}>
-                                <div className={styles.solutionIconWrap}>{item.icon}</div>
+                                <div className={styles.solutionIconWrap}>
+                                    <img alt="" className={styles.solutionIcon} src={asset(item.icon)} />
+                                </div>
                                 <h3>{item.title}</h3>
                                 <p>{item.body}</p>
                             </article>
@@ -168,16 +128,16 @@ export default function SolutionDisasterSafetyPage() {
                         <div className={styles.workflowIllustration}>
                             <img
                                 alt=""
-                                src={asset("/_assets/v11/6d7fe02eb55dc7d0474c67dc8801c03513aee202.png")}
+                                src={asset("/_assets/v11/5a2dd641e649701d91d1b18075e60d73d5167978.png")}
                             />
                             <div className={styles.workflowStrips}>
                                 <img
                                     alt=""
-                                    src={asset("/_assets/v11/034222a4f766eb65b56f324c553dd1c07b13a1b2.png")}
+                                    src={asset("/_assets/v11/469b06db7d595047c1aad4590f3ebcc1778d0211.png")}
                                 />
                                 <img
                                     alt=""
-                                    src={asset("/_assets/v11/06bc7d53fe790855f2d2c9d0d713279e795da4e1.png")}
+                                    src={asset("/_assets/v11/e92b47d1b45068361c9c20c41e1f28127bc9db0c.png")}
                                 />
                             </div>
                         </div>
@@ -200,12 +160,12 @@ export default function SolutionDisasterSafetyPage() {
                 <img
                     alt=""
                     className={styles.storyImage}
-                    src={asset("/_assets/v11/b2b838d40fc0a60ab4a114697f4247469610616d.png")}
+                    src={asset("/_assets/v11/10570a7d0d90a31353a090e850bcf8f13e6d5a75.png")}
                 />
                 <div className={styles.storyInner}>
                     <h2 className={styles.storyTitle}>
-                        <span>상황을 이해하고 설계하는</span>
-                        <span>재난 특화 솔루션</span>
+                        <span>운영 효율과 정확도를 높이는</span>
+                        <span>물류 특화 솔루션</span>
                     </h2>
                 </div>
             </section>

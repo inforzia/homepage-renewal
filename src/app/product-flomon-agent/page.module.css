@@ -202,43 +202,83 @@
     height: auto;
 }
 
-.featureGrid,
+.strengthGrid,
+.widgetGrid,
 .stepGrid,
 .caseGrid {
     display: grid;
+}
+
+.strengthGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.widgetGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 24px 32px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.widgetGrid .featureCard:first-child {
+    grid-row: span 2;
+}
+
+.widgetGrid .widgetCard:first-child {
+    grid-row: span 2;
+}
+
+.stepGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.caseGrid {
+    display: flex;
+    gap: 24px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .caseCardMedia {
     overflow: hidden;
     border-radius: 18px;
-    aspect-ratio: 16 / 9;
 }
 
 .caseCardMedia img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
 
-.featureCard,
+.featureCard {
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    min-height: 332px;
+    padding: 52px 36px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
 .stepCard {
     display: grid;
-    gap: 16px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.06);
+    align-content: start;
+    gap: 32px;
 }
 
 .featureCard h3,
 .stepCard h3 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 24px;
     letter-spacing: -0.6px;
-    line-height: 34px;
+    line-height: 32px;
 }
 
 .featureCard p,
@@ -247,19 +287,7 @@
     color: #adb5bd;
     font-size: 18px;
     letter-spacing: -0.45px;
-    line-height: 30px;
-}
-
-.iconBadge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #4a65e6 0%, #8a2cbe 100%);
-    color: #fff;
-    font-weight: 700;
+    line-height: 28px;
 }
 
 .sectionBody {
@@ -268,20 +296,135 @@
 
 .mediaFrame {
     display: grid;
-    gap: 24px;
+    gap: 76px;
 }
 
 .mediaCardDark {
     overflow: hidden;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.06);
+    width: calc(100% - 40px);
+    margin: 0 auto;
 }
 
-.mediaCardDark img,
-.stepCard img,
+.mediaCardDark img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.stepCard .caseCardMedia {
+    border-radius: 0;
+}
+
+.stepCard .caseCardMedia img {
+    width: 100%;
+    height: auto;
+}
+
+.featureCard .caseCardMedia {
+    border-radius: 24px;
+}
+
 .featureCard img {
     width: 100%;
     height: auto;
+}
+
+.widgetCard {
+    display: grid;
+    align-content: start;
+    gap: 24px;
+}
+
+.widgetCard .caseCardMedia {
+    border-radius: 24px;
+}
+
+.widgetCard .caseCardMedia img {
+    width: 100%;
+    height: auto;
+}
+
+.widgetCopy {
+    display: grid;
+    gap: 16px;
+}
+
+.widgetCopy h3 {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    line-height: 34px;
+}
+
+.widgetCopy p {
+    color: #adb5bd;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 30px;
+}
+
+.caseCard {
+    display: grid;
+    gap: 0;
+    overflow: hidden;
+    flex: 0 0 340px;
+    min-height: 376px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.caseImageWrap {
+    width: 340px;
+    height: 192px;
+    border-radius: 12px 12px 0 0;
+}
+
+.caseImageWrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.caseCopy {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+    width: 340px;
+    min-height: 184px;
+    padding: 30px 24px;
+}
+
+.caseTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.caseTags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 26px;
+    padding: 0 8px;
+    border-radius: 4px;
+    background: #212529;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+
+.caseCopy h3 {
+    color: #121416;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 20px;
+    max-width: 292px;
 }
 
 .ctaSpacer {
@@ -312,10 +455,37 @@
     }
 
     .firstSectionGrid,
-    .featureGrid,
+    .strengthGrid,
+    .widgetGrid,
     .stepGrid,
     .caseGrid {
         grid-template-columns: 1fr;
+    }
+
+    .caseGrid {
+        display: grid;
+    }
+
+    .caseCard,
+    .caseImageWrap,
+    .caseCopy {
+        width: 100%;
+    }
+
+    .caseImageWrap {
+        height: auto;
+        aspect-ratio: 340 / 192;
+    }
+
+    .mediaCardDark {
+        width: 100%;
+    }
+
+    .strengthGrid,
+    .widgetGrid,
+    .stepGrid,
+    .caseGrid {
+        width: 100%;
     }
 }
 

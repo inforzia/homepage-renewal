@@ -179,8 +179,7 @@ export default function VisionAiPage() {
                     <div className={styles.storyContent}>
                         <h2>
                             <span>시각적 데이터화.</span>
-                            <span>현장 맞춤형 자동화.</span>
-                            <span>압도적인 구축 민첩성.</span>
+                            <span>현장 맞춤형 자동화. 압도적인 구축 민첩성.</span>
                         </h2>
                     </div>
                 </div>
@@ -191,7 +190,7 @@ export default function VisionAiPage() {
                     <div className={styles.sectionGrid}>
                         <div className={styles.sectionHeadline}>
                             <p className={styles.gradientLabel}>
-                                Flomon, Vision AI for Any Site
+                                Flomon Vision AI for Any Site
                             </p>
                             <h2>
                                 <span>현장의 지능화를 책임지는</span>

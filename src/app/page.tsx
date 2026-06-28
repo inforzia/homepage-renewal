@@ -81,7 +81,7 @@ const industries = [
     },
     {
         image: "/images/inforzia/industry-facility.png",
-        title: "시설물 안전",
+        title: "시설물 및 인프라",
     },
     {
         image: "/images/inforzia/industry-retail.png",

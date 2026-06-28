@@ -28,7 +28,7 @@
 .heroOverlay {
     position: relative;
     min-height: 948px;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.24) 45%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.2) 45%, rgba(0, 0, 0, 0.08) 100%);
 }
 
 .heroInner,
@@ -55,7 +55,7 @@
 }
 
 .heroTitle {
-    max-width: 860px;
+    max-width: 760px;
     margin-top: 22px;
     color: #fff;
     font-size: 76px;
@@ -110,7 +110,7 @@
 
 .solutionVisual img {
     display: inline-block;
-    width: min(900px, 100%);
+    width: min(940px, 100%);
     height: auto;
 }
 
@@ -227,12 +227,6 @@
 .workflowStrips img:first-child {
     width: min(100%, 448px);
     height: 40px;
-    object-fit: cover;
-}
-
-.workflowStrips img:last-child {
-    width: min(100%, 384px);
-    height: 20px;
     object-fit: cover;
 }
 

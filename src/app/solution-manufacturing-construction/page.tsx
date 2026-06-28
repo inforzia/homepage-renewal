@@ -19,7 +19,7 @@ function SolutionIcon({ children }: { children: ReactNode }) {
 
 const solutions = [
     {
-        body: "지능형 카메라가 관제 구역 전역을 상시 탐지하며 환경적 이상 징후를 실시간으로 포착합니다. 이에 더해, 시각 인지 AI가 정밀 분석 알고리즘을 결합한 하이브리드 검증을 수행하여, 복잡한 현장 환경이나 기상 변화로 인한 오경보를 90% 이상 줄입니다.",
+        body: "위험 구역 내 계측기 및 패널 점검에 Vision AI 기술을 도입함으로써, 작업자 노출 위험을 최소화하고 산업재해를 선제적으로 예방합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -28,61 +28,62 @@ const solutions = [
                 </svg>
             </SolutionIcon>
         ),
-        title: "AI 영상기반\n위험 상황 감지",
+        title: "AI 기반 위험 구역\n점검 작업 자동화",
     },
     {
-        body: "이상 징후가 감지되는 즉시 통합 관제 센터와 현장 책임자에게 비상 알람을 실시간으로 전파합니다. 이와 동시에 AI가 분석한 현장의 실시간 영상 데이터와 정확한 위치 정보를 함께 공유하여, 골든타임 내에 즉각적인 구조 및 초동 조치가 이루어지도록 지원합니다.",
+        body: "작업자의 위험 행동이나 설비 이상 징후를 조기에 감지합니다. 생산 공정 중 발생할 수 있는 사고와 작업 중단 리스크를 최소화합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 5a5 5 0 0 1 5 5v2.4l2 2V18H7v-3.6l2-2V10a5 5 0 0 1 5-5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-                    <path d="M12 21h4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M14 5 24 23H4L14 5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+                    <path d="M14 11v5" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <circle cx="14" cy="19.2" fill="currentColor" r="1.3" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "비상 상황 발생시\n경보 알람",
+        title: "공정 이상 및\n위험 행동 분석",
     },
     {
-        body: "위험 수준이 임계치를 넘어서는 순간, 추가 피해를 막기 위해 해당 구역의 진입 차단막 가동 및 위험 설비 제어 명령을 즉각 실행합니다. 이와 동시에 현장 경보 장치, 디지털 사이니지와 유기적으로 연동되어 위험 구역 내 인원들을 안전한 지역으로 신속하게 안내합니다.",
+        body: "제품 외관 및 생산 품질을 실시간으로 검사하여 불량품을 자동 식별합니다. 미세 결함까지 모두 검출하여 품질 경쟁력을 향상시킵니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 7h12M8 14h12M8 21h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                    <path d="M14 6v16" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M17.8 6.2 21.8 10.2 10 22H6v-4L17.8 6.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+                    <path d="m15.8 8.2 4 4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "위험 상황 발생 시스템\n자동 제어 및 대응",
+        title: "AI 기반 품질\n검사 자동화",
     },
     {
-        body: "관리 지역 전역의 안전 상태와 실시간 데이터 흐름을 하나의 직관적인 대시보드에서 통합 관리합니다. 나아가 누적된 사고 징후 및 위험 데이터를 기반으로 AI가 다각적인 통계 분석을 수행하여, 잠재적 리스크를 선제적으로 예측하고 방재 대책을 수립할 수 있도록 지원합니다.",
+        body: "설비 가동률, 작업 흐름, 생산 현황을 분석하여 운영 효율을 극대화합니다. 데이터 기반 의사결정을 통해 생산성 향상을 지원합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 7.5h16v13H6z" stroke="currentColor" strokeWidth="2.4" />
-                    <path d="M10.5 18v-3.5M14 18v-6M17.5 18v-2" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M6 21V13.5M14 21V9.5M22 21V6.5" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M5 21.5h18" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "통합 모니터링 및\n통계분석",
+        title: "생산성 및\n운영 효율 분석",
     },
 ];
 
 const workflow = [
     {
-        body: "강한 흔들림이나 자욱한 연기 등 이상 징후 감지 시 상황을 인식하고 즉시 대응할 수 있는 액션을 제안합니다. 자연어 기반 인터페이스를 통해 작업자는 AI 에이전트와 직관적으로 협업할 수 있고, AI의 판단 근거를 시각화해 사용성을 강화합니다.",
-        list: "현장 상황 인지",
-        title: ["재난의 사소한", "징조를 이해하는 AI"],
+        body: "작업자 행동, 설비 상태, 공정 흐름을 실시간으로 분석하여 안전 규정 위반, 작업 이상 및 설비 위험 요소를 신속하게 감지합니다.",
+        list: "작업 현장 지능형 모니터링",
+        title: ["복잡한 산업 현장을 이해하는", "Vision AI"],
     },
     {
-        body: "단순 감지를 넘어 균열 깊이, 진동 상태, 연소 속도 등을 초 단위로 계산해 위험도를 정량화합니다. 실시간 데이터를 바탕으로 대피 우선순위와 최적의 방재 경로를 도출하며, 시각화된 '위험도 맵(Hazard Map)'을 통해 관리자의 신속한 의사결정을 돕습니다.",
-        list: "위험 데이터 분석",
-        title: ["위험 요인의", "실시간 정량화"],
+        body: "현장에서 발생하는 다양한 이벤트를 분석하여 품질 문제와 안전 리스크를 동시에 관리합니다. 이를 통해 운영 중단과 사고 발생 가능성을 최소화합니다.",
+        list: "품질 및 안전 통합 관리",
+        title: ["생산성과 안전을", "동시에 확보"],
     },
     {
-        body: "과거 패턴과 미세한 물리적 변화(기울기, 진동 등)를 결합해 미래의 재난 가능성을 선제적으로 예측합니다. AI 에이전트가 \"30분 내 붕괴 위험 85%\"와 같은 확률적 모델을 자연어로 브리핑하여, 재난 발생 전 선제적 예방 조치와 골든타임 확보를 지원합니다.",
-        list: "재난 예측 및 대비",
-        title: ["보이지 않는 위협을", "내다보는 AI"],
+        body: "생산 데이터와 작업 데이터를 통합 분석하여 공정 효율을 개선하고, 보다 안전하고 생산적인 작업 환경을 구현합니다.",
+        list: "현장 운영 최적화",
+        title: ["지속 가능한", "스마트 현장 구축"],
     },
 ];
 
@@ -93,7 +94,7 @@ const useCases = [
     ["FBG 코리아", "Vision AI", "Tech", "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축"],
 ];
 
-export default function SolutionDisasterSafetyPage() {
+export default function SolutionManufacturingConstructionPage() {
     return (
         <main className={styles.page}>
             <section className={styles.hero}>
@@ -101,22 +102,17 @@ export default function SolutionDisasterSafetyPage() {
                     <img
                         alt=""
                         className={styles.heroImage}
-                        src={asset("/_assets/v11/dc28e9c8a2462d73c614d9e7309f430af32dc7e7.png")}
+                        src={asset("/_assets/v11/45b3441d28dabbbb7c3645611955bfe5ebf731a9.png")}
                     />
                 </div>
                 <div className={styles.heroOverlay}>
                     <div className={styles.heroInner}>
-                        <p className={styles.eyebrow}>Vision AI for Disaster Safety</p>
-                        <h1 className={styles.heroTitle}>
-                            재난 상황을 감지하고
-                            <br />
-                            최적의 대응을 도출하는 AI
-                        </h1>
+                        <p className={styles.eyebrow}>Vision AI for Manufacturing &amp; Construction</p>
+                        <h1 className={styles.heroTitle}>산업 현장의 생산성과 안전을 향상시키는 AI</h1>
                         <p className={styles.heroDescription}>
-                            복잡한 재난 상황을 실시간으로 감지하고 최적의 대응 시나리오를
-                            도출하는 Vision AI 솔루션으로,
-                            <br />
-                            재난 현장의 안전 기준을 완전히 새롭게 정의합니다.
+                            제조 및 건설 현장의 작업 환경을 실시간으로 분석하여 운영
+                            이슈와 위험 요소를 해결하는 Vision AI 솔루션으로, 생산성과
+                            안전성을 모두 강화하는 스마트 현장을 실현합니다.
                         </p>
                         <a className={styles.heroAction} href="/contact-us">
                             Get started
@@ -133,7 +129,7 @@ export default function SolutionDisasterSafetyPage() {
                     <div className={styles.solutionVisual}>
                         <img
                             alt=""
-                            src={asset("/_assets/v11/edc50c34100e5c79a1f0b09cbba8f25f5c090efe.png")}
+                            src={asset("/_assets/v11/e1f1f090146afb68849396f11e01a3aa68108954.png")}
                         />
                     </div>
                     <div className={styles.solutionGrid}>
@@ -168,16 +164,16 @@ export default function SolutionDisasterSafetyPage() {
                         <div className={styles.workflowIllustration}>
                             <img
                                 alt=""
-                                src={asset("/_assets/v11/6d7fe02eb55dc7d0474c67dc8801c03513aee202.png")}
+                                src={asset("/_assets/v11/e8d392c5745b2c64adeed70b7231924506a67cbe.png")}
                             />
                             <div className={styles.workflowStrips}>
                                 <img
                                     alt=""
-                                    src={asset("/_assets/v11/034222a4f766eb65b56f324c553dd1c07b13a1b2.png")}
+                                    src={asset("/_assets/v11/05e5fce97a50d4bd1bc69e8dcf579c6ca5c25c4a.png")}
                                 />
                                 <img
                                     alt=""
-                                    src={asset("/_assets/v11/06bc7d53fe790855f2d2c9d0d713279e795da4e1.png")}
+                                    src={asset("/_assets/v11/6f6be400ecd0a1ec36b63776aa54f8320df3e7c7.png")}
                                 />
                             </div>
                         </div>
@@ -200,12 +196,12 @@ export default function SolutionDisasterSafetyPage() {
                 <img
                     alt=""
                     className={styles.storyImage}
-                    src={asset("/_assets/v11/b2b838d40fc0a60ab4a114697f4247469610616d.png")}
+                    src={asset("/_assets/v11/ba1cd8221a8936cdd39a8f978f973a2526d03b60.png")}
                 />
                 <div className={styles.storyInner}>
                     <h2 className={styles.storyTitle}>
-                        <span>상황을 이해하고 설계하는</span>
-                        <span>재난 특화 솔루션</span>
+                        <span>안전과 생산성을 모두 챙기는</span>
+                        <span>산업 현장 특화 솔루션</span>
                     </h2>
                 </div>
             </section>

@@ -19,70 +19,70 @@ function SolutionIcon({ children }: { children: ReactNode }) {
 
 const solutions = [
     {
-        body: "지능형 카메라가 관제 구역 전역을 상시 탐지하며 환경적 이상 징후를 실시간으로 포착합니다. 이에 더해, 시각 인지 AI가 정밀 분석 알고리즘을 결합한 하이브리드 검증을 수행하여, 복잡한 현장 환경이나 기상 변화로 인한 오경보를 90% 이상 줄입니다.",
+        body: "시각 언어 모델(VLM)과 CCTV 인프라를 연동하여 방문 없이 원격으로 프로모션 준수율, 청결도, 진열 상태 등 20개 이상의 환경 관리 항목을 자동으로 점검합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 4 15.8 10.2 22 12l-6.2 1.8L14 20l-1.8-6.2L6 12l6.2-1.8L14 4Z" fill="currentColor" />
-                    <path d="M21.5 5.5 22.2 7.8 24.5 8.5l-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z" fill="currentColor" />
+                    <path d="M6 9.5h16v9H6z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+                    <path d="M9 18h10M10 6h8" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "AI 영상기반\n위험 상황 감지",
+        title: "매장 환경\n자동 점검 시스템",
     },
     {
-        body: "이상 징후가 감지되는 즉시 통합 관제 센터와 현장 책임자에게 비상 알람을 실시간으로 전파합니다. 이와 동시에 AI가 분석한 현장의 실시간 영상 데이터와 정확한 위치 정보를 함께 공유하여, 골든타임 내에 즉각적인 구조 및 초동 조치가 이루어지도록 지원합니다.",
-        icon: (
-            <SolutionIcon>
-                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 5a5 5 0 0 1 5 5v2.4l2 2V18H7v-3.6l2-2V10a5 5 0 0 1 5-5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-                    <path d="M12 21h4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                </svg>
-            </SolutionIcon>
-        ),
-        title: "비상 상황 발생시\n경보 알람",
-    },
-    {
-        body: "위험 수준이 임계치를 넘어서는 순간, 추가 피해를 막기 위해 해당 구역의 진입 차단막 가동 및 위험 설비 제어 명령을 즉각 실행합니다. 이와 동시에 현장 경보 장치, 디지털 사이니지와 유기적으로 연동되어 위험 구역 내 인원들을 안전한 지역으로 신속하게 안내합니다.",
+        body: "통합 분석을 통해 점검이 완료된 각 매장 환경 관리 항목에 대한 결과를 자동으로 수치화하여 체크리스트로 보여줍니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 7h12M8 14h12M8 21h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                    <path d="M14 6v16" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="m5.5 6.8 1.5 1.7 2.5-3M5.5 13.8l1.5 1.7 2.5-3M5.5 20.8l1.5 1.7 2.5-3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "위험 상황 발생 시스템\n자동 제어 및 대응",
+        title: "한눈으로 보는\n지능형 체크리스트",
     },
     {
-        body: "관리 지역 전역의 안전 상태와 실시간 데이터 흐름을 하나의 직관적인 대시보드에서 통합 관리합니다. 나아가 누적된 사고 징후 및 위험 데이터를 기반으로 AI가 다각적인 통계 분석을 수행하여, 잠재적 리스크를 선제적으로 예측하고 방재 대책을 수립할 수 있도록 지원합니다.",
+        body: "매장 내 고객의 이동 경로와 체류 시간을 분석하여 인기 구역과 관심 상품을 파악합니다. 고객 행동 데이터를 기반으로 보다 효과적인 매장 운영 전략을 수립할 수 있습니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 7.5h16v13H6z" stroke="currentColor" strokeWidth="2.4" />
-                    <path d="M10.5 18v-3.5M14 18v-6M17.5 18v-2" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M7 21c0-3.3 3.1-5 7-5s7 1.7 7 5" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <circle cx="14" cy="10" r="3.8" stroke="currentColor" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "통합 모니터링 및\n통계분석",
+        title: "고객 행동 및\n동선 분석",
+    },
+    {
+        body: "매장 환경 상태에 따른 방문 패턴 변화나 동선과 매출 간의 상관관계를 분석하여 차기 맞춤형 마케팅 전략 수립의 근거로 활용합니다.",
+        icon: (
+            <SolutionIcon>
+                <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 21V12.5M14 21V9M21 21V6" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M5.5 21.5h17" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                </svg>
+            </SolutionIcon>
+        ),
+        title: "고객 인사이트 및\n마케팅 분석",
     },
 ];
 
 const workflow = [
     {
-        body: "강한 흔들림이나 자욱한 연기 등 이상 징후 감지 시 상황을 인식하고 즉시 대응할 수 있는 액션을 제안합니다. 자연어 기반 인터페이스를 통해 작업자는 AI 에이전트와 직관적으로 협업할 수 있고, AI의 판단 근거를 시각화해 사용성을 강화합니다.",
-        list: "현장 상황 인지",
-        title: ["재난의 사소한", "징조를 이해하는 AI"],
+        body: "매장 내 CCTV를 통해 청결도, 진열 상태 등 20개 이상의 환경 관리 항목을 자동으로 점검하고, 고객의 이동 동선, 체류 시간, 관심 구역을 분석하여 고객 행동 데이터를 실시간으로 수집합니다.",
+        list: "매장 환경 데이터 수집",
+        title: ["매장 환경을 철저하게", "점검하는 Vision AI"],
     },
     {
-        body: "단순 감지를 넘어 균열 깊이, 진동 상태, 연소 속도 등을 초 단위로 계산해 위험도를 정량화합니다. 실시간 데이터를 바탕으로 대피 우선순위와 최적의 방재 경로를 도출하며, 시각화된 '위험도 맵(Hazard Map)'을 통해 관리자의 신속한 의사결정을 돕습니다.",
-        list: "위험 데이터 분석",
-        title: ["위험 요인의", "실시간 정량화"],
+        body: "청결도·진열 상태 등의 환경 점검 결과와 고객 체류 시간·동선 데이터를 하나의 대시보드로 통합합니다. 축적된 데이터를 바탕으로 매장의 시공간별 운영 효율성을 다차원적으로 비교·분석합니다.",
+        list: "데이터 통합 분석",
+        title: ["매장 상황과 고객 행동을", "다각도로 분석"],
     },
     {
-        body: "과거 패턴과 미세한 물리적 변화(기울기, 진동 등)를 결합해 미래의 재난 가능성을 선제적으로 예측합니다. AI 에이전트가 \"30분 내 붕괴 위험 85%\"와 같은 확률적 모델을 자연어로 브리핑하여, 재난 발생 전 선제적 예방 조치와 골든타임 확보를 지원합니다.",
-        list: "재난 예측 및 대비",
-        title: ["보이지 않는 위협을", "내다보는 AI"],
+        body: "분석 결과를 기반으로 상품 진열, 인력 운영, 프로모션 전략을 최적화하여 고객 경험과 매출 성과를 동시에 향상시킵니다.",
+        list: "최적 인사이트 도출",
+        title: ["데이터 기반의", "스마트 리테일 구현"],
     },
 ];
 
@@ -93,7 +93,7 @@ const useCases = [
     ["FBG 코리아", "Vision AI", "Tech", "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축"],
 ];
 
-export default function SolutionDisasterSafetyPage() {
+export default function SolutionRetailStoreManagementPage() {
     return (
         <main className={styles.page}>
             <section className={styles.hero}>
@@ -101,22 +101,17 @@ export default function SolutionDisasterSafetyPage() {
                     <img
                         alt=""
                         className={styles.heroImage}
-                        src={asset("/_assets/v11/dc28e9c8a2462d73c614d9e7309f430af32dc7e7.png")}
+                        src={asset("/_assets/v11/f8d19ae660c1e078a44c7df4975e23dbd11d373f.png")}
                     />
                 </div>
                 <div className={styles.heroOverlay}>
                     <div className={styles.heroInner}>
-                        <p className={styles.eyebrow}>Vision AI for Disaster Safety</p>
-                        <h1 className={styles.heroTitle}>
-                            재난 상황을 감지하고
-                            <br />
-                            최적의 대응을 도출하는 AI
-                        </h1>
+                        <p className={styles.eyebrow}>Vision AI for Retail &amp; Store Management</p>
+                        <h1 className={styles.heroTitle}>고객 경험과 매장 운영을 혁신하는 AI</h1>
                         <p className={styles.heroDescription}>
-                            복잡한 재난 상황을 실시간으로 감지하고 최적의 대응 시나리오를
-                            도출하는 Vision AI 솔루션으로,
-                            <br />
-                            재난 현장의 안전 기준을 완전히 새롭게 정의합니다.
+                            고객 행동과 매장 운영 데이터를 실시간으로 분석하여 최적의
+                            운영 전략을 제공하는 Vision AI 솔루션으로, 매장 운영 효율과
+                            고객 만족도를 향상시킵니다.
                         </p>
                         <a className={styles.heroAction} href="/contact-us">
                             Get started
@@ -133,7 +128,7 @@ export default function SolutionDisasterSafetyPage() {
                     <div className={styles.solutionVisual}>
                         <img
                             alt=""
-                            src={asset("/_assets/v11/edc50c34100e5c79a1f0b09cbba8f25f5c090efe.png")}
+                            src={asset("/_assets/v11/f55b2701f0197e527135fcf7bb9e70816ef60317.png")}
                         />
                     </div>
                     <div className={styles.solutionGrid}>
@@ -168,16 +163,12 @@ export default function SolutionDisasterSafetyPage() {
                         <div className={styles.workflowIllustration}>
                             <img
                                 alt=""
-                                src={asset("/_assets/v11/6d7fe02eb55dc7d0474c67dc8801c03513aee202.png")}
+                                src={asset("/_assets/v11/9ecd515cce0496b946b5038079bf31003caa2b20.png")}
                             />
                             <div className={styles.workflowStrips}>
                                 <img
                                     alt=""
-                                    src={asset("/_assets/v11/034222a4f766eb65b56f324c553dd1c07b13a1b2.png")}
-                                />
-                                <img
-                                    alt=""
-                                    src={asset("/_assets/v11/06bc7d53fe790855f2d2c9d0d713279e795da4e1.png")}
+                                    src={asset("/_assets/v11/8b3ea0c559c104c372209840f5137dcbd8b5efea.png")}
                                 />
                             </div>
                         </div>
@@ -200,12 +191,12 @@ export default function SolutionDisasterSafetyPage() {
                 <img
                     alt=""
                     className={styles.storyImage}
-                    src={asset("/_assets/v11/b2b838d40fc0a60ab4a114697f4247469610616d.png")}
+                    src={asset("/_assets/v11/4cc5feab30d07ef94a5d8376edb6ae09a5123324.png")}
                 />
                 <div className={styles.storyInner}>
                     <h2 className={styles.storyTitle}>
-                        <span>상황을 이해하고 설계하는</span>
-                        <span>재난 특화 솔루션</span>
+                        <span>고객 경험과 운영을 혁신하는</span>
+                        <span>리테일 특화 솔루션</span>
                     </h2>
                 </div>
             </section>

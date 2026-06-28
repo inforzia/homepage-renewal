@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { SiteCaseCard } from "@/components/site/SiteCaseCard";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
@@ -150,18 +149,6 @@ const partnerLogos = [
         height: 60,
         src: "/images/inforzia/logo-wapplab.png",
         width: 96,
-    },
-    {
-        alt: "Nkia",
-        height: 60,
-        src: "/images/inforzia/logo-nkia.png",
-        width: 150,
-    },
-    {
-        alt: "COWEAVER",
-        height: 60,
-        src: "/images/inforzia/logo-coweaver.png",
-        width: 120,
     },
 ];
 
@@ -354,12 +341,15 @@ export default function ProductFlomonVisionPage() {
                     />
                     <div className={styles.caseGrid}>
                         {industries.map((industry) => (
-                            <SiteCaseCard
-                                description={industry.description}
-                                imageSrc={industry.image}
-                                key={industry.title}
-                                title={industry.title}
-                            />
+                            <article className={styles.caseCard} key={industry.title}>
+                                <div className={styles.caseCardMedia}>
+                                    <img alt="" src={industry.image} />
+                                </div>
+                                <div className={styles.caseCardCopy}>
+                                    <h3>{industry.title}</h3>
+                                    <p>{industry.description}</p>
+                                </div>
+                            </article>
                         ))}
                     </div>
                 </div>

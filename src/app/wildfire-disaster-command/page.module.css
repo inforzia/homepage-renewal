@@ -1,0 +1,404 @@
+.page {
+    background: #fff;
+    color: #121416;
+    overflow-x: hidden;
+}
+
+.hero {
+    padding: 146px 0 80px;
+}
+
+.heroInner,
+.storyInner,
+.consultInner,
+.useCasesInner {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.heroInner {
+    max-width: 748px;
+}
+
+.tagRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tag,
+.caseTags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 6px;
+    background: #212529;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 30px;
+}
+
+.title {
+    margin-top: 28px;
+    font-weight: 500;
+    font-size: 62px;
+    letter-spacing: -1.55px;
+    line-height: 74px;
+}
+
+.date {
+    margin-top: 28px;
+    color: #868e96;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.heroVisual {
+    margin-top: 28px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #f1f3f5;
+}
+
+.heroVisual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.storySection {
+    padding: 32px 0 120px;
+}
+
+.storyInner {
+    display: grid;
+    grid-template-columns: 296px minmax(0, 746px);
+    gap: 36px;
+    align-items: start;
+}
+
+.storyNav {
+    position: sticky;
+    top: 120px;
+    display: grid;
+    gap: 8px;
+}
+
+.storyNavItem {
+    display: block;
+    padding: 20px 24px;
+    border-radius: 24px;
+    color: #495057;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 30px;
+}
+
+.storyNavItemActive {
+    background: #f1f3f5;
+    color: #121416;
+}
+
+.storyContent {
+    display: grid;
+    gap: 56px;
+}
+
+.storyBlock h2 {
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: -0.9px;
+    line-height: 52px;
+}
+
+.storyBlock p {
+    margin-top: 20px;
+    color: #343a40;
+    font-size: 18px;
+    letter-spacing: -0.45px;
+    line-height: 36px;
+}
+
+.consultSection {
+    padding: 0 0 120px;
+}
+
+.consultInner {
+    width: min(600px, calc(100% - 40px));
+}
+
+.consultVisual {
+    position: relative;
+    overflow: hidden;
+    min-height: 244px;
+    border-radius: 0;
+    background:
+        linear-gradient(135deg, rgba(131, 56, 236, 0.38), rgba(58, 12, 163, 0.12)),
+        radial-gradient(circle at 18% 28%, rgba(255, 255, 255, 0.5), transparent 28%),
+        radial-gradient(circle at 72% 24%, rgba(107, 33, 168, 0.55), transparent 30%),
+        radial-gradient(circle at 44% 80%, rgba(59, 130, 246, 0.42), transparent 30%),
+        #05060b;
+}
+
+.consultVisual::before,
+.consultVisual::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    transform: rotate(-18deg);
+}
+
+.consultVisual::before {
+    top: -12%;
+    left: -16%;
+    width: 72%;
+    height: 132%;
+}
+
+.consultVisual::after {
+    right: -10%;
+    bottom: -18%;
+    width: 64%;
+    height: 128%;
+}
+
+.consultOverlay {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 12px;
+    align-content: end;
+    min-height: 244px;
+    padding: 40px 32px;
+    color: #fff;
+}
+
+.consultOverlay p,
+.consultOverlay strong {
+    font-size: 38px;
+    letter-spacing: -0.95px;
+    line-height: 52px;
+}
+
+.consultOverlay p {
+    font-weight: 500;
+}
+
+.consultOverlay strong {
+    font-weight: 700;
+}
+
+.consultForm {
+    display: grid;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+.field span {
+    color: #212529;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+}
+
+.required {
+    color: #f03e3e;
+}
+
+.field input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #121416;
+    background: #fff;
+    font: inherit;
+}
+
+.progressTrack {
+    overflow: hidden;
+    height: 12px;
+    border-radius: 999px;
+    background: #adb5bd;
+}
+
+.progressFill {
+    width: 50%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #4c6ef5 0%, #5c7cfa 100%);
+}
+
+.nextButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    border: 0;
+    border-radius: 12px;
+    background: #212529;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 28px;
+}
+
+.useCasesSection {
+    padding: 0 0 48px;
+    background: #f1f3f5;
+}
+
+.useCasesTitle {
+    padding-top: 106px;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: -1.5px;
+    line-height: 72px;
+}
+
+.caseGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.caseCard {
+    overflow: hidden;
+    min-height: 376px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.caseImageWrap {
+    height: 192px;
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),
+        linear-gradient(45deg, #e9ecef 25%, transparent 25%),
+        linear-gradient(-45deg, #e9ecef 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e9ecef 75%),
+        linear-gradient(-45deg, transparent 75%, #e9ecef 75%);
+    background-size: 24px 24px;
+    background-position: 0 0, 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+.caseImageWrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caseCopy {
+    display: grid;
+    gap: 16px;
+    padding: 30px 24px;
+}
+
+.caseTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.caseCopy h3 {
+    max-width: 292px;
+    color: #121416;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 20px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 28px;
+    color: #495057;
+    font-size: 32px;
+    letter-spacing: -0.8px;
+    line-height: 40px;
+}
+
+.pageButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: #e9ecef;
+    color: #ced4da;
+    font-size: 28px;
+}
+
+.ctaSpacer {
+    padding-top: 0;
+}
+
+@media (max-width: 1279px) {
+    .storyInner {
+        grid-template-columns: 1fr;
+    }
+
+    .storyNav {
+        position: static;
+    }
+
+    .caseGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 112px;
+    }
+
+    .title {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    .storyBlock h2 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .storyBlock p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .consultOverlay p,
+    .consultOverlay strong {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .useCasesTitle {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    .caseGrid {
+        grid-template-columns: 1fr;
+    }
+}

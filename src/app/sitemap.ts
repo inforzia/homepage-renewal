@@ -56,10 +56,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${siteUrl}/contact-us-2`,
+            url: `${siteUrl}/contact-us`,
             lastModified,
             changeFrequency: "monthly",
             priority: 0.7,
+        },
+        {
+            url: `${siteUrl}/wildfire-disaster-command`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/solution-smart-farming`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/solution-logistics-distribution`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/solution-manufacturing-construction`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/solution-retail-store-management`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/solution-facility-infrastructure`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
         },
     ];
 }
