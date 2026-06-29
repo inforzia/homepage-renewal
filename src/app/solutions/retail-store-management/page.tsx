@@ -115,7 +115,7 @@ export default function SolutionRetailStoreManagementPage() {
                             운영 전략을 제공하는 Vision AI 솔루션으로, 매장 운영 효율과
                             고객 만족도를 향상시킵니다.
                         </p>
-                        <a className={styles.heroAction} href="/contact-us">
+                        <a className={styles.heroAction} href="/company/contact-us">
                             Get started
                         </a>
                     </div>

@@ -167,10 +167,10 @@ export default function ProductFlomonVisionPage() {
                         체계로 혁신합니다.
                     </p>
                     <div className={styles.heroActions}>
-                        <a className={styles.secondaryAction} href="/contact-us-2">
+                        <a className={styles.secondaryAction} href="/company/contact-us">
                             소개서 다운로드
                         </a>
-                        <a className={styles.primaryAction} href="/contact-us-2">
+                        <a className={styles.primaryAction} href="/company/contact-us">
                             도입 문의하기
                         </a>
                     </div>

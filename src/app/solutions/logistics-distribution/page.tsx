@@ -78,7 +78,7 @@ export default function SolutionLogisticsDistributionPage() {
                             운영 상태를 모니터링하는 Vision AI 솔루션으로, 보다 빠르고
                             정확한 공급망 운영을 지원합니다.
                         </p>
-                        <a className={styles.heroAction} href="/contact-us">
+                        <a className={styles.heroAction} href="/company/contact-us">
                             Get started
                         </a>
                     </div>

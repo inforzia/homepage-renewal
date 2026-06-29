@@ -222,7 +222,7 @@ export default function SolutionDisasterSafetyPage() {
                             <br />
                             재난 현장의 안전 기준을 완전히 새롭게 정의합니다.
                         </p>
-                        <a className={styles.heroAction} href="/contact-us">
+                        <a className={styles.heroAction} href="/company/contact-us">
                             Get started
                         </a>
                     </div>

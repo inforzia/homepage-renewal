@@ -21,71 +21,70 @@ function SolutionIcon({ children }: { children: ReactNode }) {
 
 const solutions = [
     {
-        body: "위험 구역 내 계측기 및 패널 점검에 Vision AI 기술을 도입함으로써, 작업자 노출 위험을 최소화하고 산업재해를 선제적으로 예방합니다.",
+        body: "Vision AI가 시설 전역을 실시간으로 분석하여 침입, 화재, 낙상, 위험 구역 접근 등 다양한 안전 위협을 즉시 탐지합니다. 복합적인 영상 분석 기술을 통해 오탐지를 최소화하고 정확도 높은 안전 관제를 제공합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 4 15.8 10.2 22 12l-6.2 1.8L14 20l-1.8-6.2L6 12l6.2-1.8L14 4Z" fill="currentColor" />
-                    <path d="M21.5 5.5 22.2 7.8 24.5 8.5l-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z" fill="currentColor" />
+                    <rect height="12" rx="2.5" stroke="currentColor" strokeWidth="2.4" width="16" x="6" y="8" />
+                    <path d="M14 4v4M11 23h6" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "AI 기반 위험 구역\n점검 작업 자동화",
+        title: "AI 영상기반\n위험 상황 감지",
     },
     {
-        body: "작업자의 위험 행동이나 설비 이상 징후를 조기에 감지합니다. 생산 공정 중 발생할 수 있는 사고와 작업 중단 리스크를 최소화합니다.",
+        body: "인가되지 않은 출입이나 제한 구역 접근을 실시간으로 식별하고 출입 이력을 자동 기록합니다. 보안 시스템과 연동하여 시설 내 보안 수준을 강화하고 관리 효율을 높입니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 5 24 23H4L14 5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-                    <path d="M14 11v5" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                    <circle cx="14" cy="19.2" fill="currentColor" r="1.3" />
+                    <path d="M14 5 21 8v5.5c0 4.2-2.6 7.7-7 9.5-4.4-1.8-7-5.3-7-9.5V8l7-3Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+                    <path d="m11.3 14.2 1.9 1.9 3.7-4.3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "공정 이상 및\n위험 행동 분석",
+        title: "출입 통제 및\n보안 관리",
     },
     {
-        body: "제품 외관 및 생산 품질을 실시간으로 검사하여 불량품을 자동 식별합니다. 미세 결함까지 모두 검출하여 품질 경쟁력을 향상시킵니다.",
+        body: "사고 발생 시 경보 시스템, 방송 설비, 출입 통제 장치와 자동 연동되어 신속한 초기 대응을 수행합니다. 현장 상황에 맞는 대응 절차를 자동 실행하여 피해 확산을 최소화합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.8 6.2 21.8 10.2 10 22H6v-4L17.8 6.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-                    <path d="m15.8 8.2 4 4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M14 5a5 5 0 0 1 5 5v2.4l2 2V18H7v-3.6l2-2V10a5 5 0 0 1 5-5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+                    <path d="M12 21h4" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "AI 기반 품질\n검사 자동화",
+        title: "비상 대응\n프로세스 자동화",
     },
     {
-        body: "설비 가동률, 작업 흐름, 생산 현황을 분석하여 운영 효율을 극대화합니다. 데이터 기반 의사결정을 통해 생산성 향상을 지원합니다.",
+        body: "시설 전체의 안전 상태와 이벤트 현황을 하나의 화면에서 관리합니다. 위험 발생 추이와 운영 데이터를 시각화하여 보다 체계적인 안전 관리 의사결정을 지원합니다.",
         icon: (
             <SolutionIcon>
                 <svg fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 21V13.5M14 21V9.5M22 21V6.5" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-                    <path d="M5 21.5h18" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+                    <path d="M6 7.5h16v13H6z" stroke="currentColor" strokeWidth="2.4" />
+                    <path d="M10.5 18v-3.5M14 18v-6M17.5 18v-2" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
                 </svg>
             </SolutionIcon>
         ),
-        title: "생산성 및\n운영 효율 분석",
+        title: "통합 안전\n관제 대시보드",
     },
 ];
 
 const workflow = [
     {
-        body: "작업자 행동, 설비 상태, 공정 흐름을 실시간으로 분석하여 안전 규정 위반, 작업 이상 및 설비 위험 요소를 신속하게 감지합니다.",
-        list: "작업 현장 지능형 모니터링",
-        title: ["복잡한 산업 현장을 이해하는", "Vision AI"],
+        body: "다양한 CCTV와 영상 장비 및 센서를 통해 시설 전역을 실시간으로 모니터링하며, 침입, 화재, 낙상, 위험 구역 접근 등 잠재적 위험 요소를 즉시 식별합니다.",
+        list: "실시간 위험 요소 인식",
+        title: ["24시간 안전 상태를 감시하는", "Vision AI"],
     },
     {
-        body: "현장에서 발생하는 다양한 이벤트를 분석하여 품질 문제와 안전 리스크를 동시에 관리합니다. 이를 통해 운영 중단과 사고 발생 가능성을 최소화합니다.",
-        list: "품질 및 안전 통합 관리",
-        title: ["생산성과 안전을", "동시에 확보"],
+        body: "단순 감지를 넘어 위험 수준과 상황 맥락을 종합적으로 분석하여, 경보 발송, 출입 통제, 관제 시스템 연계 등 적절한 대응 프로세스를 자동으로 실행합니다.",
+        list: "상황 판단 및 대응 연계",
+        title: ["특이 상황을 분석을 통한", "즉각적인 대응"],
     },
     {
-        body: "생산 데이터와 작업 데이터를 통합 분석하여 공정 효율을 개선하고, 보다 안전하고 생산적인 작업 환경을 구현합니다.",
-        list: "현장 운영 최적화",
-        title: ["지속 가능한", "스마트 현장 구축"],
+        body: "누적된 이벤트와 운영 데이터를 분석하여 사고 발생 패턴과 취약 구간을 파악해 끊임없이 고도화합니다. 이를 통해 보다 체계적이고 예방 중심의 안전 관리 체계를 완성합니다.",
+        list: "예방 중심 안전 운영",
+        title: ["데이터 기반의", "선제적 안전 관리"],
     },
 ];
 
@@ -96,7 +95,7 @@ const useCases = [
     ["FBG 코리아", "Vision AI", "Tech", "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축"],
 ];
 
-export default function SolutionManufacturingConstructionPage() {
+export default function SolutionFacilityInfrastructurePage() {
     return (
         <main className={styles.page}>
             <section className={styles.hero}>
@@ -104,19 +103,23 @@ export default function SolutionManufacturingConstructionPage() {
                     <img
                         alt=""
                         className={styles.heroImage}
-                        src={asset("/_assets/v11/45b3441d28dabbbb7c3645611955bfe5ebf731a9.png")}
+                        src={asset("/_assets/v11/6c7d3120108066c0ae2fc235d86686865e1e229a.png")}
                     />
                 </div>
                 <div className={styles.heroOverlay}>
                     <div className={styles.heroInner}>
-                        <p className={styles.eyebrow}>Vision AI for Manufacturing &amp; Construction</p>
-                        <h1 className={styles.heroTitle}>산업 현장의 생산성과 안전을 향상시키는 AI</h1>
+                        <p className={styles.eyebrow}>Vision AI for Facility &amp; Infrastructure</p>
+                        <h1 className={styles.heroTitle}>
+                            시설물의 유지보수와
+                            <br />
+                            이용자 안전을 보장하는 AI
+                        </h1>
                         <p className={styles.heroDescription}>
-                            제조 및 건설 현장의 작업 환경을 실시간으로 분석하여 운영
-                            이슈와 위험 요소를 해결하는 Vision AI 솔루션으로, 생산성과
-                            안전성을 모두 강화하는 스마트 현장을 실현합니다.
+                            시설물 내 특이 상황과 잠재적 위험 요소를 실시간으로 감지하고
+                            신속한 대응을 지원하는 Vision AI 솔루션으로, 더 안전하고
+                            효율적인 시설 운영 환경을 구현합니다.
                         </p>
-                        <a className={styles.heroAction} href="/contact-us">
+                        <a className={styles.heroAction} href="/company/contact-us">
                             Get started
                         </a>
                     </div>
@@ -131,7 +134,7 @@ export default function SolutionManufacturingConstructionPage() {
                     <div className={styles.solutionVisual}>
                         <img
                             alt=""
-                            src={asset("/_assets/v11/e1f1f090146afb68849396f11e01a3aa68108954.png")}
+                            src={asset("/_assets/v11/c4d92161dbb59b027baecd3498a827f8541e0d2f.png")}
                         />
                     </div>
                     <div className={styles.solutionGrid}>
@@ -148,13 +151,11 @@ export default function SolutionManufacturingConstructionPage() {
 
             <ScrollLinkedSteps
                 heading="How Vision AI Solution Works"
-                items={workflow.map((item, index) => ({
+                items={workflow.map((item) => ({
                     content: <p>{item.body}</p>,
-                    image: [
-                        "/_assets/v11/e8d392c5745b2c64adeed70b7231924506a67cbe.png",
-                        "/_assets/v11/05e5fce97a50d4bd1bc69e8dcf579c6ca5c25c4a.png",
-                        "/_assets/v11/6f6be400ecd0a1ec36b63776aa54f8320df3e7c7.png",
-                    ].map(asset)[index],
+                    image: asset(
+                        "/_assets/v11/1b62d727f65d660abe6066623c626c381ca250b2.png",
+                    ),
                     label: item.list,
                     title: item.title.join("\n"),
                 }))}
@@ -164,12 +165,12 @@ export default function SolutionManufacturingConstructionPage() {
                 <img
                     alt=""
                     className={styles.storyImage}
-                    src={asset("/_assets/v11/ba1cd8221a8936cdd39a8f978f973a2526d03b60.png")}
+                    src={asset("/_assets/v11/aa01f1885070d29ebd4b341042a492309b98590e.png")}
                 />
                 <div className={styles.storyInner}>
                     <h2 className={styles.storyTitle}>
-                        <span>안전과 생산성을 모두 챙기는</span>
-                        <span>산업 현장 특화 솔루션</span>
+                        <span>위험을 예측하고 대응하는</span>
+                        <span>시설 안전 특화 솔루션</span>
                     </h2>
                 </div>
             </section>

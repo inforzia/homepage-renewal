@@ -8,13 +8,13 @@ import styles from "./SiteHeader.module.css";
 const productItems = [
     {
         description: "현장의 모든 순간을 감지하는 Vision AI",
-        href: "/product-flomon-vision",
+        href: "/products/flomon-vision",
         title: "Flomon Vision",
         image: "/images/vision-ai/overview-visual.png",
     },
     {
         description: "의사결정과 흐름을 설계하는 AI 에이전트",
-        href: "/product-flomon-agent",
+        href: "/products/flomon-agent",
         title: "Flomon Agent",
         image: "/images/vision-ai/overview-visual.png",
     },
@@ -22,27 +22,27 @@ const productItems = [
 
 const visionIndustryItems = [
     {
-        href: "/solution-disaster-safety",
+        href: "/solutions/disaster-safety",
         title: "재난 안전",
     },
     {
-        href: "/solution-facility-infrastructure",
+        href: "/solutions/facility-infrastructure",
         title: "시설 및 인프라",
     },
     {
-        href: "/solution-retail-store-management",
+        href: "/solutions/retail-store-management",
         title: "리테일 및 매장",
     },
     {
-        href: "/solution-manufacturing-construction",
+        href: "/solutions/manufacturing-construction",
         title: "제조 및 건설",
     },
     {
-        href: "/solution-logistics-distribution",
+        href: "/solutions/logistics-distribution",
         title: "물류 및 유통업",
     },
     {
-        href: "/solution-smart-farming",
+        href: "/solutions/smart-farming",
         title: "스마트팜",
     },
 ];
@@ -51,7 +51,7 @@ const companyItems = [
     {
         description:
             "Vision AI Solution의 새로운 기준을 제시하는 인포지아의 미션과 비전을 소개합니다.",
-        href: "/contact-us",
+        href: "/company/contact-us",
         title: "About Inforzia",
     },
 ];
@@ -123,7 +123,7 @@ export function SiteHeader() {
                             <div className={styles.visionDropdownLayout}>
                                 <Link
                                     className={styles.visionFeature}
-                                    href="/enterprise-vision-ai"
+                                    href="/vision-ai"
                                     onClick={closeMenu}
                                 >
                                     <div className={styles.visionFeatureHeader}>
@@ -278,7 +278,7 @@ export function SiteHeader() {
                 <div className={styles.actions}>
                     <Link
                         className={styles.contactLink}
-                        href="/contact-us"
+                        href="/company/contact-us"
                         onClick={closeMenu}
                     >
                         문의하기

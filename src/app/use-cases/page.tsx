@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
@@ -110,7 +111,10 @@ export default function UseCasesPage() {
 
             <section className={styles.featuredSection}>
                 <div className={styles.container}>
-                    <article className={styles.featuredCase}>
+                    <Link
+                        className={styles.featuredCase}
+                        href="/use-cases/wildfire-disaster-command"
+                    >
                         <div className={styles.featuredMedia}>
                             <img alt="" src={featuredCase.image} />
                         </div>
@@ -125,7 +129,7 @@ export default function UseCasesPage() {
                             <h2 className={styles.featuredTitle}>{featuredCase.title}</h2>
                             <p className={styles.featuredBody}>{featuredCase.description}</p>
                         </div>
-                    </article>
+                    </Link>
                 </div>
             </section>
 

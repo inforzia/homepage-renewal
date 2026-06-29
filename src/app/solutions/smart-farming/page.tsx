@@ -74,7 +74,7 @@ export default function SolutionSmartFarmingPage() {
                             관리 방안을 제공하는 Vision AI 솔루션으로, 안정적인 생산성과
                             지속가능한 농업 환경을 구축합니다.
                         </p>
-                        <a className={styles.heroAction} href="/contact-us">
+                        <a className={styles.heroAction} href="/company/contact-us">
                             Get started
                         </a>
                     </div>

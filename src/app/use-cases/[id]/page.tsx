@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { notFound } from "next/navigation";
 import { CardSlider } from "@/components/ui/CardSlider";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
@@ -7,6 +8,7 @@ import styles from "./page.module.css";
 
 const assetBase = "https://seed-bronze-70048020.figma.site";
 const asset = (path: string) => `${assetBase}${path}`;
+const supportedUseCaseId = "wildfire-disaster-command";
 
 const tags = ["재난", "Vision AI", "Case"];
 
@@ -32,7 +34,25 @@ const useCases = [
     ["FBG 코리아", "Vision AI", "Tech", "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축"],
 ];
 
-export default function WildfireDisasterCommandPage() {
+type UseCaseDetailPageProps = {
+    params: Promise<{
+        id: string;
+    }>;
+};
+
+export function generateStaticParams() {
+    return [{ id: supportedUseCaseId }];
+}
+
+export default async function UseCaseDetailPage({
+    params,
+}: UseCaseDetailPageProps) {
+    const { id } = await params;
+
+    if (id !== supportedUseCaseId) {
+        notFound();
+    }
+
     return (
         <main className={styles.page}>
             <section className={styles.hero}>
