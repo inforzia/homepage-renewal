@@ -4,9 +4,11 @@ import {
     useEffect,
     useRef,
     useState,
+    type MouseEvent,
     type CSSProperties,
     type ReactNode,
 } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import styles from "./CardSlider.module.css";
 
@@ -19,6 +21,8 @@ type CardSliderProps = {
     nextButtonLabel?: string;
     previousButtonLabel?: string;
     gap?: number;
+    initialPage?: number;
+    pageParamName?: string;
     sectionClassName?: string;
     sectionStyle?: CSSProperties;
 };
@@ -44,17 +48,35 @@ export function CardSlider({
     itemWidth,
     items,
     gap = 24,
+    initialPage = 0,
     nextButtonLabel = "Next items",
+    pageParamName,
     previousButtonLabel = "Previous items",
     sectionClassName,
     sectionStyle,
 }: CardSliderProps) {
+    const pathname = usePathname();
+    const router = useRouter();
+    const searchParams = useSearchParams();
     const sliderItems = Children.toArray(items);
     const viewportRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const firstItemRef = useRef<HTMLDivElement>(null);
 
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(() => {
+        if (!pageParamName) {
+            return initialPage;
+        }
+
+        const pageParamValue = searchParams.get(pageParamName);
+        const parsedPage = Number(pageParamValue);
+
+        if (!Number.isFinite(parsedPage) || parsedPage <= 0) {
+            return initialPage;
+        }
+
+        return Math.floor(parsedPage) - 1;
+    });
     const [viewportWidth, setViewportWidth] = useState(0);
     const [trackWidth, setTrackWidth] = useState(0);
     const [measuredItemWidth, setMeasuredItemWidth] = useState(itemWidth);
@@ -106,6 +128,64 @@ export function CardSlider({
     const canGoPrevious = currentPage > 0;
     const canGoNext = currentPage < maxPage - 1;
 
+    const updatePageInUrl = (nextPage: number) => {
+        if (!pageParamName) {
+            return;
+        }
+
+        const params = new URLSearchParams(searchParams.toString());
+        params.set(pageParamName, String(nextPage + 1));
+
+        const nextUrl = params.toString()
+            ? `${pathname}?${params.toString()}`
+            : pathname;
+
+        router.replace(nextUrl, { scroll: false });
+    };
+
+    const handleItemClickCapture = (event: MouseEvent<HTMLDivElement>) => {
+        if (!pageParamName || event.defaultPrevented) {
+            return;
+        }
+
+        if (
+            event.button !== 0 ||
+            event.metaKey ||
+            event.ctrlKey ||
+            event.shiftKey ||
+            event.altKey
+        ) {
+            return;
+        }
+
+        const target = event.target;
+
+        if (!(target instanceof Element)) {
+            return;
+        }
+
+        const anchor = target.closest("a[href]");
+
+        if (!(anchor instanceof HTMLAnchorElement)) {
+            return;
+        }
+
+        if (anchor.target && anchor.target !== "_self") {
+            return;
+        }
+
+        const nextUrl = new URL(anchor.href);
+
+        if (nextUrl.origin !== window.location.origin) {
+            return;
+        }
+
+        event.preventDefault();
+        nextUrl.searchParams.set(pageParamName, String(currentPage + 1));
+
+        router.push(`${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+    };
+
     return (
         <section
             className={
@@ -120,7 +200,11 @@ export function CardSlider({
                     <h2 className={headingClassName}>{heading}</h2>
                 </div>
                 <div className={styles.wrap}>
-                    <div className={styles.viewport} ref={viewportRef}>
+                    <div
+                        className={styles.viewport}
+                        onClickCapture={handleItemClickCapture}
+                        ref={viewportRef}
+                    >
                         <div
                             className={styles.track}
                             ref={trackRef}
@@ -163,9 +247,9 @@ export function CardSlider({
                                     return;
                                 }
 
-                                setPage((previousPage) =>
-                                    Math.max(0, previousPage - 1),
-                                );
+                                const nextPage = Math.max(0, currentPage - 1);
+                                setPage(nextPage);
+                                updatePageInUrl(nextPage);
                             }}
                             type="button"
                         >
@@ -187,9 +271,12 @@ export function CardSlider({
                                     return;
                                 }
 
-                                setPage((previousPage) =>
-                                    Math.min(maxPage - 1, previousPage + 1),
+                                const nextPage = Math.min(
+                                    maxPage - 1,
+                                    currentPage + 1,
                                 );
+                                setPage(nextPage);
+                                updatePageInUrl(nextPage);
                             }}
                             type="button"
                         >

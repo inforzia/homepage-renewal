@@ -33,6 +33,7 @@
 }
 
 .tabGroup {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -45,18 +46,37 @@
     background: #e9ecef;
 }
 
+.tabIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(18, 20, 22, 0.16);
+    transition:
+        transform 240ms ease,
+        width 240ms ease,
+        height 240ms ease;
+}
+
 .tabPill {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 32px;
     padding: 4px 40px;
+    border: 0;
     border-radius: 999px;
+    background: transparent;
     color: #495057;
+    cursor: pointer;
     font-weight: 600;
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
+    transition: color 180ms ease;
     white-space: nowrap;
 }
 
@@ -64,6 +84,11 @@
     background: #fff;
     box-shadow: 0 1px 3px rgba(18, 20, 22, 0.16);
     color: #212529;
+}
+
+.tabGroupReady .tabPillActive {
+    background: transparent;
+    box-shadow: none;
 }
 
 .featuredSection {
@@ -81,6 +106,7 @@
     overflow: hidden;
     border-radius: 20px;
     height: 420px;
+    box-shadow: 0 14px 32px rgba(18, 20, 22, 0.06);
 }
 
 .featuredMedia img,
@@ -152,6 +178,7 @@
     overflow: hidden;
     border-radius: 20px;
     aspect-ratio: 320 / 180;
+    box-shadow: 0 10px 20px rgba(18, 20, 22, 0.07);
 }
 
 .caseTitle {
@@ -267,15 +294,27 @@
         background: transparent;
     }
 
+    .tabIndicator {
+        display: none;
+    }
+
     .tabPill,
     .tabPillActive {
         background: #e9ecef;
         box-shadow: none;
+        transition:
+            background-color 180ms ease,
+            color 180ms ease;
     }
 
     .tabPillActive {
         background: #212529;
         color: #fff;
+    }
+
+    .tabGroupReady .tabPillActive {
+        background: #212529;
+        box-shadow: none;
     }
 
     .featuredSection {

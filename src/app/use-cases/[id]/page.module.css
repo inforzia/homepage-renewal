@@ -1,11 +1,10 @@
 .page {
     background: #fff;
     color: #121416;
-    overflow-x: hidden;
 }
 
 .hero {
-    padding: 146px 0 80px;
+    padding: 80px 0 80px;
 }
 
 .heroInner,
@@ -23,7 +22,7 @@
 .tagRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
 }
 
 .tag,
@@ -33,10 +32,11 @@
     justify-content: center;
     min-height: 30px;
     padding: 0 12px;
-    border-radius: 6px;
+    border-radius: 4px;
     background: #212529;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
     letter-spacing: -0.4px;
     line-height: 30px;
 }
@@ -44,9 +44,9 @@
 .title {
     margin-top: 28px;
     font-weight: 500;
-    font-size: 62px;
-    letter-spacing: -1.55px;
-    line-height: 74px;
+    font-size: 40px;
+    letter-spacing: -1.2px;
+    line-height: 52px;
 }
 
 .date {
@@ -60,14 +60,16 @@
 .heroVisual {
     margin-top: 28px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 8px;
     background: #f1f3f5;
+    padding: 24px;
 }
 
 .heroVisual img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 .storySection {
@@ -83,19 +85,19 @@
 
 .storyNav {
     position: sticky;
-    top: 120px;
+    top: 160px;
     display: grid;
     gap: 8px;
 }
 
 .storyNavItem {
     display: block;
-    padding: 20px 24px;
+    padding: 16px 24px;
     border-radius: 24px;
     color: #495057;
     font-size: 16px;
     letter-spacing: -0.4px;
-    line-height: 30px;
+    line-height: 24px;
 }
 
 .storyNavItemActive {
@@ -108,11 +110,15 @@
     gap: 56px;
 }
 
+.storyBlock {
+    scroll-margin-top: 160px;
+}
+
 .storyBlock h2 {
     font-weight: 500;
-    font-size: 36px;
+    font-size: 28px;
     letter-spacing: -0.9px;
-    line-height: 52px;
+    line-height: 44px;
 }
 
 .storyBlock p {
@@ -120,7 +126,7 @@
     color: #343a40;
     font-size: 18px;
     letter-spacing: -0.45px;
-    line-height: 36px;
+    line-height: 28px;
 }
 
 .consultSection {
@@ -137,10 +143,26 @@
     min-height: 244px;
     border-radius: 0;
     background:
-        linear-gradient(135deg, rgba(131, 56, 236, 0.38), rgba(58, 12, 163, 0.12)),
-        radial-gradient(circle at 18% 28%, rgba(255, 255, 255, 0.5), transparent 28%),
-        radial-gradient(circle at 72% 24%, rgba(107, 33, 168, 0.55), transparent 30%),
-        radial-gradient(circle at 44% 80%, rgba(59, 130, 246, 0.42), transparent 30%),
+        linear-gradient(
+            135deg,
+            rgba(131, 56, 236, 0.38),
+            rgba(58, 12, 163, 0.12)
+        ),
+        radial-gradient(
+            circle at 18% 28%,
+            rgba(255, 255, 255, 0.5),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 72% 24%,
+            rgba(107, 33, 168, 0.55),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 44% 80%,
+            rgba(59, 130, 246, 0.42),
+            transparent 30%
+        ),
         #05060b;
 }
 
@@ -263,7 +285,7 @@
 }
 
 .useCasesTitle {
-    padding-top: 106px;
+    padding-top: 40px;
     font-weight: 500;
     font-size: 60px;
     letter-spacing: -1.5px;
@@ -287,13 +309,23 @@
 .caseImageWrap {
     height: 192px;
     background:
-        linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.12)
+        ),
         linear-gradient(45deg, #e9ecef 25%, transparent 25%),
         linear-gradient(-45deg, #e9ecef 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #e9ecef 75%),
         linear-gradient(-45deg, transparent 75%, #e9ecef 75%);
     background-size: 24px 24px;
-    background-position: 0 0, 0 0, 0 12px, 12px -12px, -12px 0;
+    background-position:
+        0 0,
+        0 0,
+        0 12px,
+        12px -12px,
+        -12px 0;
+    border-bottom: 1px solid #f1f3f5;
 }
 
 .caseImageWrap img {
