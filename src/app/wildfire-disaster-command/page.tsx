@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { CardSlider } from "@/components/ui/CardSlider";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
@@ -109,42 +110,36 @@ export default function WildfireDisasterCommandPage() {
                 </div>
             </section>
 
-            <section className={styles.useCasesSection}>
-                <div className={styles.useCasesInner}>
-                    <h2 className={styles.useCasesTitle}>Use Cases</h2>
-                    <div className={styles.caseGrid}>
-                        {useCases.map(([a, b, c, title]) => (
-                            <article className={styles.caseCard} key={title}>
-                                <div className={styles.caseImageWrap}>
-                                    <img
-                                        alt=""
-                                        src={asset(
-                                            "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
-                                        )}
-                                    />
-                                </div>
-                                <div className={styles.caseCopy}>
-                                    <div className={styles.caseTags}>
-                                        <span>{a}</span>
-                                        <span>{b}</span>
-                                        <span>{c}</span>
-                                    </div>
-                                    <h3>{title}</h3>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div className={styles.pagination}>
-                        <button aria-label="Previous cases" className={styles.pageButton} type="button">
-                            ‹
-                        </button>
-                        <span>1 / 2</span>
-                        <button aria-label="Next cases" className={styles.pageButton} type="button">
-                            ›
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <CardSlider
+                fadeColor="#f1f3f5"
+                heading="Use Cases"
+                headingClassName={styles.useCasesTitle}
+                itemWidth={340}
+                items={useCases.map(([a, b, c, title]) => (
+                    <article className={styles.caseCard} key={title}>
+                        <div className={styles.caseImageWrap}>
+                            <img
+                                alt=""
+                                src={asset(
+                                    "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
+                                )}
+                            />
+                        </div>
+                        <div className={styles.caseCopy}>
+                            <div className={styles.caseTags}>
+                                <span>{a}</span>
+                                <span>{b}</span>
+                                <span>{c}</span>
+                            </div>
+                            <h3>{title}</h3>
+                        </div>
+                    </article>
+                ))}
+                nextButtonLabel="Next cases"
+                previousButtonLabel="Previous cases"
+                sectionClassName={styles.useCasesSection}
+                sectionStyle={{ padding: "106px 0 48px" }}
+            />
 
             <div className={styles.ctaSpacer}>
                 <SiteFooterCta

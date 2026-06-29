@@ -1,7 +1,6 @@
 .page {
     background: #fff;
     color: #121416;
-    overflow-x: hidden;
 }
 
 .hero {
@@ -143,13 +142,11 @@
     color: #212529;
 }
 
-.solutionCard h3,
-.workflowCard h3 span {
+.solutionCard h3 {
     display: block;
 }
 
-.solutionCard h3,
-.workflowCard h3 {
+.solutionCard h3 {
     white-space: pre-line;
     font-size: 40px;
     font-weight: 600;
@@ -157,95 +154,11 @@
     line-height: 52px;
 }
 
-.solutionCard p,
-.workflowCard p {
+.solutionCard p {
     color: #343a40;
     font-size: 20px;
     letter-spacing: -0.5px;
     line-height: 32px;
-}
-
-.workflowSection {
-    padding: 136px 0 212px;
-}
-
-.workflowHeader {
-    display: block;
-}
-
-.workflowBody {
-    display: grid;
-    grid-template-columns: 310px 520px 530px;
-    gap: 50px;
-    align-items: start;
-    padding-top: 152px;
-}
-
-.workflowTabs {
-    display: grid;
-    gap: 28px;
-    align-content: start;
-    margin: 300px 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.workflowTab {
-    display: flex;
-    gap: 6px;
-    color: #6c757d;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 26px;
-}
-
-.workflowTabActive {
-    color: #212529;
-}
-
-.workflowIllustration {
-    display: grid;
-    gap: 20px;
-    justify-items: center;
-    align-content: start;
-}
-
-.workflowIllustration img {
-    width: min(100%, 480px);
-    height: auto;
-}
-
-.workflowStrips {
-    display: grid;
-    gap: 20px;
-    justify-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.workflowStrips img:first-child {
-    width: min(100%, 448px);
-    height: 40px;
-    object-fit: cover;
-}
-
-.workflowStrips img:last-child {
-    width: min(100%, 384px);
-    height: 20px;
-    object-fit: cover;
-}
-
-.workflowCards {
-    display: grid;
-    gap: 576px;
-    align-content: start;
-    padding-top: 300px;
-}
-
-.workflowCard {
-    display: grid;
-    gap: 26px;
 }
 
 .storySection {
@@ -396,18 +309,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .workflowBody {
-        grid-template-columns: 1fr;
-        gap: 72px;
-        padding-top: 120px;
-    }
-
-    .workflowTabs,
-    .workflowCards {
-        margin-top: 0;
-        padding-top: 0;
-    }
-
     .caseGrid {
         display: grid;
         width: 100%;
@@ -443,8 +344,7 @@
     }
 
     .heroDescription,
-    .solutionCard p,
-    .workflowCard p {
+    .solutionCard p {
         font-size: 16px;
         line-height: 30px;
     }
@@ -459,22 +359,8 @@
         aspect-ratio: 340 / 192;
     }
 
-    .solutionCard h3,
-    .workflowCard h3 {
+    .solutionCard h3 {
         font-size: 28px;
         line-height: 40px;
-    }
-
-    .workflowBody {
-        gap: 56px;
-        padding-top: 120px;
-    }
-
-    .workflowTabs {
-        gap: 16px;
-    }
-
-    .workflowCards {
-        gap: 96px;
     }
 }

@@ -1,8 +1,5 @@
 .page {
     --page-width: min(1440px, calc(100% - 40px));
-    --text-strong: #121416;
-    --text-body: #495057;
-    --text-subtle: #6c757d;
     color: var(--text-strong);
     background: #fff;
     overflow-x: hidden;
@@ -190,35 +187,13 @@
     right: 64px;
 }
 
-.industriesSection {
-    padding: 116px 0 74px;
-}
-
-.industriesWrap {
-    display: grid;
-    gap: 32px;
-    padding-top: 24px;
-}
-
-.industriesViewport {
-    position: relative;
-    overflow: hidden;
-}
-
-.industriesTrack {
-    display: flex;
-    gap: 24px;
-    width: max-content;
-}
-
 .industryCard {
     position: relative;
-    width: 360px;
+    width: 100%;
     height: 360px;
     padding: 20px 36px;
     border-radius: 20px;
     overflow: hidden;
-    flex: 0 0 auto;
 }
 
 .industryCard img {
@@ -253,53 +228,6 @@
     font-size: 24px;
     letter-spacing: -0.6px;
     line-height: 36px;
-}
-
-.industriesFade {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 360px;
-    pointer-events: none;
-    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.carouselStatus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    min-height: 48px;
-}
-
-.carouselButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 999px;
-    background: #f1f3f5;
-    color: #adb5bd;
-    cursor: default;
-}
-
-.carouselIcon {
-    width: 20px;
-    height: 20px;
-    fill: currentcolor;
-    opacity: 0.72;
-}
-
-.carouselIndicator {
-    width: 48px;
-    color: var(--text-subtle);
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    line-height: 32px;
-    text-align: center;
 }
 
 .footer {
@@ -404,11 +332,6 @@
     }
 
     .industryCard {
-        width: 320px;
-        height: 320px;
-    }
-
-    .industriesFade {
         height: 320px;
     }
 
@@ -453,13 +376,7 @@
     }
 
     .industryCard {
-        width: 280px;
         height: 280px;
         padding: 20px 24px;
-    }
-
-    .industriesFade {
-        width: 56px;
-        height: 280px;
     }
 }

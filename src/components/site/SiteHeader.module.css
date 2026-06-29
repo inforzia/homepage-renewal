@@ -1,0 +1,395 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    height: var(--site-header-height);
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(18, 20, 22, 0.08);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 13.55vw, 260px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    min-width: 180px;
+    color: #121416;
+}
+
+.logoImage {
+    display: block;
+    width: 140px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.navLink,
+.navTrigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 124px;
+    height: 64px;
+    padding: 0 24px;
+    color: #121416;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.navGroup {
+    position: relative;
+}
+
+.navTrigger {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+
+.dropdown {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: min(832px, calc(100vw - 40px)); */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid rgba(18, 20, 22, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 24px 48px rgba(18, 20, 22, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 160ms ease,
+        transform 160ms ease,
+        visibility 160ms ease;
+}
+
+.dropdownOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.companyDropdown {
+    width: min(448px, calc(100vw - 40px));
+}
+
+.visionDropdown {
+    /* width: min(1040px, calc(100vw - 40px)); */
+    padding: 28px 40px 40px;
+}
+
+.visionDropdownLayout {
+    display: grid;
+    grid-template-columns: 320px 120px;
+    gap: 48px;
+    align-items: start;
+}
+
+.visionFeature {
+    height: 100%;
+    display: grid;
+}
+
+.visionFeatureHeader {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.visionFeatureHeader strong {
+    color: #121416;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1.15;
+}
+
+.visionFeatureHeader span {
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.visionFeatureDesc {
+    max-width: 620px;
+    color: #adb5bd;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.visionFeatureImage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    aspect-ratio: 1.62;
+    background: linear-gradient(180deg, #f8f9fa 0%, #eef2f5 100%);
+    width: 320px;
+    height: 100%;
+}
+
+.visionFeatureImage :global(img) {
+    object-fit: cover;
+}
+
+.visionIndustryColumn {
+    display: grid;
+    gap: 24px;
+}
+
+.visionIndustryLabel {
+    color: #adb5bd;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+}
+
+.visionIndustryList {
+    display: grid;
+    gap: 24px;
+}
+
+.visionIndustryLink {
+    color: #121416;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.2;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    gap: 64px;
+}
+
+.cardLink {
+    display: grid;
+    gap: 8px;
+    min-height: 120px;
+    padding: 24px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    transition:
+        background-color 160ms ease,
+        transform 160ms ease;
+}
+
+.cardLink strong {
+    color: #121416;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.cardLink span {
+    color: #495057;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    min-width: 160px;
+}
+
+.contactLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 20px;
+    border: 1px solid rgba(18, 20, 22, 0.12);
+    border-radius: 999px;
+    color: #121416;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.localeButton {
+    border: 0;
+    background: transparent;
+    color: #121416;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: default;
+}
+
+.navLink:hover,
+.navTrigger:hover,
+.navTrigger[aria-expanded="true"],
+.cardLink:hover,
+.contactLink:hover,
+.visionIndustryLink:hover,
+.visionFeature:hover .visionFeatureHeader strong {
+    color: #121416;
+}
+
+.cardLink:hover {
+    background: #f1f3f5;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1279px) {
+    .inner {
+        padding: 0 20px;
+    }
+
+    .navLink,
+    .navTrigger {
+        min-width: auto;
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .header {
+        height: auto;
+    }
+
+    .inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 16px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .logo,
+    .actions {
+        min-width: auto;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dropdown,
+    .companyDropdown {
+        left: 0;
+        transform: none;
+        width: min(560px, calc(100vw - 40px));
+    }
+
+    .visionDropdown {
+        padding: 24px;
+    }
+
+    .visionDropdownLayout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .visionFeatureHeader strong {
+        font-size: 28px;
+    }
+
+    .visionFeature p,
+    .visionIndustryLabel {
+        font-size: 20px;
+    }
+
+    .visionIndustryList {
+        gap: 20px;
+    }
+
+    .visionIndustryLink {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .logoImage {
+        width: 140px;
+    }
+
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardLink {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .cardLink strong {
+        font-size: 20px;
+    }
+
+    .visionFeatureHeader {
+        gap: 10px;
+    }
+
+    .visionFeatureHeader strong {
+        font-size: 22px;
+    }
+
+    .visionFeatureHeader span {
+        font-size: 22px;
+    }
+
+    .visionFeature p,
+    .visionIndustryLabel {
+        font-size: 18px;
+    }
+
+    .visionIndustryLink {
+        font-size: 20px;
+    }
+
+    .actions {
+        gap: 12px;
+    }
+
+    .contactLink {
+        padding: 0 16px;
+    }
+}

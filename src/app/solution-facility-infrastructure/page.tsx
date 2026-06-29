@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { CardSlider } from "@/components/ui/CardSlider";
+import { ScrollLinkedSteps } from "@/components/ui/ScrollLinkedSteps";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
@@ -147,49 +149,17 @@ export default function SolutionFacilityInfrastructurePage() {
                 </div>
             </section>
 
-            <section className={styles.workflowSection}>
-                <div className={styles.container}>
-                    <div className={styles.workflowHeader}>
-                        <h2 className={styles.sectionTitle}>How Vision AI Solution Works</h2>
-                    </div>
-                    <div className={styles.workflowBody}>
-                        <ol className={styles.workflowTabs} aria-label="Workflow stages">
-                            {workflow.map((item, index) => (
-                                <li
-                                    className={`${styles.workflowTab}${index === 0 ? ` ${styles.workflowTabActive}` : ""}`}
-                                    key={item.list}
-                                >
-                                    <span>{`${index + 1}.`}</span>
-                                    <span>{item.list}</span>
-                                </li>
-                            ))}
-                        </ol>
-                        <div className={styles.workflowIllustration}>
-                            <img
-                                alt=""
-                                src={asset("/_assets/v11/1b62d727f65d660abe6066623c626c381ca250b2.png")}
-                            />
-                            <div className={styles.workflowStrips}>
-                                <img
-                                    alt=""
-                                    src={asset("/_assets/v11/3b002fc4b3979c71a6b38e22f57b6102ff600b4e.png")}
-                                />
-                            </div>
-                        </div>
-                        <div className={styles.workflowCards}>
-                            {workflow.map((item) => (
-                                <article className={styles.workflowCard} key={item.list}>
-                                    <h3>
-                                        <span>{item.title[0]}</span>
-                                        <span>{item.title[1]}</span>
-                                    </h3>
-                                    <p>{item.body}</p>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ScrollLinkedSteps
+                heading="How Vision AI Solution Works"
+                items={workflow.map((item) => ({
+                    content: <p>{item.body}</p>,
+                    image: asset(
+                        "/_assets/v11/1b62d727f65d660abe6066623c626c381ca250b2.png",
+                    ),
+                    label: item.list,
+                    title: item.title.join("\n"),
+                }))}
+            />
 
             <section className={styles.storySection}>
                 <img
@@ -205,42 +175,36 @@ export default function SolutionFacilityInfrastructurePage() {
                 </div>
             </section>
 
-            <section className={styles.useCasesSection}>
-                <div className={styles.useCasesInner}>
-                    <h2 className={styles.useCasesTitle}>Use Cases</h2>
-                    <div className={styles.caseGrid}>
-                        {useCases.map(([a, b, c, title]) => (
-                            <article className={styles.caseCard} key={title}>
-                                <div className={styles.caseImageWrap}>
-                                    <img
-                                        alt=""
-                                        src={asset(
-                                            "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
-                                        )}
-                                    />
-                                </div>
-                                <div className={styles.caseCopy}>
-                                    <div className={styles.caseTags}>
-                                        <span>{a}</span>
-                                        <span>{b}</span>
-                                        <span>{c}</span>
-                                    </div>
-                                    <h3>{title}</h3>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div className={styles.pagination}>
-                        <button aria-label="Previous cases" className={styles.pageButton} type="button">
-                            ‹
-                        </button>
-                        <span>1 / 2</span>
-                        <button aria-label="Next cases" className={styles.pageButton} type="button">
-                            ›
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <CardSlider
+                fadeColor="#f1f3f5"
+                heading="Use Cases"
+                headingClassName={styles.useCasesTitle}
+                itemWidth={340}
+                items={useCases.map(([a, b, c, title]) => (
+                    <article className={styles.caseCard} key={title}>
+                        <div className={styles.caseImageWrap}>
+                            <img
+                                alt=""
+                                src={asset(
+                                    "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
+                                )}
+                            />
+                        </div>
+                        <div className={styles.caseCopy}>
+                            <div className={styles.caseTags}>
+                                <span>{a}</span>
+                                <span>{b}</span>
+                                <span>{c}</span>
+                            </div>
+                            <h3>{title}</h3>
+                        </div>
+                    </article>
+                ))}
+                nextButtonLabel="Next cases"
+                previousButtonLabel="Previous cases"
+                sectionClassName={styles.useCasesSection}
+                sectionStyle={{ padding: "96px 0 48px" }}
+            />
 
             <div className={styles.ctaSpacer}>
                 <SiteFooterCta

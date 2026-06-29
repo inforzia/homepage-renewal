@@ -1,0 +1,129 @@
+.section {
+    padding: 116px 0 74px;
+}
+
+.container {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    min-height: 96px;
+}
+
+.heading h2 {
+    color: var(--text-strong);
+    font-weight: 500;
+    font-size: 42px;
+    letter-spacing: -1.05px;
+    line-height: 48px;
+}
+
+.wrap {
+    display: grid;
+    gap: 32px;
+    padding-top: 24px;
+}
+
+.viewport {
+    position: relative;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    gap: var(--card-gap);
+    width: max-content;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.item {
+    width: var(--card-width);
+    flex: 0 0 auto;
+}
+
+.fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    pointer-events: none;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    min-height: 48px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 999px;
+    background: rgb(222, 226, 230);
+    color: #fff;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.button[data-disabled="true"] {
+    background-color: rgb(233, 236, 239);
+    cursor: default;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+    opacity: 0.72;
+}
+
+.indicator {
+    width: 48px;
+    color: var(--text-subtle);
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 32px;
+    text-align: center;
+}
+
+@media (max-width: 1023px) {
+    .heading h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .item {
+        width: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .heading h2 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+
+    .item {
+        width: 280px;
+    }
+
+    .fade {
+        width: 56px;
+    }
+}

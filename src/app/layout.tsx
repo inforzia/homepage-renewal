@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import "./globals.css";
 
 const siteUrl = "https://inforzia.io";
@@ -59,7 +60,10 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body>{children}</body>
+            <body>
+                <SiteHeader />
+                <div className="site-shell">{children}</div>
+            </body>
         </html>
     );
 }

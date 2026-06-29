@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { ScrollLinkedSteps } from "@/components/ui/ScrollLinkedSteps";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
@@ -206,51 +207,19 @@ export default function VisionAiPage() {
                 </div>
             </section>
 
-            <section className={styles.workflowSection}>
-                <div className={styles.container}>
-                    <div className={styles.workflowHeader}>
-                        <h2>How Vision AI Solution Works</h2>
-                    </div>
-
-                    <div className={styles.workflowBody}>
-                        <ol
-                            className={styles.workflowTabs}
-                            aria-label="Workflow stages"
-                        >
-                            {workflowTabs.map((tab, index) => (
-                                <li
-                                    className={`${styles.workflowTab}${index === 0 ? ` ${styles.workflowTabActive}` : ""}`}
-                                    key={tab}
-                                >
-                                    <span>{`${index + 1}.`}</span>
-                                    <span>{tab}</span>
-                                </li>
-                            ))}
-                        </ol>
-                        <div className={styles.workflowIllustration}>
-                            <img alt="" src={overviewVisual} />
-                            <div className={styles.workflowStrips}>
-                                <img alt="" src={overviewStripPrimary} />
-                                <img alt="" src={overviewStripSecondary} />
-                            </div>
-                        </div>
-                        <div className={styles.workflowCards}>
-                            {workflowCards.map((card) => (
-                                <article
-                                    className={styles.workflowCard}
-                                    key={card.title.join("-")}
-                                >
-                                    <h3>
-                                        <span>{card.title[0]}</span>
-                                        <span>{card.title[1]}</span>
-                                    </h3>
-                                    <p>{card.description}</p>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ScrollLinkedSteps
+                heading="How Vision AI Solution Works"
+                items={workflowCards.map((card, index) => ({
+                    content: <p>{card.description}</p>,
+                    image: [
+                        overviewVisual,
+                        overviewStripPrimary,
+                        overviewStripSecondary,
+                    ][index],
+                    label: workflowTabs[index],
+                    title: card.title.join("\n"),
+                }))}
+            />
 
             <SiteFooterCta
                 button={<SitePrimaryButton />}
