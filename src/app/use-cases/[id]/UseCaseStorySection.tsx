@@ -68,7 +68,7 @@ export function UseCaseStorySection({ sections }: UseCaseStorySectionProps) {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", handleScroll);
         };
-    }, [updateActiveIndex]);
+    }, [sections.length]);
 
     return (
         <section className={styles.storySection} ref={sectionRef}>

@@ -4,8 +4,8 @@ import {
     useEffect,
     useRef,
     useState,
-    type MouseEvent,
     type CSSProperties,
+    type MouseEvent,
     type ReactNode,
 } from "react";
 import { useRouter } from "next/navigation";
@@ -75,14 +75,23 @@ export function CardSlider({
     const viewportRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const firstItemRef = useRef<HTMLDivElement>(null);
-    const [page, setPage] = useState(initialPage);
+    const [page, setPage] = useState(() => {
+        if (!pageParamName || typeof window === "undefined") {
+            return initialPage;
+        }
+
+        return getPageFromSearchParams(
+            new URLSearchParams(window.location.search),
+            pageParamName,
+            initialPage,
+        );
+    });
     const [viewportWidth, setViewportWidth] = useState(0);
     const [trackWidth, setTrackWidth] = useState(0);
     const [measuredItemWidth, setMeasuredItemWidth] = useState(itemWidth);
 
     useEffect(() => {
         if (!pageParamName) {
-            setPage(initialPage);
             return;
         }
 
@@ -95,7 +104,6 @@ export function CardSlider({
             setPage(nextPage);
         };
 
-        syncPageFromLocation();
         window.addEventListener("popstate", syncPageFromLocation);
 
         return () => {
