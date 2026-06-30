@@ -8,7 +8,7 @@ import {
     type CSSProperties,
     type ReactNode,
 } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import styles from "./CardSlider.module.css";
 
@@ -26,6 +26,21 @@ type CardSliderProps = {
     sectionClassName?: string;
     sectionStyle?: CSSProperties;
 };
+
+function getPageFromSearchParams(
+    searchParams: URLSearchParams,
+    pageParamName: string,
+    initialPage: number,
+) {
+    const pageParamValue = searchParams.get(pageParamName);
+    const parsedPage = Number(pageParamValue);
+
+    if (!Number.isFinite(parsedPage) || parsedPage <= 0) {
+        return initialPage;
+    }
+
+    return Math.floor(parsedPage) - 1;
+}
 
 function ChevronIcon({
     className,
@@ -55,31 +70,38 @@ export function CardSlider({
     sectionClassName,
     sectionStyle,
 }: CardSliderProps) {
-    const pathname = usePathname();
     const router = useRouter();
-    const searchParams = useSearchParams();
     const sliderItems = Children.toArray(items);
     const viewportRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const firstItemRef = useRef<HTMLDivElement>(null);
-
-    const [page, setPage] = useState(() => {
-        if (!pageParamName) {
-            return initialPage;
-        }
-
-        const pageParamValue = searchParams.get(pageParamName);
-        const parsedPage = Number(pageParamValue);
-
-        if (!Number.isFinite(parsedPage) || parsedPage <= 0) {
-            return initialPage;
-        }
-
-        return Math.floor(parsedPage) - 1;
-    });
+    const [page, setPage] = useState(initialPage);
     const [viewportWidth, setViewportWidth] = useState(0);
     const [trackWidth, setTrackWidth] = useState(0);
     const [measuredItemWidth, setMeasuredItemWidth] = useState(itemWidth);
+
+    useEffect(() => {
+        if (!pageParamName) {
+            setPage(initialPage);
+            return;
+        }
+
+        const syncPageFromLocation = () => {
+            const nextPage = getPageFromSearchParams(
+                new URLSearchParams(window.location.search),
+                pageParamName,
+                initialPage,
+            );
+            setPage(nextPage);
+        };
+
+        syncPageFromLocation();
+        window.addEventListener("popstate", syncPageFromLocation);
+
+        return () => {
+            window.removeEventListener("popstate", syncPageFromLocation);
+        };
+    }, [initialPage, pageParamName]);
 
     useEffect(() => {
         const updateMeasurements = () => {
@@ -129,16 +151,16 @@ export function CardSlider({
     const canGoNext = currentPage < maxPage - 1;
 
     const updatePageInUrl = (nextPage: number) => {
-        if (!pageParamName) {
+        if (!pageParamName || typeof window === "undefined") {
             return;
         }
 
-        const params = new URLSearchParams(searchParams.toString());
+        const params = new URLSearchParams(window.location.search);
         params.set(pageParamName, String(nextPage + 1));
 
         const nextUrl = params.toString()
-            ? `${pathname}?${params.toString()}`
-            : pathname;
+            ? `${window.location.pathname}?${params.toString()}`
+            : window.location.pathname;
 
         router.replace(nextUrl, { scroll: false });
     };
