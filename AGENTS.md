@@ -32,6 +32,7 @@
 - Keep components small, semantic, and content-oriented.
 - Reuse existing shared components before creating new ones.
 - Prefer CSS variables and shared tokens before introducing heavier styling patterns.
+- Import each CSS module from only one file. If files are split, split the CSS modules as well.
 - Replace obfuscated or machine-generated naming with clear project-native names that describe component purpose.
 - Measure spacing, typography, sizing, and responsive behavior from the rendered page instead of approximating by eye.
 - Preserve natural asset proportions. Do not upscale logos, icons, or wordmarks beyond their rendered size unless the user explicitly requests a redesign.
@@ -44,6 +45,7 @@
 - Move fully completed todo files into `docs/todo/completed/`.
 - Keep references and notes in `docs/note/` when a task needs durable implementation context.
 - Keep repeatable task-specific workflows in `docs/skills/`.
+- When referring to a specific folder for context or instructions, also check for a `READMD.md` or `readme.md` file in that folder and use its contents as part of the local guidance.
 
 ## Final Checks
 - Confirm the change does not break static hosting assumptions.
