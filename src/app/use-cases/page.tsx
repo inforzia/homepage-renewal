@@ -194,31 +194,6 @@ export default function UseCasesPage() {
                                     </Link>
                                 ))}
                             </div>
-
-                            <div
-                                className={styles.pagination}
-                                aria-label="Use case pages"
-                            >
-                                <button
-                                    aria-label="Previous page"
-                                    className={styles.paginationButton}
-                                    disabled
-                                    type="button"
-                                >
-                                    <span aria-hidden="true">‹</span>
-                                </button>
-                                <span className={styles.paginationText}>
-                                    1 / 3
-                                </span>
-                                <button
-                                    aria-label="Next page"
-                                    className={styles.paginationButton}
-                                    disabled
-                                    type="button"
-                                >
-                                    <span aria-hidden="true">›</span>
-                                </button>
-                            </div>
                         </div>
                     </section>
                 </>

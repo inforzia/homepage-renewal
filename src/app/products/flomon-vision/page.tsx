@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
+import { SitePartnerStrip } from "@/components/site/SitePartnerStrip";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
 import { SiteSectionIntro } from "@/components/site/SiteSectionIntro";
+import { partnerLogos } from "@/datas/partnerLogos";
 import styles from "./page.module.css";
 
 const assetBase = "https://seed-bronze-70048020.figma.site";
@@ -119,38 +121,7 @@ const testimonials = [
     },
 ];
 
-const partnerLogos = [
-    {
-        alt: "Roadpia",
-        height: 60,
-        src: "/images/inforzia/logo-roadpia.png",
-        width: 180,
-    },
-    {
-        alt: "FUTURE ICT",
-        height: 60,
-        src: "/images/inforzia/logo-future-ict.png",
-        width: 110,
-    },
-    {
-        alt: "D&C",
-        height: 60,
-        src: "/images/inforzia/logo-dnc.png",
-        width: 170,
-    },
-    {
-        alt: "thingspire",
-        height: 60,
-        src: "/images/inforzia/logo-thingspire.png",
-        width: 200,
-    },
-    {
-        alt: "WAPPLAB",
-        height: 60,
-        src: "/images/inforzia/logo-wapplab.png",
-        width: 96,
-    },
-];
+const visionPartnerLogos = partnerLogos.slice(0, 5);
 
 export default function ProductFlomonVisionPage() {
     return (
@@ -183,22 +154,11 @@ export default function ProductFlomonVisionPage() {
                 </div>
             </section>
 
-            <section className={styles.partnerStrip}>
-                <div className={styles.partnerViewport}>
-                    <div className={styles.partnerTrack}>
-                        {partnerLogos.map((logo) => (
-                            <img
-                                alt={logo.alt}
-                                className={styles.partnerLogo}
-                                height={logo.height}
-                                key={logo.alt}
-                                src={logo.src}
-                                width={logo.width}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <SitePartnerStrip
+                logos={visionPartnerLogos}
+                sectionClassName={styles.partnerStrip}
+                useDefaultSpacing={false}
+            />
 
             <section className={`${styles.section} ${styles.featureSection}`}>
                 <div className={styles.container}>

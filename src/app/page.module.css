@@ -17,44 +17,21 @@
     padding: 0 20px;
 }
 
+.productContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+.productContainer:hover {
+    background-color: #f1f3f5;
+}
+
 .logoSection {
     display: flex;
     align-items: center;
     height: 360px;
-}
-
-.logoViewport {
-    position: relative;
-    overflow: hidden;
-}
-
-.logoTrack {
-    display: flex;
-    align-items: center;
-    gap: 120px;
-    width: max-content;
-}
-
-.logoItem {
-    flex: 0 0 auto;
-}
-
-.logoFade {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    pointer-events: none;
-}
-
-.logoFadeLeft {
-    left: 0;
-    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.logoFadeRight {
-    right: 0;
-    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 0;
 }
 
 .productsSection {
@@ -180,14 +157,20 @@
         bottom 0.3s,
         right 0.3s;
 }
-.productMedia:hover .productInnerFrame {
+.productContainer:hover .productInnerFrame {
     top: 54px;
     left: 64px;
     bottom: 54px;
     right: 64px;
 }
 
-.industryCard {
+.solutionCardLink {
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.solutionCard {
     position: relative;
     width: 100%;
     height: 360px;
@@ -196,38 +179,54 @@
     overflow: hidden;
 }
 
-.industryCard img {
+.solutionCard img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.3s ease;
 }
 
-.industryOverlay {
+.solutionOverlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 40%);
+    opacity: 0.72;
+    transition:
+        opacity 0.3s ease,
+        background-color 0.3s ease;
 }
 
-.industryText {
+.solutionText {
     position: relative;
     z-index: 1;
 }
 
-.industryText p {
+.solutionText p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
 }
 
-.industryText h3 {
+.solutionText h3 {
     color: #fff;
     font-weight: bold;
     font-size: 24px;
     letter-spacing: -0.6px;
     line-height: 36px;
+}
+
+.solutionCardLink:hover .solutionCard img,
+.solutionCardLink:focus-visible .solutionCard img {
+    transform: scale(1.04);
+}
+
+.solutionCardLink:focus-visible {
+    outline: 3px solid rgba(22, 119, 255, 0.65);
+    outline-offset: 6px;
 }
 
 .footer {
@@ -331,7 +330,7 @@
         height: 75.78125%;
     }
 
-    .industryCard {
+    .solutionCard {
         height: 320px;
     }
 
@@ -349,10 +348,6 @@
 
     .logoSection {
         height: 280px;
-    }
-
-    .logoTrack {
-        gap: 72px;
     }
 
     .sectionHeading p,
@@ -375,7 +370,7 @@
         line-height: 32px;
     }
 
-    .industryCard {
+    .solutionCard {
         height: 280px;
         padding: 20px 24px;
     }

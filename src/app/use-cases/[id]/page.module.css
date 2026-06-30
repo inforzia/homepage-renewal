@@ -8,7 +8,6 @@
 }
 
 .heroInner,
-.storyInner,
 .consultInner,
 .useCasesInner {
     width: min(1400px, calc(100% - 40px));
@@ -70,63 +69,6 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
-}
-
-.storySection {
-    padding: 32px 0 120px;
-}
-
-.storyInner {
-    display: grid;
-    grid-template-columns: 296px minmax(0, 746px);
-    gap: 36px;
-    align-items: start;
-}
-
-.storyNav {
-    position: sticky;
-    top: 160px;
-    display: grid;
-    gap: 8px;
-}
-
-.storyNavItem {
-    display: block;
-    padding: 16px 24px;
-    border-radius: 24px;
-    color: #495057;
-    font-size: 16px;
-    letter-spacing: -0.4px;
-    line-height: 24px;
-}
-
-.storyNavItemActive {
-    background: #f1f3f5;
-    color: #121416;
-}
-
-.storyContent {
-    display: grid;
-    gap: 56px;
-}
-
-.storyBlock {
-    scroll-margin-top: 160px;
-}
-
-.storyBlock h2 {
-    font-weight: 500;
-    font-size: 28px;
-    letter-spacing: -0.9px;
-    line-height: 44px;
-}
-
-.storyBlock p {
-    margin-top: 20px;
-    color: #343a40;
-    font-size: 18px;
-    letter-spacing: -0.45px;
-    line-height: 28px;
 }
 
 .consultSection {
@@ -386,14 +328,6 @@
 }
 
 @media (max-width: 1279px) {
-    .storyInner {
-        grid-template-columns: 1fr;
-    }
-
-    .storyNav {
-        position: static;
-    }
-
     .caseGrid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -407,16 +341,6 @@
     .title {
         font-size: 42px;
         line-height: 52px;
-    }
-
-    .storyBlock h2 {
-        font-size: 28px;
-        line-height: 40px;
-    }
-
-    .storyBlock p {
-        font-size: 16px;
-        line-height: 30px;
     }
 
     .consultOverlay p,

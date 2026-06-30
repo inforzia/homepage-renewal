@@ -10,6 +10,7 @@ import {
 import { useCaseSummaries } from "@/datas/useCases";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { UseCaseStorySection } from "./UseCaseStorySection";
 import styles from "./page.module.css";
 
 type UseCaseDetailPageProps = {
@@ -54,33 +55,7 @@ export default async function UseCaseDetailPage({
                 </div>
             </section>
 
-            <section className={styles.storySection}>
-                <div className={styles.storyInner}>
-                    <aside className={styles.storyNav}>
-                        {pageData.sections.map((section, index) => (
-                            <a
-                                className={`${styles.storyNavItem} ${index === 0 ? styles.storyNavItemActive : ""}`}
-                                href={`#section-${index + 1}`}
-                                key={section.title}
-                            >
-                                {section.title}
-                            </a>
-                        ))}
-                    </aside>
-                    <div className={styles.storyContent}>
-                        {pageData.sections.map((section, index) => (
-                            <article
-                                className={styles.storyBlock}
-                                id={`section-${index + 1}`}
-                                key={section.title}
-                            >
-                                <h2>{section.title}</h2>
-                                <p>{section.body}</p>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <UseCaseStorySection sections={pageData.sections} />
 
             {/* TODO: 간편 상담 화면 개발 (이미지 대신 비디오 사용) */}
             <section className={styles.consultSection}>

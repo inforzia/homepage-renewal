@@ -2,57 +2,14 @@
 import { HomeHero } from "@/components/site/HomeHero";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
+import { SitePartnerStrip } from "@/components/site/SitePartnerStrip";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
 import { CardSlider } from "@/components/ui/CardSlider";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import styles from "./page.module.css";
 
 const heroVideoUrl = "/videos/inforzia/hero-background.mp4";
-
-const partnerLogos = [
-    {
-        alt: "Roadpia",
-        height: 60,
-        src: "/images/inforzia/logo-roadpia.png",
-        width: 180,
-    },
-    {
-        alt: "FUTURE ICT",
-        height: 60,
-        src: "/images/inforzia/logo-future-ict.png",
-        width: 110,
-    },
-    {
-        alt: "D&C",
-        height: 60,
-        src: "/images/inforzia/logo-dnc.png",
-        width: 170,
-    },
-    {
-        alt: "thingspire",
-        height: 60,
-        src: "/images/inforzia/logo-thingspire.png",
-        width: 200,
-    },
-    {
-        alt: "WAPPLAB",
-        height: 60,
-        src: "/images/inforzia/logo-wapplab.png",
-        width: 96,
-    },
-    {
-        alt: "Nkia",
-        height: 60,
-        src: "/images/inforzia/logo-nkia.png",
-        width: 150,
-    },
-    {
-        alt: "COWEAVER",
-        height: 60,
-        src: "/images/inforzia/logo-coweaver.png",
-        width: 120,
-    },
-];
 
 const products = [
     {
@@ -63,6 +20,7 @@ const products = [
         title: "Flomon Vision",
         titleAccent: "Vision AI",
         titlePrefix: "현장의 모든 순간을 감지하는",
+        url: "/products/flomon-vision",
     },
     {
         accentClassName: styles.agentAccent,
@@ -72,33 +30,40 @@ const products = [
         title: "Flomon Agent",
         titleAccent: "AI 에이전트",
         titlePrefix: "의사결정과 흐름을 설계하는",
+        url: "/products/flomon-agent",
     },
 ];
 
-const industries = [
+const solutions = [
     {
         image: "/images/inforzia/industry-disaster.png",
         title: "재난 안전",
+        url: "/solutions/disaster-safety",
     },
     {
         image: "/images/inforzia/industry-facility.png",
         title: "시설물 및 인프라",
+        url: "/solutions/facility-infrastructure",
     },
     {
         image: "/images/inforzia/industry-retail.png",
         title: "리테일 및 매장",
+        url: "/solutions/retail-store-management",
     },
     {
         image: "/images/inforzia/industry-manufacturing.png",
         title: "제조 및 건설",
+        url: "/solutions/manufacturing-construction",
     },
     {
         image: "/images/inforzia/industry-logistics.png",
         title: "물류 및 유통업",
+        url: "/solutions/logistics-distribution",
     },
     {
         image: "/images/inforzia/industry-smartfarm.png",
         title: "스마트팜",
+        url: "/solutions/smart-farming",
     },
 ];
 
@@ -115,42 +80,12 @@ export default function HomePage() {
                 videoSrc={heroVideoUrl}
             />
 
-            <section aria-label="Partners" className={styles.logoSection}>
-                <div className={styles.container}>
-                    <div className={styles.logoViewport}>
-                        <div className={styles.logoTrack}>
-                            {[...partnerLogos, ...partnerLogos].map(
-                                (logo, index) => (
-                                    <div
-                                        className={styles.logoItem}
-                                        key={`${logo.alt}-${index}`}
-                                    >
-                                        <img
-                                            alt={
-                                                index < partnerLogos.length
-                                                    ? logo.alt
-                                                    : ""
-                                            }
-                                            height={logo.height}
-                                            loading="eager"
-                                            src={logo.src}
-                                            width={logo.width}
-                                        />
-                                    </div>
-                                ),
-                            )}
-                        </div>
-                        <div
-                            aria-hidden="true"
-                            className={`${styles.logoFade} ${styles.logoFadeLeft}`}
-                        />
-                        <div
-                            aria-hidden="true"
-                            className={`${styles.logoFade} ${styles.logoFadeRight}`}
-                        />
-                    </div>
-                </div>
-            </section>
+            <SitePartnerStrip
+                ariaLabel="Partners"
+                containerClassName={styles.container}
+                sectionClassName={styles.logoSection}
+                useDefaultSpacing={false}
+            />
 
             <section className={styles.productsSection}>
                 <div className={styles.container}>
@@ -160,36 +95,49 @@ export default function HomePage() {
                 </div>
                 <div className={styles.productList}>
                     {products.map((product) => (
-                        <div className={styles.container} key={product.title}>
-                            <article className={styles.productCard}>
-                                <div className={styles.productCopy}>
-                                    <h2 className={styles.productTitle}>
-                                        {product.title}
-                                    </h2>
-                                    <p className={styles.productSubtitle}>
-                                        <span>{product.titlePrefix}</span>
-                                        <span
-                                            className={product.accentClassName}
+                        <Link href={product.url} key={product.title}>
+                            <div
+                                className={styles.productContainer}
+                                key={product.title}
+                            >
+                                <article className={styles.productCard}>
+                                    <div className={styles.productCopy}>
+                                        <h2 className={styles.productTitle}>
+                                            {product.title}
+                                        </h2>
+                                        <p className={styles.productSubtitle}>
+                                            <span>{product.titlePrefix}</span>
+                                            <span
+                                                className={
+                                                    product.accentClassName
+                                                }
+                                            >
+                                                {product.titleAccent}
+                                            </span>
+                                        </p>
+                                        <p
+                                            className={
+                                                styles.productDescription
+                                            }
                                         >
-                                            {product.titleAccent}
-                                        </span>
-                                    </p>
-                                    <p className={styles.productDescription}>
-                                        {product.description}
-                                    </p>
-                                </div>
-                                <div
-                                    className={styles.productMedia}
-                                    style={
-                                        {
-                                            "--frame-image": `url("${product.frameImage}")`,
-                                        } as CSSProperties
-                                    }
-                                >
-                                    <div className={styles.productInnerFrame} />
-                                </div>
-                            </article>
-                        </div>
+                                            {product.description}
+                                        </p>
+                                    </div>
+                                    <div
+                                        className={styles.productMedia}
+                                        style={
+                                            {
+                                                "--frame-image": `url("${product.frameImage}")`,
+                                            } as CSSProperties
+                                        }
+                                    >
+                                        <div
+                                            className={styles.productInnerFrame}
+                                        />
+                                    </div>
+                                </article>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </section>
@@ -197,18 +145,24 @@ export default function HomePage() {
             <CardSlider
                 heading="현장 관제의 완벽한 지능화, 인포지아와 실현하세요."
                 itemWidth={360}
-                items={industries.map((industry) => (
-                    <article
-                        className={styles.industryCard}
-                        key={industry.title}
+                items={solutions.map((solution) => (
+                    <Link
+                        className={styles.solutionCardLink}
+                        href={solution.url}
+                        key={solution.title}
                     >
-                        <img alt="" src={industry.image} />
-                        <div className={styles.industryOverlay} />
-                        <div className={styles.industryText}>
-                            <p>Industries</p>
-                            <h3>{industry.title}</h3>
-                        </div>
-                    </article>
+                        <article
+                            className={styles.solutionCard}
+                            key={solution.title}
+                        >
+                            <img alt="" src={solution.image} />
+                            <div className={styles.solutionOverlay} />
+                            <div className={styles.solutionText}>
+                                <p>Industries</p>
+                                <h3>{solution.title}</h3>
+                            </div>
+                        </article>
+                    </Link>
                 ))}
             />
 

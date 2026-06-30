@@ -1,3 +1,8 @@
+.sectionBase {
+    user-select: none;
+    pointer-events: none;
+}
+
 .section {
     padding: 40px 0 72px;
 }
@@ -30,13 +35,28 @@
 
 .track {
     display: flex;
+    width: max-content;
+    animation: partner-strip-marquee var(--partner-strip-duration, 36s) linear
+        infinite;
+    will-change: transform;
+}
+
+.logoList {
+    display: flex;
+    flex: 0 0 auto;
     align-items: center;
     gap: 120px;
-    width: max-content;
+    padding-right: 120px;
 }
 
 .logoItem {
     flex: 0 0 auto;
+}
+
+.logoImage {
+    display: block;
+    width: auto;
+    height: 60px;
 }
 
 .fade {
@@ -65,8 +85,19 @@
     background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+@keyframes partner-strip-marquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
 @media (max-width: 767px) {
-    .track {
+    .logoList {
         gap: 72px;
+        padding-right: 72px;
     }
 }

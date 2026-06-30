@@ -68,26 +68,6 @@
     padding: 330px 0 350px;
 }
 
-.partnerViewport {
-    width: min(1440px, calc(100% - 40px));
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.partnerTrack {
-    display: flex;
-    align-items: center;
-    gap: 120px;
-    width: max-content;
-}
-
-.partnerLogo {
-    display: block;
-    width: auto;
-    height: 60px;
-    flex: 0 0 auto;
-}
-
 .gradientVision {
     color: transparent;
     background-image: linear-gradient(

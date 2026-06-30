@@ -21,6 +21,7 @@
 ## 상세지시
 
 - locale 작업은 한글/영어 기준으로만 범위를 한정한다.
+- locale 작업은 화면 마감, 링크 정리, 접근성/정적 검토 이후 최후반에 진행한다.
 - 실제 번역 문구 작성은 이번 작업 범위에 포함하지 않는다.
 - 홈 카드 클릭 동작과 공통 링크 정리는 기존 URL 체계를 유지하는 방향을 우선한다.
 - 신규 라우트 추가가 필요해지는 정보구조 개편은 이번 작업에서 다루지 않는다.
@@ -39,7 +40,7 @@
 ### Locale 적용 현황
 
 - 관련 TODO:
-    - [2. Locale 적용 범위와 구조 설계](#2-locale-적용-범위와-구조-설계)
+    - [9. Locale 적용 범위와 구조 설계](#9-locale-적용-범위와-구조-설계-결정-필요)
 - 참고 자료:
     - `src/app/layout.tsx`
     - `src/app/sitemap.ts`
@@ -61,6 +62,7 @@
     - [5. use cases 상세 화면 하단 상담 화면 개발](#5-use-cases-상세-화면-하단-상담-화면-개발)
     - [6. 문의하기 화면 수정](#6-문의하기-화면-수정)
     - [7. Company 진입 화면 개발](#7-company-진입-화면-개발)
+    - [8. 상단 메뉴 하위 메뉴들의 interaction 추가](#8-상단-메뉴-하위-메뉴들의-interaction-추가)
 - 참고 자료:
     - `src/app/company/contact-us/page.tsx`
     - `src/components/site/SiteHeader.tsx`
@@ -76,14 +78,15 @@
 
 ## TODO 목록
 
-- [ ] [1. 홈 화면 클릭 동작과 인터랙션 마감](#1-홈-화면-클릭-동작과-인터랙션-마감)
-- [ ] [2. Locale 적용 범위와 구조 설계 (결정 필요)](#2-locale-적용-범위와-구조-설계-결정-필요)
-- [ ] [3. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)](#3-flomon-vision-페이지-미완료-항목-정리-결정-필요)
-- [ ] [4. 공통 링크와 placeholder 상호작용 정리](#4-공통-링크와-placeholder-상호작용-정리)
-- [ ] [5. use cases 상세 화면 하단 상담 화면 개발](#5-use-cases-상세-화면-하단-상담-화면-개발)
-- [ ] [6. 문의하기 화면 수정](#6-문의하기-화면-수정)
-- [ ] [7. Company 진입 화면 개발](#7-company-진입-화면-개발)
+- [x] [1. 홈 화면 클릭 동작과 인터랙션 마감](#1-홈-화면-클릭-동작과-인터랙션-마감)
+- [ ] [2. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)](#2-flomon-vision-페이지-미완료-항목-정리-결정-필요)
+- [ ] [3. 공통 링크와 placeholder 상호작용 정리](#3-공통-링크와-placeholder-상호작용-정리)
+- [ ] [4. use cases 상세 화면 하단 상담 화면 개발](#4-use-cases-상세-화면-하단-상담-화면-개발)
+- [ ] [5. 문의하기 화면 수정](#5-문의하기-화면-수정)
+- [ ] [6. Company 진입 화면 개발](#6-company-진입-화면-개발)
+- [ ] [7. 상단 메뉴 하위 메뉴들의 interaction 추가](#7-상단-메뉴-하위-메뉴들의-interaction-추가)
 - [ ] [8. 반응형 접근성 정적 검토 항목 정리](#8-반응형-접근성-정적-검토-항목-정리)
+- [ ] [9. Locale 적용 범위와 구조 설계 (결정 필요)](#9-locale-적용-범위와-구조-설계-결정-필요)
 
 ## 상세 TODO
 
@@ -93,39 +96,19 @@
 - 목적:
     - 홈 화면의 핵심 탐색 요소를 실제 이동 가능한 UI로 마감한다.
 - 작업 내용:
-    - [ ] `/`의 `Our Products` 카드 전체를 클릭 가능한 구조로 변경한다.
-    - [ ] `Flomon Vision` 카드를 `/products/flomon-vision`으로 연결한다.
-    - [ ] `Flomon Agent` 카드를 `/products/flomon-agent`으로 연결한다.
-    - [ ] 제품 카드 hover 시 배경 음영 또는 이에 준하는 시각 피드백을 추가한다.
-    - [ ] 포커스 상태에서도 동일한 수준의 클릭 가능 피드백을 제공한다.
-    - [ ] `/`의 `현장 관제의 완벽한 지능화, 인포지아와 실현하세요.` 섹션 카드 전체를 클릭 가능하게 만든다.
-    - [ ] 각 산업 카드를 대응하는 `/solutions/*` 또는 확정된 목적지로 연결한다.
-    - [ ] 슬라이더 넘김 동작과 카드 클릭이 충돌하지 않도록 동작을 정리한다.
+    - [x] `/`의 `Our Products` 카드 전체를 클릭 가능한 구조로 변경한다.
+    - [x] `Flomon Vision` 카드를 `/products/flomon-vision`으로 연결한다.
+    - [x] `Flomon Agent` 카드를 `/products/flomon-agent`으로 연결한다.
+    - [x] 제품 카드 hover 시 배경 음영 또는 이에 준하는 시각 피드백을 추가한다.
+    - [x] 포커스 상태에서도 동일한 수준의 클릭 가능 피드백을 제공한다.
+    - [x] `/`의 `현장 관제의 완벽한 지능화, 인포지아와 실현하세요.` 섹션 카드 전체를 클릭 가능하게 만든다.
+    - [x] 각 산업 카드를 대응하는 `/solutions/*` 또는 확정된 목적지로 연결한다.
 - 참고 자료:
     - `src/app/page.tsx`
     - `src/app/page.module.css`
     - `src/components/ui/CardSlider.tsx`
 
-### 2. Locale 적용 범위와 구조 설계 (결정 필요)
-
-- 상위 TODO: [TODO 목록으로 이동](#todo-목록)
-- 목적:
-    - 다국어 확장에 무리가 없는 구조를 정의하고 공통 UI에 반영 가능한 기준을 마련한다.
-- 작업 내용:
-    - [ ] locale 적용 범위를 정의한다.
-    - [ ] 한국어 기본 + 영어 추가, 사전 기반 번역, locale segment 도입 여부를 비교 정리한다.
-    - [ ] 제품/솔루션/use-cases slug를 locale별로 나눌지, URL은 유지하고 문구만 번역할지 정리한다.
-    - [ ] 메시지/사전 파일 구조 후보를 정리한다.
-    - [ ] 헤더, 푸터, CTA, 버튼, 섹션 제목 등 공통 UI 텍스트를 locale 구조로 분리하는 방식을 정리한다.
-    - [ ] metadata, canonical, alternates, sitemap 반영 범위를 locale 정책 기준으로 정리한다.
-    - [ ] `SiteHeader.module.css`에 남아 있는 locale 버튼 흔적을 실제 기능으로 연결할지 제거할지 결정한다.
-- 참고 자료:
-    - `src/app/layout.tsx`
-    - `src/app/sitemap.ts`
-    - `src/components/site/SiteHeader.tsx`
-    - `src/components/site/SiteHeader.module.css`
-
-### 3. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)
+### 2. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -143,7 +126,7 @@
     - `src/app/products/flomon-vision/page.tsx`
     - `src/app/products/flomon-vision/page.module.css`
 
-### 4. 공통 링크와 placeholder 상호작용 정리
+### 3. 공통 링크와 placeholder 상호작용 정리
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -161,7 +144,7 @@
     - `src/app/products/flomon-vision/page.tsx`
     - `src/app/products/flomon-agent/page.tsx`
 
-### 5. use cases 상세 화면 하단 상담 화면 개발
+### 4. use cases 상세 화면 하단 상담 화면 개발
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -177,7 +160,7 @@
     - `src/app/use-cases/[id]/page.module.css`
     - `src/app/company/contact-us/page.tsx`
 
-### 6. 문의하기 화면 수정
+### 5. 문의하기 화면 수정
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -193,7 +176,7 @@
     - `src/app/company/contact-us/page.module.css`
     - `src/components/site/SiteFooter.tsx`
 
-### 7. Company 진입 화면 개발
+### 6. Company 진입 화면 개발
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -208,6 +191,22 @@
     - `src/components/site/SiteHeader.tsx`
     - `src/components/site/SiteHeader.module.css`
     - `src/app/company/contact-us/page.tsx`
+
+### 7. 상단 메뉴 하위 메뉴들의 interaction 추가
+
+- 상위 TODO: [TODO 목록으로 이동](#todo-목록)
+- 목적:
+    - 상단 메뉴의 하위 메뉴가 실제 탐색 흐름에 맞는 상호작용을 갖도록 정리한다.
+- 작업 내용:
+    - [ ] 현재 상단 메뉴 하위 메뉴의 노출 방식과 동작 조건을 점검한다.
+    - [ ] hover, focus, click 기준으로 어떤 interaction이 필요한지 정리한다.
+    - [ ] 데스크톱과 모바일에서 하위 메뉴 동작 방식을 어떻게 나눌지 정리한다.
+    - [ ] 키보드 접근성과 포커스 이동 규칙을 포함해 필요한 동작을 정리한다.
+    - [ ] 실제 구현 대상 파일과 후속 구현 task를 추가한다.
+- 참고 자료:
+    - `src/components/site/SiteHeader.tsx`
+    - `src/components/site/SiteHeader.module.css`
+    - `src/app/layout.tsx`
 
 ### 8. 반응형 접근성 정적 검토 항목 정리
 
@@ -226,6 +225,25 @@
     - `src/components/ui/CardSlider.tsx`
     - `src/app/use-cases/[id]/UseCaseStorySection.tsx`
     - `package.json`
+
+### 9. Locale 적용 범위와 구조 설계 (결정 필요)
+
+- 상위 TODO: [TODO 목록으로 이동](#todo-목록)
+- 목적:
+    - 다국어 확장에 무리가 없는 구조를 정의하고 공통 UI에 반영 가능한 기준을 마련한다.
+- 작업 내용:
+    - [ ] locale 적용 범위를 정의한다.
+    - [ ] 한국어 기본 + 영어 추가, 사전 기반 번역, locale segment 도입 여부를 비교 정리한다.
+    - [ ] 제품/솔루션/use-cases slug를 locale별로 나눌지, URL은 유지하고 문구만 번역할지 정리한다.
+    - [ ] 메시지/사전 파일 구조 후보를 정리한다.
+    - [ ] 헤더, 푸터, CTA, 버튼, 섹션 제목 등 공통 UI 텍스트를 locale 구조로 분리하는 방식을 정리한다.
+    - [ ] metadata, canonical, alternates, sitemap 반영 범위를 locale 정책 기준으로 정리한다.
+    - [ ] `SiteHeader.module.css`에 남아 있는 locale 버튼 흔적을 실제 기능으로 연결할지 제거할지 결정한다.
+- 참고 자료:
+    - `src/app/layout.tsx`
+    - `src/app/sitemap.ts`
+    - `src/components/site/SiteHeader.tsx`
+    - `src/components/site/SiteHeader.module.css`
 
 ## 사용자 확인 필요 사항
 

@@ -15,7 +15,7 @@
     font-size: 18px;
     letter-spacing: -0.45px;
     line-height: 24px;
-    cursor: default;
+    cursor: pointer;
 }
 
 .button::before {
