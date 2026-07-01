@@ -106,7 +106,7 @@ const useCaseDetailPageEntries = {
                 title: "안전 사고 예방 및 대응력의 획기적 향상",
             },
         ],
-        tags: ["보안", "Vision AI", "Tech"],
+        tags: ["제조", "Vision AI", "Tech"],
         title: "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축",
     },
     "lift-safety-management": {

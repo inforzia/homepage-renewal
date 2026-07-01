@@ -1,0 +1,123 @@
+.hero {
+    --hero-foreground: #fff;
+    --hero-description: rgba(255, 255, 255, 0.92);
+    --hero-overlay-start: rgba(0, 0, 0, 0.58);
+    --hero-overlay-middle: rgba(0, 0, 0, 0.24);
+    --hero-overlay-end: rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: max(640px, 100svh);
+}
+
+.light {
+    --hero-foreground: #fff;
+    --hero-description: rgba(255, 255, 255, 0.92);
+    --hero-overlay-start: rgba(0, 0, 0, 0.58);
+    --hero-overlay-middle: rgba(0, 0, 0, 0.24);
+    --hero-overlay-end: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --hero-foreground: #121416;
+    --hero-description: rgba(18, 20, 22, 0.86);
+    --hero-overlay-start: rgba(255, 255, 255, 0.72);
+    --hero-overlay-middle: rgba(255, 255, 255, 0.42);
+    --hero-overlay-end: rgba(255, 255, 255, 0.14);
+}
+
+.mediaWrap,
+.media {
+    width: 100%;
+    height: 100%;
+}
+
+.mediaWrap {
+    position: absolute;
+    inset: 0;
+}
+
+.media {
+    display: block;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+}
+
+.overlay {
+    position: relative;
+    min-height: max(640px, 100svh);
+    background: linear-gradient(
+        90deg,
+        var(--hero-overlay-start) 0%,
+        var(--hero-overlay-middle) 45%,
+        var(--hero-overlay-end) 100%
+    );
+}
+
+.inner {
+    display: grid;
+    align-content: center;
+    width: min(1400px, calc(100% - 40px));
+    min-height: max(640px, 100svh);
+    margin: 0 auto;
+    padding-top: 18svh;
+    word-break: keep-all;
+}
+
+.eyebrow {
+    color: var(--hero-foreground);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.45px;
+    line-height: 24px;
+}
+
+.title {
+    max-width: 860px;
+    margin-top: 12px;
+    color: var(--hero-foreground);
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -1.6px;
+    line-height: 84px;
+}
+
+.description {
+    max-width: 1110px;
+    margin-top: 16px;
+    color: var(--hero-description);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    line-height: 30px;
+}
+
+.action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 56px;
+    margin-top: 60px;
+}
+
+@media (max-width: 767px) {
+    .hero,
+    .overlay,
+    .inner {
+        min-height: max(560px, 100svh);
+    }
+
+    .inner {
+        padding-top: 15svh;
+    }
+
+    .title {
+        font-size: 42px;
+        line-height: 54px;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 30px;
+    }
+}

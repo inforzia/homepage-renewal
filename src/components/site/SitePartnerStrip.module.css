@@ -17,11 +17,15 @@
 }
 
 .label {
-    color: #6c757d;
+    display: flex;
+    justify-content: center;
+    color: rgb(173, 181, 189);
     font-size: 16px;
     letter-spacing: -0.4px;
     line-height: 24px;
-    margin-bottom: 20px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 70px;
 }
 
 .sectionDark .label {

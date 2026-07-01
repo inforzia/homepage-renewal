@@ -1,8 +1,6 @@
 import { useCaseImages } from "@/datas/useCaseImages";
 
-const assetBase = "https://seed-bronze-70048020.figma.site";
-
-const asset = (path: string) => `${assetBase}${path}`;
+const asset = (path: string) => path;
 
 export type UseCaseSummary = {
     description?: string;
@@ -12,7 +10,7 @@ export type UseCaseSummary = {
     title: string;
 };
 
-const defaultImage = asset("/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png");
+const defaultImage = asset("/images/solutions/shared/use-case-card-placeholder.png");
 
 export const useCaseSummaries: UseCaseSummary[] = [
     {
@@ -52,7 +50,7 @@ export const useCaseSummaries: UseCaseSummary[] = [
             "기존 제조 및 건설 현장에서는 작업자의 안전 장구 착용 여부나 위험 구역 침입을 확인하기 위해 안전 관리자가 직접 순찰하거나 CCTV를 일일이 모니터링해야 했습니다. 하지만 작업 범위가 넓고 인력이 부족한 상황에서 낙상, 기계 끼임, 실신 등의 돌발적인 인명 사고를 실시간으로 포착하기에는 한계가 명확했습니다. 특히 사고 발생 시 즉각적인 기계 제어가 이루어지지 않아 골든타임을 놓치는 심각한 안전 사각지대가 존재해 왔습니다.",
         id: "manufacturing-site-safety-management",
         image: defaultImage,
-        tags: ["보안", "Vision AI", "Tech"],
+        tags: ["제조", "Vision AI", "Tech"],
         title: "제조 현장 안전 관리: 위험 상황 대응 리드타임 90% 단축",
     },
     {

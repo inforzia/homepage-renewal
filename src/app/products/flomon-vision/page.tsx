@@ -7,15 +7,14 @@ import { SiteSectionIntro } from "@/components/site/SiteSectionIntro";
 import { partnerLogos } from "@/datas/partnerLogos";
 import styles from "./page.module.css";
 
-const assetBase = "https://seed-bronze-70048020.figma.site";
-const asset = (path: string) => `${assetBase}${path}`;
+const asset = (path: string) => path;
 
 const featureHero = {
     chips: ["영상 + 텍스트 통합 분석", "복합 상황까지 정확히 판단"],
     description:
         "단순한 객체 탐지를 넘어 영상 속 텍스트는 물론 정돈 상태, 상품 태그, 인물의 표정과 같은 복합적인 정보를 통합 분석하는 VLM 기술을 적용합니다.",
-    image: asset("/_assets/v11/b29cd84dd0007f2fff6df43eb414565760bebb8a.png"),
-    line: asset("/_assets/v11/479520c266d97dd636513ffeddd93a3cfd0d3d2a.svg"),
+    image: asset("/images/products/flomon-vision/feature-hero-context-understanding.png"),
+    line: asset("/images/products/flomon-vision/feature-chip-divider.svg"),
     subtitle: "상황과 맥락을 이해하는 시각언어모델(VLM)",
     title: "맥락 기반 상황 이해",
 };
@@ -24,19 +23,19 @@ const features = [
     {
         description:
             "단순 근거리 모니터링을 넘어, 최대 반경 3km 내의 미세 징후를 포착합니다. 전체 화면의 3%에 불과한 작은 변화까지 탐지해 위험 상황을 입체적으로 분석하고 데이터로 저장합니다.",
-        image: asset("/_assets/v11/6ac32b3a4082c697697c67d2d20b54342e99020a.png"),
+        image: asset("/images/products/flomon-vision/feature-detection-coverage.png"),
         title: "광대역 정밀 탐지 및 데이터 자산화",
     },
     {
         description:
             "검증된 최신 비전 AI 엔진을 불러오거나, 현장 특성에 맞춰 고유하게 커스텀할 수 있습니다. 이를 통해 각 산업 현장에 최적화된, 더욱 정확하고 스마트한 운영 환경을 구축합니다.",
-        image: asset("/_assets/v11/97e2d46ad8b9e5b5589c85fa620ece7f3fd2d13e.png"),
+        image: asset("/images/products/flomon-vision/feature-engine-integration.png"),
         title: "최신 비전 AI 엔진과의 결합",
     },
     {
         description:
             "아날로그 계측기나 수치 그래프를 AI가 직접 읽어 디지털 데이터로 전환합니다. 빛 반사나 어두운 조명 등 열악한 환경에서도 높은 인식률로 노후 설비 관리 공백을 제거합니다.",
-        image: asset("/_assets/v11/f175c12fcaf25b045417043dbe83f668a554733e.png"),
+        image: asset("/images/products/flomon-vision/feature-ocr-conversion.png"),
         title: "아날로그 자산의 디지털 전환(OCR)",
     },
 ];
@@ -73,37 +72,37 @@ const industries = [
     {
         description:
             "초정밀 AI로 광범위한 지역의 재난 징후를 조기에 탐지하고 전파합니다. 사각지대 없는 상시 감시 체계를 통해 복합 재난 상황에서도 실시간으로 골든타임을 확보합니다.",
-        image: asset("/_assets/v11/810429b5ccd1f9b9a3f64149f1eea9c5bc4348eb.png"),
+        image: asset("/images/products/flomon-vision/industry-disaster-safety.png"),
         title: "재난 안전",
     },
     {
         description:
             "노후 설비와 건축물의 미세한 이상 징후를 실시간으로 판독해 예측합니다. 육안 검사의 한계를 극복하고 24시간 모니터링하여 구조물 사고를 사전에 원천 차단합니다.",
-        image: asset("/_assets/v11/c754904af3dff44fa316e819e3cfed05c071459a.png"),
+        image: asset("/images/products/flomon-vision/industry-facility-safety.png"),
         title: "시설물 안전",
     },
     {
         description:
             "고객 행동 패턴과 매장 내 혼잡도를 실시간으로 분석해 최적의 동선을 제공합니다. 데이터 기반의 지능형 관리를 통해 고객 경험과 매장 운영 효율을 동시에 극대화합니다.",
-        image: asset("/_assets/v11/38233c6dde22691b0d53896252f28bc01f96a011.png"),
+        image: asset("/images/products/flomon-vision/industry-retail-store-management.png"),
         title: "리테일 및 매장",
     },
     {
         description:
             "작업 현장의 안전 위반 행위와 설비 결함을 실시간으로 포착해 자동 제어합니다. 복잡한 고위험 환경의 위험 요소를 뿌리 뽑아 공백 없는 제로(Zero) 재해 현장을 구현합니다.",
-        image: asset("/_assets/v11/d20a813f318be1fa57fd2600726d8c0fe3533d88.png"),
+        image: asset("/images/products/flomon-vision/industry-manufacturing-construction.png"),
         title: "제조 및 공정",
     },
     {
         description:
             "입출고부터 적재, 운송까지의 전 과정과 물류 흐름을 지능적으로 관제합니다. 파편화된 현장 데이터를 실시간 통합해 병목 현상을 해결하고 처리 속도를 획기적으로 높입니다.",
-        image: asset("/_assets/v11/766b278ff055e081d54d220db278de8eab2699e8.png"),
+        image: asset("/images/products/flomon-vision/industry-logistics-distribution.png"),
         title: "물류 및 유통업",
     },
     {
         description:
             "작물 생육 상태와 환경 데이터를 정밀 분석해 최적의 환경을 자동 제어합니다. 기후 변화와 인력 부족에 관계없이 24시간 안정적인 농업 생산성과 운영 예측성을 지원합니다.",
-        image: asset("/_assets/v11/5fba15b26f40a590e08e11cb546098b48f9b5842.png"),
+        image: asset("/images/products/flomon-vision/industry-smart-farming.png"),
         title: "스마트팜",
     },
 ];
@@ -111,12 +110,12 @@ const industries = [
 const testimonials = [
     {
         body: "AI 탑승 결함 감지 및 자동 제동 기술 도입으로 인해, 리프트 위험 거동을 사전에 포착하여 추락 사고를 원천 차단하는 효과를 볼 수 있었습니다.",
-        logo: asset("/_assets/v11/abeab1212708531ace9e3ce84b07adbc7f0f8666.png"),
+        logo: asset("/images/products/flomon-vision/testimonial-lift-safety.png"),
         title: "24시간 실시간 관제 및 자동 알람 시스템으로 안전 사고 제로화",
     },
     {
         body: "OCR 및 복합 비전 AI 기술 도입으로 인해, 파편화된 계측 데이터를 실시간 통합하여 수작업 오류를 원천 차단하는 효과를 볼 수 있었습니다.",
-        logo: asset("/_assets/v11/d82c31298f0e73ad1102d9b88dce96a7981a6102.png"),
+        logo: asset("/images/products/flomon-vision/testimonial-meter-reading.png"),
         title: "이기종 설비 데이터 관리 100% 자동화 및 자산화",
     },
 ];
@@ -148,7 +147,7 @@ export default function ProductFlomonVisionPage() {
                     <div className={styles.heroVisual}>
                         <img
                             alt="Flomon Vision overview"
-                            src={asset("/_assets/v11/b76b6ba3011adaa93b6c091687149de7caee422f.png")}
+                            src={asset("/images/products/flomon-vision/hero-overview.png")}
                         />
                     </div>
                 </div>
@@ -253,7 +252,7 @@ export default function ProductFlomonVisionPage() {
                         <div className={styles.mediaCard}>
                             <img
                                 alt="Vision AI task preview"
-                                src={asset("/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png")}
+                                src={asset("/images/solutions/shared/use-case-card-placeholder.png")}
                             />
                         </div>
                         <p className={styles.sectionBody}>

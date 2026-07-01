@@ -4,9 +4,9 @@
 
 - 요청자: 사용자
 - 생성 일시: 2026-06-30
-- 최종 수정 일시: 2026-06-30
+- 최종 수정 일시: 2026-07-01
 - 완료 일시:
-- 상태: 계획 중
+- 상태: 진행 중
 - 관련 작업:
     - [Flomon Vision 페이지 구현 TODO](./flomon-vision-page-todo.md)
 - 관련 문서 / 이슈 / 링크:
@@ -17,6 +17,25 @@
 
 - 현재 구현된 주요 화면을 실제 오픈 가능한 수준까지 마감하기 위한 후속 작업을 정리한다.
 - 단순한 레이아웃 재현을 넘어서 홈 화면 인터랙션, locale 적용, 링크 연결, 접근성, 정적 호스팅 검토까지 포함한 작업 계획을 만든다.
+
+## 현재 기준 요약
+
+- `solutions` 하위 개별 페이지는 `/solutions/[id]` 동적 라우트로 통합되었다.
+- 솔루션 페이지 데이터는 `src/datas/solutions.tsx`로 모였고, `Our Solution`, workflow, use cases 구성을 데이터 기반으로 관리한다.
+- 솔루션 관련 외부 Figma Sites 의존 이미지는 대부분 로컬 `public/images/solutions/*`로 내려받아 정리되었다.
+- `Our Solution` 아이콘 SVG는 로컬 파일로 치환되었고, 기본 비율 및 기본 크기(`28x28`)도 정리되었다.
+- 솔루션 페이지 `Use Cases` 카드는 `src/datas/useCases.ts`의 첫 번째 `tags` 값을 기준으로 카테고리 매핑되도록 변경되었다.
+- `SiteHero` 범용 컴포넌트는 생성되었고, 현재 솔루션 동적 페이지 hero에서 사용 중이다.
+- 제품 페이지 hero에 `SiteHero`를 확대 적용하려는 시도는 사용자 의도와 맞지 않아 원복되었다.
+- 임시 산출물은 `/.temp/` 아래로 정리하는 규칙이 `AGENTS.md`에 반영되었다.
+
+## 다음 재개 포인트
+
+1. 홈 hero를 실제로 어떤 수준까지 공통화할지 먼저 재정의한다.
+2. `Flomon Vision` 페이지의 실제 미완료 인터랙션이 필요한지, 정적 표현으로 둘지 결정한다.
+3. 공통 CTA, `더 보기`, `소개서 다운로드`, `개인정보 처리방침` 등 링크 목적지를 정리한다.
+4. `use-cases` 상세 하단 상담 영역, 문의하기, Company 진입 화면 후속 구현 범위를 확정한다.
+5. 마지막으로 반응형/접근성/lint 경고 대응과 locale 구조 설계를 진행한다.
 
 ## 상세지시
 
@@ -32,15 +51,30 @@
 
 - 관련 TODO:
     - [1. 홈 화면 클릭 동작과 인터랙션 마감](#1-홈-화면-클릭-동작과-인터랙션-마감)
+    - [2. 홈 hero section 컴포넌트화](#2-홈-hero-section-컴포넌트화)
 - 참고 자료:
     - `src/app/page.tsx`
     - `src/app/page.module.css`
     - `src/components/ui/CardSlider.tsx`
+    - `src/components/site/HomeHero.tsx`
+    - `src/components/site/SiteHero.tsx`
+
+### 솔루션 화면 구조 개편 현황
+
+- 관련 TODO:
+    - [4. 공통 링크와 placeholder 상호작용 정리](#4-공통-링크와-placeholder-상호작용-정리)
+    - [9. 반응형 접근성 정적 검토 항목 정리](#9-반응형-접근성-정적-검토-항목-정리)
+- 참고 자료:
+    - `src/app/solutions/[id]/page.tsx`
+    - `src/app/solutions/[id]/page.module.css`
+    - `src/datas/solutions.tsx`
+    - `src/datas/useCases.ts`
+    - `public/images/solutions/`
 
 ### Locale 적용 현황
 
 - 관련 TODO:
-    - [9. Locale 적용 범위와 구조 설계](#9-locale-적용-범위와-구조-설계-결정-필요)
+    - [10. Locale 적용 범위와 구조 설계](#10-locale-적용-범위와-구조-설계-결정-필요)
 - 참고 자료:
     - `src/app/layout.tsx`
     - `src/app/sitemap.ts`
@@ -50,7 +84,7 @@
 ### Flomon Vision 잔여 작업 현황
 
 - 관련 TODO:
-    - [3. Flomon Vision 페이지 미완료 항목 정리](#3-flomon-vision-페이지-미완료-항목-정리)
+    - [3. Flomon Vision 페이지 미완료 항목 정리](#3-flomon-vision-페이지-미완료-항목-정리-결정-필요)
 - 참고 자료:
     - [Flomon Vision 페이지 구현 TODO](./flomon-vision-page-todo.md)
     - `src/app/products/flomon-vision/page.tsx`
@@ -71,6 +105,8 @@
 ## 완료 기준
 
 - 홈 `/`의 제품 카드와 산업 카드가 의도한 목적지로 이동 가능한 상태가 된다.
+- 홈 hero section이 페이지 파일에서 분리된 재사용 가능한 컴포넌트 구조로 정리된다.
+- 솔루션 화면 구조 개편 내용과 남은 보완 지점이 문서 기준으로 이어받기 가능한 상태가 된다.
 - locale 적용 범위와 방식이 문서화되고, 공통 UI에서 반영 가능한 구조가 정리된다.
 - `Flomon Vision` 페이지의 미완료 항목이 구현되거나 제외 사유가 정리된다.
 - 공통 CTA와 placeholder 링크 정리 작업이 끝나고 남은 미결 사항이 사용자 확인 항목으로 분리된다.
@@ -79,14 +115,15 @@
 ## TODO 목록
 
 - [x] [1. 홈 화면 클릭 동작과 인터랙션 마감](#1-홈-화면-클릭-동작과-인터랙션-마감)
-- [ ] [2. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)](#2-flomon-vision-페이지-미완료-항목-정리-결정-필요)
-- [ ] [3. 공통 링크와 placeholder 상호작용 정리](#3-공통-링크와-placeholder-상호작용-정리)
-- [ ] [4. use cases 상세 화면 하단 상담 화면 개발](#4-use-cases-상세-화면-하단-상담-화면-개발)
-- [ ] [5. 문의하기 화면 수정](#5-문의하기-화면-수정)
-- [ ] [6. Company 진입 화면 개발](#6-company-진입-화면-개발)
-- [ ] [7. 상단 메뉴 하위 메뉴들의 interaction 추가](#7-상단-메뉴-하위-메뉴들의-interaction-추가)
-- [ ] [8. 반응형 접근성 정적 검토 항목 정리](#8-반응형-접근성-정적-검토-항목-정리)
-- [ ] [9. Locale 적용 범위와 구조 설계 (결정 필요)](#9-locale-적용-범위와-구조-설계-결정-필요)
+- [ ] [2. 홈 hero section 컴포넌트화](#2-홈-hero-section-컴포넌트화)
+- [ ] [3. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)](#3-flomon-vision-페이지-미완료-항목-정리-결정-필요)
+- [ ] [4. 공통 링크와 placeholder 상호작용 정리](#4-공통-링크와-placeholder-상호작용-정리)
+- [ ] [5. use cases 상세 화면 하단 상담 화면 개발](#5-use-cases-상세-화면-하단-상담-화면-개발)
+- [ ] [6. 문의하기 화면 수정](#6-문의하기-화면-수정)
+- [ ] [7. Company 진입 화면 개발](#7-company-진입-화면-개발)
+- [ ] [8. 상단 메뉴 하위 메뉴들의 interaction 추가](#8-상단-메뉴-하위-메뉴들의-interaction-추가)
+- [ ] [9. 반응형 접근성 정적 검토 항목 정리](#9-반응형-접근성-정적-검토-항목-정리)
+- [ ] [10. Locale 적용 범위와 구조 설계 (결정 필요)](#10-locale-적용-범위와-구조-설계-결정-필요)
 
 ## 상세 TODO
 
@@ -108,7 +145,30 @@
     - `src/app/page.module.css`
     - `src/components/ui/CardSlider.tsx`
 
-### 2. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)
+### 2. 홈 hero section 컴포넌트화
+
+- 상위 TODO: [TODO 목록으로 이동](#todo-목록)
+- 목적:
+    - 홈 hero section을 `page.tsx`에서 분리해 구조를 명확히 하고 후속 수정 범위를 줄인다.
+- 작업 내용:
+    - [ ] 현재 홈 hero section의 마크업, 카피, 미디어, CTA 구성을 분리 대상 단위로 정리한다.
+    - [ ] 서버 컴포넌트 기본 원칙을 유지하면서 hero section을 독립 컴포넌트로 추출한다.
+    - [ ] hero 전용 스타일이 필요하면 import 범위를 분리해 페이지 레벨 스타일 의존성을 줄인다.
+    - [ ] 추출 이후에도 기존 시맨틱 구조, 링크 동작, 정적 호스팅 전제를 유지하는지 확인한다.
+    - [ ] hero section 후속 수정이 예상되는 경우 props 구조를 과하게 일반화하지 않고 현재 용도에 맞게 정리한다.
+- 진행 메모:
+    - `src/components/site/SiteHero.tsx` 범용 hero 컴포넌트를 먼저 추출하고 `src/app/solutions/disaster-safety/page.tsx`에만 선적용했다.
+    - 이후 솔루션 동적 라우트(`/solutions/[id]`)의 hero가 `SiteHero` 기반으로 정리되었다.
+    - 제품 페이지 hero에 `SiteHero`를 적용하는 시도를 했지만 사용자 의도와 맞지 않아 원복했다.
+    - `HomeHero`는 화면 안정성과 기존 연출을 유지하기 위해 현재 구조를 그대로 유지 중이다.
+    - 다음 작업에서는 `HomeHero`를 직접 정리할지, `SiteHero`와 별개로 홈 전용 hero 체계를 유지할지 먼저 판단해야 한다.
+- 참고 자료:
+    - `src/app/page.tsx`
+    - `src/app/page.module.css`
+    - `src/components/site/HomeHero.tsx`
+    - `src/components/site/SiteHero.tsx`
+
+### 3. Flomon Vision 페이지 미완료 항목 정리 (결정 필요)
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -126,7 +186,7 @@
     - `src/app/products/flomon-vision/page.tsx`
     - `src/app/products/flomon-vision/page.module.css`
 
-### 3. 공통 링크와 placeholder 상호작용 정리
+### 4. 공통 링크와 placeholder 상호작용 정리
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -137,6 +197,10 @@
     - [ ] 푸터 `개인정보 처리방침` 링크의 실제 목적지 정리 작업을 추가한다.
     - [ ] 후기 카드 `더 보기`, 사례 카드, 보조 CTA 중 정적 텍스트로 남은 항목을 정리한다.
     - [ ] 각 주요 페이지에서 placeholder 링크나 미완성 상호작용을 점검하고 필요한 후속 task를 추가한다.
+- 진행 메모:
+    - 솔루션 `Use Cases` 카드는 `src/datas/useCases.ts` 기반 실제 데이터로 교체되었다.
+    - 제품 페이지 일부 `Use Cases`/미디어 영역에는 여전히 placeholder 이미지 또는 정적 카드가 남아 있다.
+    - `Flomon Vision`, `Flomon Agent`의 `소개서 다운로드`는 현재 `/company/contact-us`로 연결되어 있다.
 - 참고 자료:
     - `src/components/site/SitePrimaryButton.tsx`
     - `src/components/site/SiteFooter.tsx`
@@ -144,7 +208,7 @@
     - `src/app/products/flomon-vision/page.tsx`
     - `src/app/products/flomon-agent/page.tsx`
 
-### 4. use cases 상세 화면 하단 상담 화면 개발
+### 5. use cases 상세 화면 하단 상담 화면 개발
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -160,7 +224,7 @@
     - `src/app/use-cases/[id]/page.module.css`
     - `src/app/company/contact-us/page.tsx`
 
-### 5. 문의하기 화면 수정
+### 6. 문의하기 화면 수정
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -176,7 +240,7 @@
     - `src/app/company/contact-us/page.module.css`
     - `src/components/site/SiteFooter.tsx`
 
-### 6. Company 진입 화면 개발
+### 7. Company 진입 화면 개발
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -192,7 +256,7 @@
     - `src/components/site/SiteHeader.module.css`
     - `src/app/company/contact-us/page.tsx`
 
-### 7. 상단 메뉴 하위 메뉴들의 interaction 추가
+### 8. 상단 메뉴 하위 메뉴들의 interaction 추가
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -208,7 +272,7 @@
     - `src/components/site/SiteHeader.module.css`
     - `src/app/layout.tsx`
 
-### 8. 반응형 접근성 정적 검토 항목 정리
+### 9. 반응형 접근성 정적 검토 항목 정리
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -221,12 +285,16 @@
     - [ ] `src/app/use-cases/[id]/UseCaseStorySection.tsx`의 dependency 경고 대응 작업을 추가한다.
     - [ ] lint, typecheck, build 실행이 필요해지는 시점과 범위를 정리한다.
     - [ ] 정적 호스팅 전제와 locale/상호작용 변경 충돌 여부를 확인하는 작업을 정리한다.
+- 진행 메모:
+    - `tsc --noEmit` 기준 타입 체크는 최근 변경 시점까지 통과 상태를 유지했다.
+    - 솔루션 SVG 기본 렌더 크기와 비율 문제는 수정되었지만, 실제 화면 단위 반응형 확인은 아직 별도 점검이 필요하다.
+    - 솔루션 페이지 구조가 동적 라우트로 통합된 이후 390px/768px 기준 실제 레이아웃 재확인이 필요하다.
 - 참고 자료:
     - `src/components/ui/CardSlider.tsx`
     - `src/app/use-cases/[id]/UseCaseStorySection.tsx`
     - `package.json`
 
-### 9. Locale 적용 범위와 구조 설계 (결정 필요)
+### 10. Locale 적용 범위와 구조 설계 (결정 필요)
 
 - 상위 TODO: [TODO 목록으로 이동](#todo-목록)
 - 목적:
@@ -251,8 +319,21 @@
 - [ ] 홈 산업 카드의 최종 목적지를 모두 `/solutions/*`로 연결해도 되는지 확인
 - [ ] `소개서 다운로드`, `개인정보 처리방침`, 후기 카드 `더 보기`의 실제 공개 목적지 확인
 - [ ] `Flomon Vision` 전환형 섹션이 실제 인터랙션이어야 하는지 정적 표현이면 충분한지 확인
+- [ ] 홈 hero를 `SiteHero` 계열로 공통화할지, `HomeHero`를 별도 유지/개선할지 확인
 
 ## 작업 결과 요약
 
 - 변경된 주요 내용:
+    - 홈 카드 클릭 동작과 솔루션 카드 링크 연결 작업은 완료 상태로 유지한다.
+    - `src/components/site/SiteHero.tsx`를 추가해 이미지/영상 배경, eyebrow, title, description, color를 받을 수 있는 범용 hero 기반을 만들었다.
+    - 솔루션 화면은 `/solutions/[id]` 동적 라우트로 통합되었고, 데이터는 `src/datas/solutions.tsx`로 이동했다.
+    - 솔루션 관련 외부 리소스를 로컬 `public/images/solutions/*` 자산으로 정리했다.
+    - 솔루션 `Our Solution` SVG 아이콘을 로컬 파일로 추출하고, 비율/기본 크기 문제도 정리했다.
+    - 솔루션 `Use Cases` 카드는 `src/datas/useCases.ts` 첫 번째 태그 기준 카테고리 매핑으로 전환되었다.
+    - `disaster-safety`에서 시작한 `SiteHero` 적용은 현재 솔루션 동적 페이지에 반영되어 있고, 홈 `HomeHero`와 제품 hero는 기존 구조로 유지 중이다.
+    - 임시 파일 저장 위치를 `/.temp/`로 통일하는 규칙을 `AGENTS.md`에 반영했다.
 - 남은 제약 또는 후속 작업:
+    - TODO 2의 원래 목표인 홈 hero section 컴포넌트화는 아직 완료되지 않았다.
+    - `SiteHero`를 어디까지 공통화할지 기준을 먼저 다시 정해야 한다.
+    - 제품 페이지 hero는 `SiteHero`로의 단순 치환이 사용자 의도와 맞지 않았으므로, 재시도 전 목표 형태 정의가 필요하다.
+    - 반응형/접근성 점검과 CTA 목적지 정리는 아직 미착수 상태다.

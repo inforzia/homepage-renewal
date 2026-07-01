@@ -6,8 +6,7 @@ import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
 import { SiteSectionIntro } from "@/components/site/SiteSectionIntro";
 import styles from "./page.module.css";
 
-const assetBase = "https://seed-bronze-70048020.figma.site";
-const asset = (path: string) => `${assetBase}${path}`;
+const asset = (path: string) => path;
 
 const firstSectionItems = [
     "AI에게 현장 상황 물어보기",
@@ -36,22 +35,22 @@ const strengths = [
 const steps = [
     {
         description: "CCTV와 각종 센서로 실시간 현장 탐지",
-        image: asset("/_assets/v11/8074125bdc9fff0bbc787908f62b338cbf8cd252.png"),
+        image: asset("/images/products/flomon-agent/workflow-step-1-situation-awareness.png"),
         title: "STEP 1. 입체적 상황 인지",
     },
     {
         description: "연결된 노드를 중심으로 AI 최적 판단",
-        image: asset("/_assets/v11/0ea6def3c935ef937e151a0e6623117a4e98b60c.png"),
+        image: asset("/images/products/flomon-agent/workflow-step-2-autonomous-reasoning.png"),
         title: "STEP 2. 지능형 자율 추론",
     },
     {
         description: "현장 자동 제어 및 실시간 상황 대응",
-        image: asset("/_assets/v11/82915808abf9f16f20b554e5e3d0e332f9060ffa.png"),
+        image: asset("/images/products/flomon-agent/workflow-step-3-automated-response.png"),
         title: "STEP 3. 자동화 조치 실행",
     },
     {
         description: "데이터 분석과 AI 재학습으로 모델 최적화",
-        image: asset("/_assets/v11/62405d92672238a5234e67152cd96128b76373ea.png"),
+        image: asset("/images/products/flomon-agent/workflow-step-4-optimization.png"),
         title: "STEP 4. 지속적 고도화 및 자산화",
     },
 ];
@@ -60,19 +59,19 @@ const widgets = [
     {
         description:
             "복잡한 추론 로직과 단계별 의사결정 과정을 시각적으로 구성하며, 멀티 에이전트 협업 체계를 손쉽게 구축합니다.",
-        image: asset("/_assets/v11/777dab45733e298f1b4f39c9d8fe511611e80d59.png"),
+        image: asset("/images/products/flomon-agent/widget-orchestration.png"),
         title: "워크플로우 기반 오케스트레이션",
     },
     {
         description:
             "운영중인 시스템을 멈추지 않고도 신규 센서를 증설하거나 AI 모델 추가 및 수정을 수행할 수 있습니다.",
-        image: asset("/_assets/v11/ea2e31c65e43b3db50bb70fee1ce30c7a658f069.png"),
+        image: asset("/images/products/flomon-agent/widget-live-update.png"),
         title: "실시간 업데이트 및 유지보수 민첩성",
     },
     {
         description:
             "클라우드는 물론 폐쇄망 환경에서도 독립 구축이 가능하며, 역할 기반 접근 제어로 데이터를 안전하게 보호합니다.",
-        image: asset("/_assets/v11/9ae3fdbf02b68ff700de4ef32877eb08927283c9.png"),
+        image: asset("/images/products/flomon-agent/widget-infrastructure-security.png"),
         title: "유연한 인프라 및 보안",
     },
 ];
@@ -109,7 +108,7 @@ export default function ProductFlomonAgentPage() {
                     <div className={styles.heroVisual}>
                         <img
                             alt="Flomon Agent overview"
-                            src={asset("/_assets/v11/f3785319cefaf518c5659f309fa2a201c53e431f.png")}
+                            src={asset("/images/products/flomon-agent/hero-overview.png")}
                         />
                     </div>
                 </div>
@@ -161,7 +160,7 @@ export default function ProductFlomonAgentPage() {
                                     <div className={styles.firstSectionLink} key={item}>
                                         <img
                                             alt=""
-                                            src={asset("/_assets/v11/0a0dbecc7aabb64bda62691267109aa8377af03a.svg")}
+                                            src={asset("/images/products/flomon-agent/knowledge-link-arrow.svg")}
                                         />
                                         <span>{item}</span>
                                     </div>
@@ -171,7 +170,7 @@ export default function ProductFlomonAgentPage() {
                         <div className={styles.firstSectionVisual}>
                             <img
                                 alt=""
-                                src={asset("/_assets/v11/2cda2f4a7dd7a4c816eda73aa83ddc6f40c0422e.png")}
+                                src={asset("/images/products/flomon-agent/knowledge-platform-overview.png")}
                             />
                         </div>
                     </div>
@@ -221,7 +220,7 @@ export default function ProductFlomonAgentPage() {
                         <div className={styles.mediaCardDark}>
                             <img
                                 alt="Agent dashboard"
-                                src={asset("/_assets/v11/548517587964dcde312350085f2c3d114c85f778.png")}
+                                src={asset("/images/products/flomon-agent/dashboard-overview.png")}
                             />
                         </div>
                         <div className={styles.widgetGrid}>
@@ -255,7 +254,7 @@ export default function ProductFlomonAgentPage() {
                                     <img
                                         alt=""
                                         src={asset(
-                                            "/_assets/v11/ece298d0ec2c16f10310d45724b276a6035cb503.png",
+                                            "/images/solutions/shared/use-case-card-placeholder.png",
                                         )}
                                     />
                                 </div>

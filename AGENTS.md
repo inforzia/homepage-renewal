@@ -45,6 +45,7 @@
 - Move fully completed todo files into `docs/todo/completed/`.
 - Keep references and notes in `docs/note/` when a task needs durable implementation context.
 - Keep repeatable task-specific workflows in `docs/skills/`.
+- Store temporary artifacts, scratch files, downloaded reference pages, and intermediate outputs under `/.temp/`.
 - When referring to a specific folder for context or instructions, also check for a `READMD.md` or `readme.md` file in that folder and use its contents as part of the local guidance.
 
 ## Final Checks
