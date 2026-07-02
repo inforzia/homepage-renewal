@@ -50,6 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${siteUrl}/company/about`,
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
             url: `${siteUrl}/company/contact-us`,
             lastModified,
             changeFrequency: "monthly",

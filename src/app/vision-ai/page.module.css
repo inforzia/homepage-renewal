@@ -3,9 +3,50 @@
     color: #121416;
 }
 
+.heroSection {
+    min-height: 948px;
+    background-color: #f2f6ff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     width: min(1400px, calc(100% - 40px));
     margin: 0 auto;
+}
+
+.heroContent {
+    display: flex;
+    align-items: flex-end;
+    min-height: 948px;
+    padding: 60px 0 128px;
+}
+
+.heroCopy {
+    display: grid;
+    gap: 24px;
+    width: min(100%, 920px);
+}
+
+.heroTitle {
+    color: #1a234e;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: -1.6px;
+    line-height: 84px;
+}
+
+.heroTitle span,
+.heroDescription span {
+    display: block;
+}
+
+.heroDescription {
+    color: #495057;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
 }
 
 .sectionHeadline h2 span,
@@ -381,9 +422,30 @@
     .container {
         width: calc(100% - 40px);
     }
+
+    .heroSection,
+    .heroContent {
+        min-height: 1034px;
+    }
 }
 
 @media (max-width: 767px) {
+    .heroContent {
+        align-items: flex-start;
+        min-height: 1138px;
+        padding-top: 100px;
+        padding-bottom: 140px;
+    }
+
+    .heroCopy {
+        width: 100%;
+    }
+
+    .heroTitle {
+        font-size: 52px;
+        line-height: 68px;
+    }
+
     .storySection {
         min-height: 680px;
         margin-top: 188px;

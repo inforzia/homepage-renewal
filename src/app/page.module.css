@@ -5,6 +5,69 @@
     overflow-x: hidden;
 }
 
+.heroSection {
+    position: relative;
+    min-height: 948px;
+    overflow: hidden;
+    background: #11151b;
+}
+
+.heroVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.heroContainer {
+    width: var(--page-width);
+    margin: 0 auto;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    min-height: 948px;
+    padding: 60px 0 128px;
+}
+
+.heroCopy {
+    display: grid;
+    width: min(100%, 658px);
+}
+
+.heroTitle {
+    margin-bottom: 24px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: -1.6px;
+    line-height: 84px;
+}
+
+.heroTitle span,
+.heroDescription span {
+    display: block;
+}
+
+.heroDescription {
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+}
+
 .page img,
 .page video {
     display: block;
@@ -312,6 +375,16 @@
         --page-width: calc(100% - 32px);
     }
 
+    .heroSection,
+    .heroContent {
+        min-height: 880px;
+    }
+
+    .heroTitle {
+        font-size: 56px;
+        line-height: 74px;
+    }
+
     .sectionHeading p,
     .sectionHeading h2 {
         font-size: 36px;
@@ -341,6 +414,26 @@
 }
 
 @media (max-width: 767px) {
+    .heroContent {
+        min-height: 948px;
+        padding-top: 32px;
+        padding-bottom: 52px;
+    }
+
+    .heroCopy {
+        width: 100%;
+    }
+
+    .heroTitle {
+        font-size: 64px;
+        line-height: 84px;
+    }
+
+    .heroDescription {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
     .productDescription {
         font-size: 20px;
         line-height: 30px;

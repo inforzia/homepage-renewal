@@ -51,7 +51,7 @@ const companyItems = [
     {
         description:
             "Vision AI Solution의 새로운 기준을 제시하는 인포지아의 미션과 비전을 소개합니다.",
-        href: "/company/contact-us",
+        href: "/company/about",
         title: "About Inforzia",
     },
 ];

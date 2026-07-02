@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { HomeHero } from "@/components/site/HomeHero";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteFooterCta } from "@/components/site/SiteFooterCta";
+import { SiteHero } from "@/components/site/SiteHero";
 import { SitePartnerStrip } from "@/components/site/SitePartnerStrip";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
 import { CardSlider } from "@/components/ui/CardSlider";
@@ -70,14 +70,25 @@ const solutions = [
 export default function HomePage() {
     return (
         <main className={styles.page}>
-            <HomeHero
-                button={<SitePrimaryButton />}
-                description={[
-                    "인포지아의 Vision AI 기술은 우리가 놓치기 쉬운 수많은 시각 정보를",
-                    "정확히 이해하고, 현장과 상황에 맞는 실질적인 가치와 솔루션을 제시합니다.",
-                ]}
-                title={["Vision AI That Sees", "Beyond The Surface."]}
-                videoSrc={heroVideoUrl}
+            <SiteHero
+                action={<SitePrimaryButton />}
+                backgroundSrc={heroVideoUrl}
+                description={
+                    <>
+                        인포지아의 Vision AI 기술은 우리가 놓치기 쉬운 수많은
+                        시각 정보를
+                        <br />
+                        정확히 이해하고, 현장과 상황에 맞는 실질적인 가치와
+                        솔루션을 제시합니다.
+                    </>
+                }
+                title={
+                    <>
+                        Vision AI That Sees
+                        <br />
+                        Beyond The Surface.
+                    </>
+                }
             />
 
             <SitePartnerStrip

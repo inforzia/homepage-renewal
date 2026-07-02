@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { ScrollLinkedSteps } from "@/components/ui/ScrollLinkedSteps";
-import { SiteFooterCta } from "@/components/site/SiteFooterCta";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteFooterCta } from "@/components/site/SiteFooterCta";
+import { SiteHero } from "@/components/site/SiteHero";
 import { SitePrimaryButton } from "@/components/site/SitePrimaryButton";
-import { VisionAiHero } from "@/components/site/VisionAiHero";
+import { ScrollLinkedSteps } from "@/components/ui/ScrollLinkedSteps";
 import styles from "./page.module.css";
 
 const heroBackground = "/images/vision-ai/hero-background.png";
@@ -77,17 +77,25 @@ const workflowCards = [
 export default function VisionAiPage() {
     return (
         <main className={styles.page}>
-            <VisionAiHero
-                backgroundImageSrc={heroBackground}
-                button={<SitePrimaryButton dark />}
-                description={[
-                    "현장의 모든 순간을 포착하고 분석하며 예측하는 Vision AI.",
-                    "인포지아는 가장 완벽한 현장 관제를 현실로 만듭니다.",
-                ]}
-                title={[
-                    "Vision AI That Turns",
-                    "Every View into Industrial Value",
-                ]}
+            <SiteHero
+                action={<SitePrimaryButton dark />}
+                backgroundSrc={heroBackground}
+                color="dark"
+                description={
+                    <>
+                        현장의 모든 순간을 포착하고 분석하며 예측하는 Vision
+                        AI.
+                        <br />
+                        인포지아는 가장 완벽한 현장 관제를 현실로 만듭니다.
+                    </>
+                }
+                title={
+                    <>
+                        Vision AI That Turns
+                        <br />
+                        Every View into Industrial Value
+                    </>
+                }
             />
 
             <section className={styles.comparisonSection}>
